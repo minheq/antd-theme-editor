@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.2.2",
+    "antd-tools": "^5.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1"
@@ -16,10 +18,20 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
-    "@storybook/react": "^3.3.14",
     "@storybook/addon-actions": "^3.3.14",
     "@storybook/addon-links": "^3.3.14",
     "@storybook/addons": "^3.3.14",
-    "babel-core": "^6.26.0"
+    "@storybook/react": "^3.3.14",
+    "babel-core": "^6.26.0",
+    "babel-plugin-import": "^1.6.5",
+    "bluebird": "^3.5.1",
+    "fs-readfile-promise": "^3.0.1",
+    "glob": "^7.1.2",
+    "jsonml.js": "^0.1.0",
+    "less": "2.7.2",
+    "less-loader": "^4.0.5",
+    "less-vars-to-js": "^1.2.1",
+    "mark-twain": "^2.0.2",
+    "node-fs-writefile-promise": "^1.0.0"
   }
 }
