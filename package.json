@@ -24,6 +24,7 @@
     "bluebird": "^3.5.1",
     "fs-readdir-promise": "^1.0.1",
     "fs-readfile-promise": "^3.0.1",
+    "jsonml.js": "^0.1.0",
     "less": "2.7.2",
     "less-loader": "^4.0.5",
     "less-vars-to-js": "^1.2.1",
