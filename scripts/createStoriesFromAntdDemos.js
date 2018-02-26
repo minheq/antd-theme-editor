@@ -104,4 +104,6 @@ const createStoriesFromAntdDemos = async () => {
   }
 };
 
-createStoriesFromAntdDemos().then(() => console.log('Finish'));
+createStoriesFromAntdDemos().then(() =>
+  console.log('Finished creating stories!')
+);
