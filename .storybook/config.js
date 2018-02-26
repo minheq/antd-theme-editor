@@ -1,6 +1,7 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
+import '../src/style-override.css';
 
 const req = require.context('../src/stories', true, /\.stories\.js$/);
 
