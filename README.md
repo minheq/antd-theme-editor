@@ -1,11 +1,14 @@
-# Usage
+# Ant Design Theme Editor
+Quickly preview ant design theme overrides and editing its css styles
+
+## Usage
 
 ```
 yarn              // install dependencies
 yarn storybook    // launch storybook with all antd components
 ```
 
-# Customizing theme
+## Customizing theme
 
 ### Editing antd default variables
 
