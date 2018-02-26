@@ -13,7 +13,7 @@ yarn storybook    // launch storybook with all antd components
 
 Visit `localhost:6006` to view Storybook
 
-Note: Stories are already created. It utilizes the script `yarn create-stories` which runs the file `scripts/createStoriesFromAntdDemos.js`
+**Note**: Stories are already created. It utilizes the script `yarn create-stories` which runs the file `scripts/createStoriesFromAntdDemos.js`
 
 ## Customizing theme
 
@@ -24,3 +24,7 @@ There is ready `src/ant-theme-override.less` for editing **antd default variable
 ### Editing css antd classes
 
 You can also edit css file `src/style-override.css` for overriding/editing styles of **antd classes**
+
+## Exporting
+
+After you are done editing the variables and styles, just copy the `ant-theme-override.less` and `src/style-override.css` files for use in your project
