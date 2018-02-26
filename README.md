@@ -1,6 +1,6 @@
 # Ant Design Theme Editor
 
-Boilerplate to render [Ant Design](https://ant.design/) component demos into [Storybook](https://storybook.js.org/), so you can easily edit the theme
+Boilerplate to render [Ant Design](https://ant.design/) components into [Storybook](https://storybook.js.org/), so you can easily edit the theme
 
 ![image](https://user-images.githubusercontent.com/9356633/36666319-c65273c0-1b1c-11e8-856e-190503851fc3.png)
 
