@@ -7,13 +7,12 @@ Boilerplate to render [Ant Design](https://ant.design/) components into [Storybo
 ## Usage
 
 ```
-yarn              // install dependencies
-yarn storybook    // launch storybook with all antd components
+git clone https://github.com/minheq/antd-theme-editor.git
+yarn
+yarn storybook
 ```
 
 Visit `localhost:6006` to view Storybook
-
-**Note**: Stories are already created. It utilizes the script `yarn create-stories` which runs the file `scripts/createStoriesFromAntdDemos.js`
 
 ## Customizing theme
 
@@ -28,3 +27,14 @@ You can also edit css file `src/style-override.css` for overriding/editing style
 ## Exporting
 
 After you are done editing the variables and styles, just copy the `ant-theme-override.less` and `src/style-override.css` files for use in your project
+
+## Updating stories
+
+Stories are already created based on the antd components. You can also update them by importing `antd` components via git submodules.
+
+```
+git submodule update --init --recursive // Adds antd submodule to the project
+yarn create-stories                     // Creates the stories
+```
+
+The script runs the file `scripts/createStoriesFromAntdDemos.js` to create/update stories
