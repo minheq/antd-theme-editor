@@ -1,6 +1,6 @@
 # Ant Design Theme Editor
 
-Quickly edit and preview ant design theme and css styles overrides.
+Boilerplate to render Ant Design component demos into storybook, so you can easily edit the theme
 
 ![image](https://user-images.githubusercontent.com/9356633/36666319-c65273c0-1b1c-11e8-856e-190503851fc3.png)
 
