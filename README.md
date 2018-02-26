@@ -30,11 +30,11 @@ After you are done editing the variables and styles, just copy the `ant-theme-ov
 
 ## Updating stories
 
-Stories are already created based on the antd components. You can also update them by importing `antd` components via git submodules.
+Stories are already created based on the antd repository. You can also update them by importing `antd` components via git submodules and running a script to create or update stories.
 
 ```
 git submodule update --init --recursive // Adds antd submodule to the project
 yarn create-stories                     // Creates the stories
 ```
 
-The script runs the file `scripts/createStoriesFromAntdDemos.js` to create/update stories
+The script runs the file `scripts/createStoriesFromAntdDemos.js`.
