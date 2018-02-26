@@ -1,4 +1,8 @@
-import { Menu, Dropdown, Button, Icon, message } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('dropdown', module);
+  import { Menu, Dropdown, Button, Icon, message } from 'antd';
 
 function handleButtonClick(e) {
   message.info('Click on left button.');
@@ -18,11 +22,7 @@ const menu = (
   </Menu>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
-  stories.add('dropdown-button', () => (
+stories.add('dropdown-button', () => (
     
   <div>
     <Dropdown.Button onClick={handleButtonClick} overlay={menu}>

@@ -1,4 +1,8 @@
-import { Collapse } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('collapse', module);
+  import { Collapse } from 'antd';
 const Panel = Collapse.Panel;
 
 function callback(key) {
@@ -11,11 +15,7 @@ const text = `
   it can be found as a welcome guest in many households across the world.
 `;
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('collapse', module);
-  stories.add('basic', () => (
+stories.add('basic', () => (
     
   <Collapse defaultActiveKey={['1']} onChange={callback}>
     <Panel header="This is panel header 1" key="1">

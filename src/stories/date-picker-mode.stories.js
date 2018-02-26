@@ -1,4 +1,8 @@
-import { DatePicker } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('date-picker', module);
+  import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
 
 class ControlledDatePicker extends React.Component {
@@ -56,11 +60,7 @@ class ControlledRangePicker extends React.Component {
   }
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('date-picker', module);
-  stories.add('mode', () => (
+stories.add('mode', () => (
     
   <div>
     <ControlledDatePicker />

@@ -1,4 +1,8 @@
-import { List, Card } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('list', module);
+  import { List, Card } from 'antd';
 
 const data = [
   {
@@ -15,11 +19,7 @@ const data = [
   },
 ];
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
-  stories.add('grid', () => (
+stories.add('grid', () => (
     
   <List
     grid={{ gutter: 16, column: 4 }}

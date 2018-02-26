@@ -1,11 +1,11 @@
-import { Layout, Menu, Breadcrumb } from 'antd';
-const { Header, Content, Footer } = Layout;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('layout', module);
-  stories.add('fixed', () => (
+  import { Layout, Menu, Breadcrumb } from 'antd';
+const { Header, Content, Footer } = Layout;
+
+stories.add('fixed', () => (
     
   <Layout>
     <Header style={{ position: 'fixed', width: '100%' }}>

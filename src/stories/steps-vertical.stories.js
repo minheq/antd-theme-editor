@@ -1,11 +1,11 @@
-import { Steps } from 'antd';
-const Step = Steps.Step;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('steps', module);
-  stories.add('vertical', () => (
+  import { Steps } from 'antd';
+const Step = Steps.Step;
+
+stories.add('vertical', () => (
     
   <Steps direction="vertical" current={1}>
     <Step title="Finished" description="This is a description." />

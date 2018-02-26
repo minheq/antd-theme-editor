@@ -1,4 +1,8 @@
-import { Slider } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('slider', module);
+  import { Slider } from 'antd';
 
 const marks = {
   0: '0°C',
@@ -12,11 +16,7 @@ const marks = {
   },
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('slider', module);
-  stories.add('mark', () => (
+stories.add('mark', () => (
     
   <div>
     <h4>included=true</h4>

@@ -1,4 +1,8 @@
-import { Menu, Dropdown, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('dropdown', module);
+  import { Menu, Dropdown, Button } from 'antd';
 
 const menu = (
   <Menu>
@@ -14,11 +18,7 @@ const menu = (
   </Menu>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
-  stories.add('placement', () => (
+stories.add('placement', () => (
     
   <div>
     <Dropdown overlay={menu} placement="bottomLeft">

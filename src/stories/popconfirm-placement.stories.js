@@ -1,4 +1,8 @@
-import { Popconfirm, message, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('popconfirm', module);
+  import { Popconfirm, message, Button } from 'antd';
 
 const text = 'Are you sure delete this task?';
 
@@ -6,11 +10,7 @@ function confirm() {
   message.info('Click on Yes.');
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('popconfirm', module);
-  stories.add('placement', () => (
+stories.add('placement', () => (
     
   <div className="demo">
     <div style={{ marginLeft: 70, whiteSpace: 'nowrap' }}>

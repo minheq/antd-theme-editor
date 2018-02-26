@@ -1,4 +1,8 @@
-import { Button, Menu, Dropdown, Icon } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('button', module);
+  import { Button, Menu, Dropdown, Icon } from 'antd';
 
 function handleMenuClick(e) {
   console.log('click', e);
@@ -12,11 +16,7 @@ const menu = (
   </Menu>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('button', module);
-  stories.add('multiple', () => (
+stories.add('multiple', () => (
     
   <div>
     <Button type="primary">primary</Button>

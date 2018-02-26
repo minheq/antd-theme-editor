@@ -1,4 +1,8 @@
-import { Collapse } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('collapse', module);
+  import { Collapse } from 'antd';
 const Panel = Collapse.Panel;
 
 const text = (
@@ -9,11 +13,7 @@ const text = (
   </p>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('collapse', module);
-  stories.add('borderless', () => (
+stories.add('borderless', () => (
     
   <Collapse bordered={false} defaultActiveKey={['1']}>
     <Panel header="This is panel header 1" key="1">

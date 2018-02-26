@@ -1,4 +1,8 @@
-import { Cascader } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('cascader', module);
+  import { Cascader } from 'antd';
 
 const options = [{
   value: 'zhejiang',
@@ -43,11 +47,7 @@ const displayRender = (labels, selectedOptions) => labels.map((label, i) => {
   return <span key={option.value}>{label} / </span>;
 });
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
-  stories.add('custom-render', () => (
+stories.add('custom-render', () => (
     
   <Cascader
     options={options}

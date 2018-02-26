@@ -1,4 +1,8 @@
-import { Table } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('table', module);
+  import { Table } from 'antd';
 
 const columns = [{
   title: 'Name',
@@ -80,11 +84,7 @@ const rowSelection = {
   },
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
-  stories.add('expand-children', () => (
+stories.add('expand-children', () => (
     
   <Table columns={columns} rowSelection={rowSelection} dataSource={data} />
 

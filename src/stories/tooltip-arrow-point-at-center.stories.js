@@ -1,10 +1,10 @@
-import { Tooltip, Button } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('tooltip', module);
-  stories.add('arrow-point-at-center', () => (
+  import { Tooltip, Button } from 'antd';
+
+stories.add('arrow-point-at-center', () => (
     
   <div>
     <Tooltip placement="topLeft" title="Prompt Text">

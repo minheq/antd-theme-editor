@@ -1,14 +1,14 @@
-import { InputNumber } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('input-number', module);
+  import { InputNumber } from 'antd';
 
 function onChange(value) {
   console.log('changed', value);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input-number', module);
-  stories.add('formatter', () => (
+stories.add('formatter', () => (
     
   <div>
     <InputNumber

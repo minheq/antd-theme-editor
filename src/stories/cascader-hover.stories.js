@@ -1,4 +1,8 @@
-import { Cascader } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('cascader', module);
+  import { Cascader } from 'antd';
 
 const options = [{
   value: 'zhejiang',
@@ -33,11 +37,7 @@ function displayRender(label) {
   return label[label.length - 1];
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
-  stories.add('hover', () => (
+stories.add('hover', () => (
     
   <Cascader
     options={options}

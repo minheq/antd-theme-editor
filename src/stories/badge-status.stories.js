@@ -1,10 +1,10 @@
-import { Badge } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('badge', module);
-  stories.add('status', () => (
+  import { Badge } from 'antd';
+
+stories.add('status', () => (
     
   <div>
     <Badge status="success" />

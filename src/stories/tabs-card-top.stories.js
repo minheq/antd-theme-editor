@@ -1,11 +1,11 @@
-import { Tabs } from 'antd';
-const TabPane = Tabs.TabPane;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('tabs', module);
-  stories.add('card-top', () => (
+  import { Tabs } from 'antd';
+const TabPane = Tabs.TabPane;
+
+stories.add('card-top', () => (
     
   <div className="card-container">
     <Tabs type="card">

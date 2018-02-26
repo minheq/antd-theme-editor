@@ -1,4 +1,8 @@
-import { List } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('list', module);
+  import { List } from 'antd';
 
 const data = [
   'Racing car sprays burning fuel into crowd.',
@@ -8,11 +12,7 @@ const data = [
   'Los Angeles battles huge wildfires.',
 ];
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
-  stories.add('simple', () => (
+stories.add('simple', () => (
     
   <div>
     <h3 style={{ marginBottom: 16 }}>Default Size</h3>

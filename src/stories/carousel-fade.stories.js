@@ -1,10 +1,10 @@
-import { Carousel } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('carousel', module);
-  stories.add('fade', () => (
+  import { Carousel } from 'antd';
+
+stories.add('fade', () => (
     
   <Carousel effect="fade">
     <div><h3>1</h3></div>

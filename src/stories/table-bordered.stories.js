@@ -1,4 +1,8 @@
-import { Table } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('table', module);
+  import { Table } from 'antd';
 
 const columns = [{
   title: 'Name',
@@ -30,11 +34,7 @@ const data = [{
   address: 'Sidney No. 1 Lake Park',
 }];
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
-  stories.add('bordered', () => (
+stories.add('bordered', () => (
     
   <Table
     columns={columns}

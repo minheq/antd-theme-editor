@@ -1,4 +1,8 @@
-import { List, Avatar, Icon } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('list', module);
+  import { List, Avatar, Icon } from 'antd';
 
 const listData = [];
 for (let i = 0; i < 5; i++) {
@@ -25,11 +29,7 @@ const IconText = ({ type, text }) => (
   </span>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
-  stories.add('vertical', () => (
+stories.add('vertical', () => (
     
   <List
     itemLayout="vertical"

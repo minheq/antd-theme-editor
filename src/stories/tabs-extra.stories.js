@@ -1,13 +1,13 @@
-import { Tabs, Button } from 'antd';
-const TabPane = Tabs.TabPane;
-
-const operations = <Button>Extra Action</Button>;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('tabs', module);
-  stories.add('extra', () => (
+  import { Tabs, Button } from 'antd';
+const TabPane = Tabs.TabPane;
+
+const operations = <Button>Extra Action</Button>;
+
+stories.add('extra', () => (
     
   <Tabs tabBarExtraContent={operations}>
     <TabPane tab="Tab 1" key="1">Content of tab 1</TabPane>

@@ -1,10 +1,10 @@
-import { Badge } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('badge', module);
-  stories.add('overflow', () => (
+  import { Badge } from 'antd';
+
+stories.add('overflow', () => (
     
   <div>
     <Badge count={99}>

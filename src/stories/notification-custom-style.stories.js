@@ -1,4 +1,8 @@
-import { Button, notification } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('notification', module);
+  import { Button, notification } from 'antd';
 
 const openNotification = () => {
   notification.open({
@@ -11,11 +15,7 @@ const openNotification = () => {
   });
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('notification', module);
-  stories.add('custom-style', () => (
+stories.add('custom-style', () => (
     
   <Button type="primary" onClick={openNotification}>Open the notification box</Button>
 

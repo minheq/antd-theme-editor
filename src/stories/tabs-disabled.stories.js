@@ -1,11 +1,11 @@
-import { Tabs } from 'antd';
-const TabPane = Tabs.TabPane;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('tabs', module);
-  stories.add('disabled', () => (
+  import { Tabs } from 'antd';
+const TabPane = Tabs.TabPane;
+
+stories.add('disabled', () => (
     
   <Tabs defaultActiveKey="1">
     <TabPane tab="Tab 1" key="1">Tab 1</TabPane>

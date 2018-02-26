@@ -1,4 +1,8 @@
-import { Pagination, LocaleProvider } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('locale-provider', module);
+  import { Pagination, LocaleProvider } from 'antd';
 import enUS from 'antd/lib/locale-provider/en_US';
 
 const App = () => (
@@ -7,11 +11,7 @@ const App = () => (
   </div>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('locale-provider', module);
-  stories.add('basic', () => (
+stories.add('basic', () => (
     
   <LocaleProvider locale={enUS}>
     <App />

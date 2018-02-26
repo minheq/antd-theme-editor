@@ -1,10 +1,10 @@
-import { Button } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('button', module);
-  stories.add('ghost', () => (
+  import { Button } from 'antd';
+
+stories.add('ghost', () => (
     
   <div style={{ background: 'rgb(190, 200, 200)', padding: '26px 16px 16px' }}>
     <Button type="primary" ghost>Primary</Button>

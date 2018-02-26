@@ -1,12 +1,12 @@
-import { Radio } from 'antd';
-const RadioButton = Radio.Button;
-const RadioGroup = Radio.Group;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('radio', module);
-  stories.add('size', () => (
+  import { Radio } from 'antd';
+const RadioButton = Radio.Button;
+const RadioGroup = Radio.Group;
+
+stories.add('size', () => (
     
   <div>
     <div>

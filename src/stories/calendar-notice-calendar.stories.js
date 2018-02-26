@@ -1,4 +1,8 @@
-import { Calendar, Badge } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('calendar', module);
+  import { Calendar, Badge } from 'antd';
 
 function getListData(value) {
   let listData;
@@ -59,11 +63,7 @@ function monthCellRender(value) {
   ) : null;
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('calendar', module);
-  stories.add('notice-calendar', () => (
+stories.add('notice-calendar', () => (
     
   <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
 

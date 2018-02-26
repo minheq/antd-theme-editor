@@ -1,10 +1,10 @@
-import { Switch, Icon } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('switch', module);
-  stories.add('text', () => (
+  import { Switch, Icon } from 'antd';
+
+stories.add('text', () => (
     
   <div>
     <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />

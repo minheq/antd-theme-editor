@@ -1,4 +1,8 @@
-import { Upload, Button, Icon } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('upload', module);
+  import { Upload, Button, Icon } from 'antd';
 
 const props = {
   action: '//jsonplaceholder.typicode.com/posts/',
@@ -27,11 +31,7 @@ const props = {
   }],
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
-  stories.add('defaultFileList', () => (
+stories.add('defaultFileList', () => (
     
   <Upload {...props}>
     <Button>

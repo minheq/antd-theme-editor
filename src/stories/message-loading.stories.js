@@ -1,4 +1,8 @@
-import { message, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('message', module);
+  import { message, Button } from 'antd';
 
 const success = () => {
   const hide = message.loading('Action in progress..', 0);
@@ -6,11 +10,7 @@ const success = () => {
   setTimeout(hide, 2500);
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('message', module);
-  stories.add('loading', () => (
+stories.add('loading', () => (
     
   <Button onClick={success}>Display a loading indicator</Button>
 

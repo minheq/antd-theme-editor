@@ -1,4 +1,8 @@
-import { Cascader } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('cascader', module);
+  import { Cascader } from 'antd';
 
 const options = [{
   value: 'zhejiang',
@@ -32,11 +36,7 @@ function onChange(value, selectedOptions) {
   console.log(value, selectedOptions);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
-  stories.add('search', () => (
+stories.add('search', () => (
     
   <Cascader
     options={options}

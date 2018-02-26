@@ -1,10 +1,10 @@
-import { Switch } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('switch', module);
-  stories.add('loading', () => (
+  import { Switch } from 'antd';
+
+stories.add('loading', () => (
     
   <div>
     <Switch loading defaultChecked />

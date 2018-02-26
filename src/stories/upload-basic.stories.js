@@ -1,4 +1,8 @@
-import { Upload, message, Button, Icon } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('upload', module);
+  import { Upload, message, Button, Icon } from 'antd';
 
 const props = {
   name: 'file',
@@ -18,11 +22,7 @@ const props = {
   },
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
-  stories.add('basic', () => (
+stories.add('basic', () => (
     
   <Upload {...props}>
     <Button>

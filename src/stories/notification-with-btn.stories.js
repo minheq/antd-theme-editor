@@ -1,4 +1,8 @@
-import { Button, notification } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('notification', module);
+  import { Button, notification } from 'antd';
 
 const close = () => {
   console.log('Notification was closed. Either the close button was clicked or duration time elapsed.');
@@ -20,11 +24,7 @@ const openNotification = () => {
   });
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('notification', module);
-  stories.add('with-btn', () => (
+stories.add('with-btn', () => (
     
   <Button type="primary" onClick={openNotification}>
     Open the notification box

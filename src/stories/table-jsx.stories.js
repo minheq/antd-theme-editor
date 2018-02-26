@@ -1,4 +1,8 @@
-import { Table, Icon, Divider } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('table', module);
+  import { Table, Icon, Divider } from 'antd';
 
 const { Column, ColumnGroup } = Table;
 
@@ -22,11 +26,7 @@ const data = [{
   address: 'Sidney No. 1 Lake Park',
 }];
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
-  stories.add('jsx', () => (
+stories.add('jsx', () => (
     
   <Table dataSource={data}>
     <ColumnGroup title="Name">

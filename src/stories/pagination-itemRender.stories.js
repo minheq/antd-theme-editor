@@ -1,4 +1,8 @@
-import { Pagination } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('pagination', module);
+  import { Pagination } from 'antd';
 
 function itemRender(current, type, originalElement) {
   if (type === 'prev') {
@@ -9,11 +13,7 @@ function itemRender(current, type, originalElement) {
   return originalElement;
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('pagination', module);
-  stories.add('itemRender', () => (
+stories.add('itemRender', () => (
     
   <Pagination total={500} itemRender={itemRender} />
 

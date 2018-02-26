@@ -1,4 +1,8 @@
-import { Table } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('table', module);
+  import { Table } from 'antd';
 
 const columns = [{
   title: 'Name',
@@ -70,11 +74,7 @@ function onChange(pagination, filters, sorter) {
   console.log('params', pagination, filters, sorter);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
-  stories.add('head', () => (
+stories.add('head', () => (
     
   <Table columns={columns} dataSource={data} onChange={onChange} />
 

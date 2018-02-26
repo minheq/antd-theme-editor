@@ -1,10 +1,10 @@
-import { Pagination } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('pagination', module);
-  stories.add('total', () => (
+  import { Pagination } from 'antd';
+
+stories.add('total', () => (
     
   <div>
     <Pagination

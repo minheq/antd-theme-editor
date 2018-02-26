@@ -1,4 +1,8 @@
-import { Select } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('select', module);
+  import { Select } from 'antd';
 const Option = Select.Option;
 
 function handleChange(value) {
@@ -13,11 +17,7 @@ function handleFocus() {
   console.log('focus');
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
-  stories.add('search', () => (
+stories.add('search', () => (
     
   <Select
     showSearch

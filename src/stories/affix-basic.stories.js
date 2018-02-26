@@ -1,10 +1,10 @@
-import { Affix, Button } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('affix', module);
-  stories.add('basic', () => (
+  import { Affix, Button } from 'antd';
+
+stories.add('basic', () => (
     
   <div>
     <Affix>

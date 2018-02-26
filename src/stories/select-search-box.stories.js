@@ -1,4 +1,8 @@
-import { Select } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('select', module);
+  import { Select } from 'antd';
 import jsonp from 'fetch-jsonp';
 import querystring from 'querystring';
 const Option = Select.Option;
@@ -66,11 +70,7 @@ class SearchInput extends React.Component {
   }
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
-  stories.add('search-box', () => (
+stories.add('search-box', () => (
     
   <SearchInput placeholder="input search text" style={{ width: 200 }} />
 

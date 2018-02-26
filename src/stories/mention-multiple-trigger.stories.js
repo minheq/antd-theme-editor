@@ -1,4 +1,8 @@
-import { Mention } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('mention', module);
+  import { Mention } from 'antd';
 const { toString } = Mention;
 
 function onChange(editorState) {
@@ -41,11 +45,7 @@ class App extends React.Component {
   }
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
-  stories.add('multiple-trigger', () => (
+stories.add('multiple-trigger', () => (
     
   <App />
 

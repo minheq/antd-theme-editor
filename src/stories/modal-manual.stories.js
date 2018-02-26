@@ -1,4 +1,8 @@
-import { Modal, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('modal', module);
+  import { Modal, Button } from 'antd';
 
 function success() {
   const modal = Modal.success({
@@ -9,11 +13,7 @@ function success() {
 }
 
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('modal', module);
-  stories.add('manual', () => (
+stories.add('manual', () => (
     
   <Button onClick={success}>Success</Button>
   ))

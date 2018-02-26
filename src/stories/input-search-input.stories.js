@@ -1,11 +1,11 @@
-import { Input } from 'antd';
-const Search = Input.Search;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('input', module);
-  stories.add('search-input', () => (
+  import { Input } from 'antd';
+const Search = Input.Search;
+
+stories.add('search-input', () => (
     
   <div>
     <Search

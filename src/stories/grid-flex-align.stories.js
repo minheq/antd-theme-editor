@@ -1,12 +1,12 @@
-import { Row, Col } from 'antd';
-
-const DemoBox = props => <p className={`height-${props.value}`}>{props.children}</p>;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('grid', module);
-  stories.add('flex-align', () => (
+  import { Row, Col } from 'antd';
+
+const DemoBox = props => <p className={`height-${props.value}`}>{props.children}</p>;
+
+stories.add('flex-align', () => (
     
   <div>
     <p>Align Top</p>

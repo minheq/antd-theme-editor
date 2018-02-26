@@ -1,11 +1,11 @@
-import { Layout, Menu, Icon } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('layout', module);
-  stories.add('responsive', () => (
+  import { Layout, Menu, Icon } from 'antd';
+const { Header, Content, Footer, Sider } = Layout;
+
+stories.add('responsive', () => (
     
   <Layout>
     <Sider

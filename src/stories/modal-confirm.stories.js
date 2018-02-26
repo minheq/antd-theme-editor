@@ -1,4 +1,8 @@
-import { Modal, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('modal', module);
+  import { Modal, Button } from 'antd';
 const confirm = Modal.confirm;
 
 function showConfirm() {
@@ -30,11 +34,7 @@ function showDeleteConfirm() {
   });
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('modal', module);
-  stories.add('confirm', () => (
+stories.add('confirm', () => (
     
   <div>
     <Button onClick={showConfirm}>

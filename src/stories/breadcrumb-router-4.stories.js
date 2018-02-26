@@ -1,4 +1,8 @@
-import { HashRouter as Router, Route, Switch, Link, withRouter } from 'react-router-dom';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('breadcrumb', module);
+  import { HashRouter as Router, Route, Switch, Link, withRouter } from 'react-router-dom';
 import { Breadcrumb, Alert } from 'antd';
 
 const Apps = () => (
@@ -55,11 +59,7 @@ const Home = withRouter((props) => {
   );
 });
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('breadcrumb', module);
-  stories.add('router-4', () => (
+stories.add('router-4', () => (
     
   <Router>
     <Home />

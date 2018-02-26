@@ -1,10 +1,10 @@
-import { Breadcrumb, Icon } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('breadcrumb', module);
-  stories.add('withIcon', () => (
+  import { Breadcrumb, Icon } from 'antd';
+
+stories.add('withIcon', () => (
     
   <Breadcrumb>
     <Breadcrumb.Item href="">

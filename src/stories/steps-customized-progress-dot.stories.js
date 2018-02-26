@@ -1,4 +1,8 @@
-import { Steps, Popover } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('steps', module);
+  import { Steps, Popover } from 'antd';
 const Step = Steps.Step;
 
 const customDot = (dot, { status, index }) => (
@@ -7,11 +11,7 @@ const customDot = (dot, { status, index }) => (
   </Popover>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('steps', module);
-  stories.add('customized-progress-dot', () => (
+stories.add('customized-progress-dot', () => (
     
   <Steps current={1} progressDot={customDot}>
     <Step title="Finished" description="You can hover on the dot." />

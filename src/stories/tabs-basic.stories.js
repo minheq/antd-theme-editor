@@ -1,15 +1,15 @@
-import { Tabs } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('tabs', module);
+  import { Tabs } from 'antd';
 const TabPane = Tabs.TabPane;
 
 function callback(key) {
   console.log(key);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tabs', module);
-  stories.add('basic', () => (
+stories.add('basic', () => (
     
   <Tabs defaultActiveKey="1" onChange={callback}>
     <TabPane tab="Tab 1" key="1">Content of Tab Pane 1</TabPane>

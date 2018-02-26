@@ -1,4 +1,8 @@
-import { Radio } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('radio', module);
+  import { Radio } from 'antd';
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
@@ -6,11 +10,7 @@ function onChange(e) {
   console.log(`radio checked:${e.target.value}`);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('radio', module);
-  stories.add('radiobutton', () => (
+stories.add('radiobutton', () => (
     
   <div>
     <div>

@@ -1,11 +1,11 @@
-import { Steps } from 'antd';
-const Step = Steps.Step;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('steps', module);
-  stories.add('simple', () => (
+  import { Steps } from 'antd';
+const Step = Steps.Step;
+
+stories.add('simple', () => (
     
   <Steps current={1}>
     <Step title="Finished" description="This is a description." />

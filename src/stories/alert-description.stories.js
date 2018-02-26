@@ -1,10 +1,10 @@
-import { Alert } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('alert', module);
-  stories.add('description', () => (
+  import { Alert } from 'antd';
+
+stories.add('description', () => (
     
   <div>
     <Alert

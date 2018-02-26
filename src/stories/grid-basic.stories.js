@@ -1,10 +1,10 @@
-import { Row, Col } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('grid', module);
-  stories.add('basic', () => (
+  import { Row, Col } from 'antd';
+
+stories.add('basic', () => (
     
   <div>
     <Row>

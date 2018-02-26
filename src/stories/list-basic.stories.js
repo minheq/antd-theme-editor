@@ -1,4 +1,8 @@
-import { List, Avatar } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('list', module);
+  import { List, Avatar } from 'antd';
 
 const data = [
   {
@@ -15,11 +19,7 @@ const data = [
   },
 ];
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
-  stories.add('basic', () => (
+stories.add('basic', () => (
     
   <List
     itemLayout="horizontal"

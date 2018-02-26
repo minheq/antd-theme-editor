@@ -1,4 +1,8 @@
-import { Menu, Dropdown, Icon, message } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('dropdown', module);
+  import { Menu, Dropdown, Icon, message } from 'antd';
 const onClick = function ({ key }) {
   message.info(`Click on item ${key}`);
 };
@@ -11,11 +15,7 @@ const menu = (
   </Menu>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
-  stories.add('event', () => (
+stories.add('event', () => (
     
   <Dropdown overlay={menu}>
     <a className="ant-dropdown-link" href="#">

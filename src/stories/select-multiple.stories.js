@@ -1,4 +1,8 @@
-import { Select } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('select', module);
+  import { Select } from 'antd';
 const Option = Select.Option;
 
 const children = [];
@@ -10,11 +14,7 @@ function handleChange(value) {
   console.log(`selected ${value}`);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
-  stories.add('multiple', () => (
+stories.add('multiple', () => (
     
   <Select
     mode="multiple"

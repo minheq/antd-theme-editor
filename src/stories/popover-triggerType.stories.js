@@ -1,4 +1,8 @@
-import { Popover, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('popover', module);
+  import { Popover, Button } from 'antd';
 
 const content = (
   <div>
@@ -7,11 +11,7 @@ const content = (
   </div>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('popover', module);
-  stories.add('triggerType', () => (
+stories.add('triggerType', () => (
     
   <div>
     <Popover content={content} title="Title" trigger="hover">

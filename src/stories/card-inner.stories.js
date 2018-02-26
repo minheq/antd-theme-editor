@@ -1,10 +1,10 @@
-import { Card } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('card', module);
-  stories.add('inner', () => (
+  import { Card } from 'antd';
+
+stories.add('inner', () => (
     
   <Card title="Card title">
     <p

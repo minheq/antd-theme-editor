@@ -1,4 +1,8 @@
-import { Button, Select, notification } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('notification', module);
+  import { Button, Select, notification } from 'antd';
 
 const { Option } = Select;
 const options = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
@@ -9,11 +13,7 @@ const openNotification = () => {
   });
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('notification', module);
-  stories.add('placement', () => (
+stories.add('placement', () => (
     
   <div>
     <Select

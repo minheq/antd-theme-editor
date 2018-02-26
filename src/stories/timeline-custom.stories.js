@@ -1,10 +1,10 @@
-import { Timeline, Icon } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('timeline', module);
-  stories.add('custom', () => (
+  import { Timeline, Icon } from 'antd';
+
+stories.add('custom', () => (
     
   <Timeline>
     <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>

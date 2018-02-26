@@ -1,11 +1,11 @@
-import { Card } from 'antd';
-const { Meta } = Card;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('card', module);
-  stories.add('flexible-content', () => (
+  import { Card } from 'antd';
+const { Meta } = Card;
+
+stories.add('flexible-content', () => (
     
   <Card
     hoverable

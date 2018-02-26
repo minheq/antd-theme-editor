@@ -1,4 +1,8 @@
-import { Form, Input, DatePicker, Col, TimePicker, Select, Cascader, InputNumber } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('form', module);
+  import { Form, Input, DatePicker, Col, TimePicker, Select, Cascader, InputNumber } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
 
@@ -13,11 +17,7 @@ const formItemLayout = {
   },
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
-  stories.add('validate-static', () => (
+stories.add('validate-static', () => (
     
   <Form>
     <FormItem

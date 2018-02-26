@@ -1,4 +1,8 @@
-import { Card } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('card', module);
+  import { Card } from 'antd';
 
 const tabList = [{
   key: 'tab1',
@@ -64,11 +68,7 @@ class TabsCard extends React.Component {
   }
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('card', module);
-  stories.add('tabs', () => (
+stories.add('tabs', () => (
     
   <TabsCard />
 

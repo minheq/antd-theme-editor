@@ -1,10 +1,10 @@
-import { Progress } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('progress', module);
-  stories.add('format', () => (
+  import { Progress } from 'antd';
+
+stories.add('format', () => (
     
   <div>
     <Progress type="circle" percent={75} format={percent => `${percent} Days`} />

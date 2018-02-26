@@ -1,10 +1,10 @@
-import { Badge } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('badge', module);
-  stories.add('no-wrapper', () => (
+  import { Badge } from 'antd';
+
+stories.add('no-wrapper', () => (
     
   <div>
     <Badge count={25} />

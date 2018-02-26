@@ -1,4 +1,8 @@
-import { Popover, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('popover', module);
+  import { Popover, Button } from 'antd';
 
 const text = <span>Title</span>;
 const content = (
@@ -8,11 +12,7 @@ const content = (
   </div>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('popover', module);
-  stories.add('arrow-point-at-center', () => (
+stories.add('arrow-point-at-center', () => (
     
   <div>
     <Popover placement="topLeft" title={text} content={content}>

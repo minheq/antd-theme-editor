@@ -1,4 +1,8 @@
-import { Tag } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('tag', module);
+  import { Tag } from 'antd';
 
 function log(e) {
   console.log(e);
@@ -9,11 +13,7 @@ function preventDefault(e) {
   console.log('Clicked! But prevent default.');
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tag', module);
-  stories.add('basic', () => (
+stories.add('basic', () => (
     
   <div>
     <Tag>Tag 1</Tag>

@@ -1,4 +1,8 @@
-import { Table } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('table', module);
+  import { Table } from 'antd';
 
 const columns = [
   { title: 'Name', dataIndex: 'name', key: 'name' },
@@ -13,11 +17,7 @@ const data = [
   { key: 3, name: 'Joe Black', age: 32, address: 'Sidney No. 1 Lake Park', description: 'My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park.' },
 ];
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
-  stories.add('expand', () => (
+stories.add('expand', () => (
     
   <Table
     columns={columns}

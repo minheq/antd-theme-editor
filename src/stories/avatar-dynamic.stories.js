@@ -1,4 +1,8 @@
-import { Avatar, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('avatar', module);
+  import { Avatar, Button } from 'antd';
 
 const UserList = ['U', 'Lucy', 'Tom', 'Edward'];
 const colorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
@@ -32,11 +36,7 @@ class Autoset extends React.Component {
   }
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('avatar', module);
-  stories.add('dynamic', () => (
+stories.add('dynamic', () => (
     <Autoset />
 
   ))

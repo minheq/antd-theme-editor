@@ -1,4 +1,8 @@
-import { Menu, Dropdown } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('dropdown', module);
+  import { Menu, Dropdown } from 'antd';
 
 const menu = (
   <Menu>
@@ -8,11 +12,7 @@ const menu = (
   </Menu>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
-  stories.add('context-menu', () => (
+stories.add('context-menu', () => (
     
   <Dropdown overlay={menu} trigger={['contextMenu']}>
     <span style={{ userSelect: 'none' }}>Right Click on Me</span>

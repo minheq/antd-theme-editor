@@ -1,14 +1,14 @@
-import { Alert } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('alert', module);
+  import { Alert } from 'antd';
 
 const onClose = function (e) {
   console.log(e, 'I was closed.');
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('alert', module);
-  stories.add('closable', () => (
+stories.add('closable', () => (
     
   <div>
     <Alert

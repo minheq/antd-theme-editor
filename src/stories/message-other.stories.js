@@ -1,4 +1,8 @@
-import { message, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('message', module);
+  import { message, Button } from 'antd';
 
 const success = () => {
   message.success('This is a message of success');
@@ -12,11 +16,7 @@ const warning = () => {
   message.warning('This is message of warning');
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('message', module);
-  stories.add('other', () => (
+stories.add('other', () => (
     
   <div>
     <Button onClick={success}>Success</Button>

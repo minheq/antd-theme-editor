@@ -1,10 +1,10 @@
-import { Breadcrumb } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('breadcrumb', module);
-  stories.add('basic', () => (
+  import { Breadcrumb } from 'antd';
+
+stories.add('basic', () => (
     
   <Breadcrumb>
     <Breadcrumb.Item>Home</Breadcrumb.Item>

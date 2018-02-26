@@ -1,4 +1,8 @@
-import { Popover, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('popover', module);
+  import { Popover, Button } from 'antd';
 
 const text = <span>Title</span>;
 const content = (
@@ -10,11 +14,7 @@ const content = (
 
 const buttonWidth = 70;
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('popover', module);
-  stories.add('placement', () => (
+stories.add('placement', () => (
     
   <div className="demo">
     <div style={{ marginLeft: buttonWidth, whiteSpace: 'nowrap' }}>

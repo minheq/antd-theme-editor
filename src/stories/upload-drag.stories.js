@@ -1,4 +1,8 @@
-import { Upload, Icon, message } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('upload', module);
+  import { Upload, Icon, message } from 'antd';
 const Dragger = Upload.Dragger;
 
 const props = {
@@ -18,11 +22,7 @@ const props = {
   },
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
-  stories.add('drag', () => (
+stories.add('drag', () => (
     
   <Dragger {...props}>
     <p className="ant-upload-drag-icon">

@@ -1,15 +1,15 @@
-import { DatePicker } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('date-picker', module);
+  import { DatePicker } from 'antd';
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 
 function onChange(date, dateString) {
   console.log(date, dateString);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('date-picker', module);
-  stories.add('basic', () => (
+stories.add('basic', () => (
     
   <div>
     <DatePicker onChange={onChange} />

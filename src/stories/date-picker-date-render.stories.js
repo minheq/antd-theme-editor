@@ -1,11 +1,11 @@
-import { DatePicker } from 'antd';
-const { RangePicker } = DatePicker;
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('date-picker', module);
-  stories.add('date-render', () => (
+  import { DatePicker } from 'antd';
+const { RangePicker } = DatePicker;
+
+stories.add('date-render', () => (
     
   <div>
     <DatePicker

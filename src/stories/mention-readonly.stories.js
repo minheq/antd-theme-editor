@@ -1,4 +1,8 @@
-import { Mention } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('mention', module);
+  import { Mention } from 'antd';
 const { toString } = Mention;
 
 function onChange(editorState) {
@@ -31,11 +35,7 @@ function App() {
 }
 
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
-  stories.add('readonly', () => (
+stories.add('readonly', () => (
     
   <App />
 

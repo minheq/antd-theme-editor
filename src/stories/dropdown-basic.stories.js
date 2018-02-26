@@ -1,4 +1,8 @@
-import { Menu, Dropdown, Icon } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('dropdown', module);
+  import { Menu, Dropdown, Icon } from 'antd';
 
 const menu = (
   <Menu>
@@ -14,11 +18,7 @@ const menu = (
   </Menu>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
-  stories.add('basic', () => (
+stories.add('basic', () => (
     
   <Dropdown overlay={menu}>
     <a className="ant-dropdown-link" href="#">

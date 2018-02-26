@@ -1,4 +1,8 @@
-import { Tag } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('tag', module);
+  import { Tag } from 'antd';
 const { CheckableTag } = Tag;
 
 class MyTag extends React.Component {
@@ -11,11 +15,7 @@ class MyTag extends React.Component {
   }
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tag', module);
-  stories.add('checkable', () => (
+stories.add('checkable', () => (
     
   <div>
     <MyTag>Tag1</MyTag>

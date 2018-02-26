@@ -1,4 +1,8 @@
-import { Mention } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('mention', module);
+  import { Mention } from 'antd';
 const { toString, toContentState } = Mention;
 
 function onChange(contentState) {
@@ -9,11 +13,7 @@ function onSelect(suggestion) {
   console.log('onSelect', suggestion);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
-  stories.add('basic', () => (
+stories.add('basic', () => (
     
   <Mention
     style={{ width: '100%' }}

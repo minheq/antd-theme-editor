@@ -1,4 +1,8 @@
-import { Slider } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('slider', module);
+  import { Slider } from 'antd';
 
 const style = {
   float: 'left',
@@ -18,11 +22,7 @@ const marks = {
   },
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('slider', module);
-  stories.add('vertical', () => (
+stories.add('vertical', () => (
     
   <div style={{ height: 300 }}>
     <div style={style}>

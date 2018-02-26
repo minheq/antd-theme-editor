@@ -1,4 +1,8 @@
-import { DatePicker } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('date-picker', module);
+  import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
 
 function onChange(value, dateString) {
@@ -10,11 +14,7 @@ function onOk(value) {
   console.log('onOk: ', value);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('date-picker', module);
-  stories.add('time', () => (
+stories.add('time', () => (
     
   <div>
     <DatePicker

@@ -1,15 +1,15 @@
-import { Mention } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('mention', module);
+  import { Mention } from 'antd';
 const { toString } = Mention;
 
 function onChange(editorState) {
   console.log(toString(editorState));
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
-  stories.add('multilines', () => (
+stories.add('multilines', () => (
     
   <Mention
     style={{ width: '100%', height: 100 }}

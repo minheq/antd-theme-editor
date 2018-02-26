@@ -1,4 +1,8 @@
-import { Table } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('table', module);
+  import { Table } from 'antd';
 
 // In the fifth row, other columns are merged into first column
 // by setting it's colSpan to be 0
@@ -100,11 +104,7 @@ const data = [{
   address: 'Dublin No. 2 Lake Park',
 }];
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
-  stories.add('colspan-rowspan', () => (
+stories.add('colspan-rowspan', () => (
     <Table columns={columns} dataSource={data} bordered />
 
   ))

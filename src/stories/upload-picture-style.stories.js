@@ -1,4 +1,8 @@
-import { Upload, Button, Icon } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('upload', module);
+  import { Upload, Button, Icon } from 'antd';
 
 const fileList = [{
   uid: -1,
@@ -27,11 +31,7 @@ const props2 = {
   className: 'upload-list-inline',
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
-  stories.add('picture-style', () => (
+stories.add('picture-style', () => (
     
   <div>
     <Upload {...props}>

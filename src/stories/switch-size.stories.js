@@ -1,10 +1,10 @@
-import { Switch } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('switch', module);
-  stories.add('size', () => (
+  import { Switch } from 'antd';
+
+stories.add('size', () => (
     
   <div>
     <Switch defaultChecked />

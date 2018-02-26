@@ -1,10 +1,10 @@
-import { Avatar } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('avatar', module);
-  stories.add('type', () => (
+  import { Avatar } from 'antd';
+
+stories.add('type', () => (
     
   <div>
     <Avatar icon="user" />

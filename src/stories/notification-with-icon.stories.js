@@ -1,4 +1,8 @@
-import { Button, notification } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('notification', module);
+  import { Button, notification } from 'antd';
 
 const openNotificationWithIcon = (type) => {
   notification[type]({
@@ -7,11 +11,7 @@ const openNotificationWithIcon = (type) => {
   });
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('notification', module);
-  stories.add('with-icon', () => (
+stories.add('with-icon', () => (
     
   <div>
     <Button onClick={() => openNotificationWithIcon('success')}>Success</Button>

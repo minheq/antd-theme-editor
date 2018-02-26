@@ -1,4 +1,8 @@
-import { Checkbox } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('checkbox', module);
+  import { Checkbox } from 'antd';
 const CheckboxGroup = Checkbox.Group;
 
 function onChange(checkedValues) {
@@ -17,11 +21,7 @@ const optionsWithDisabled = [
   { label: 'Orange', value: 'Orange', disabled: false },
 ];
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('checkbox', module);
-  stories.add('group', () => (
+stories.add('group', () => (
     
   <div>
     <CheckboxGroup options={plainOptions} defaultValue={['Apple']} onChange={onChange} />

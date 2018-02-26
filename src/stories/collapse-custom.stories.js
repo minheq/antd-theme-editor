@@ -1,4 +1,8 @@
-import { Collapse } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('collapse', module);
+  import { Collapse } from 'antd';
 const Panel = Collapse.Panel;
 
 const text = `
@@ -15,11 +19,7 @@ const customPanelStyle = {
   overflow: 'hidden',
 };
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('collapse', module);
-  stories.add('custom', () => (
+stories.add('custom', () => (
     
   <Collapse bordered={false} defaultActiveKey={['1']}>
     <Panel header="This is panel header 1" key="1" style={customPanelStyle}>

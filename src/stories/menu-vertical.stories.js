@@ -1,4 +1,8 @@
-import { Menu, Icon } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('menu', module);
+  import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
@@ -6,11 +10,7 @@ function handleClick(e) {
   console.log('click', e);
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('menu', module);
-  stories.add('vertical', () => (
+stories.add('vertical', () => (
     
   <Menu onClick={handleClick} style={{ width: 256 }} mode="vertical">
     <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>

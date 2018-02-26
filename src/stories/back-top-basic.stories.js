@@ -1,10 +1,10 @@
-import { BackTop } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('back-top', module);
-  stories.add('basic', () => (
+  import { BackTop } from 'antd';
+
+stories.add('basic', () => (
     
   <div>
     <BackTop />

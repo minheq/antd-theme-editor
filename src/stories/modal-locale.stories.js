@@ -1,4 +1,8 @@
-import { Modal, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('modal', module);
+  import { Modal, Button } from 'antd';
 
 class LocalizedModal extends React.Component {
   state = { visible: false }
@@ -42,11 +46,7 @@ function confirm() {
   });
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('modal', module);
-  stories.add('locale', () => (
+stories.add('locale', () => (
     
   <div>
     <LocalizedModal />

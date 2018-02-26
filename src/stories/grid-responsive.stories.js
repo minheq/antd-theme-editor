@@ -1,10 +1,10 @@
-import { Row, Col } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('grid', module);
-  stories.add('responsive', () => (
+  import { Row, Col } from 'antd';
+
+stories.add('responsive', () => (
     
   <Row>
     <Col xs={2} sm={4} md={6} lg={8} xl={10}>Col</Col>

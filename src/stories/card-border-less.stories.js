@@ -1,10 +1,10 @@
-import { Card } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('card', module);
-  stories.add('border-less', () => (
+  import { Card } from 'antd';
+
+stories.add('border-less', () => (
     
   <div style={{ background: '#ECECEC', padding: '30px' }}>
     <Card title="Card title" bordered={false} style={{ width: 300 }}>

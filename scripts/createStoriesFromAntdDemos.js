@@ -43,12 +43,10 @@ const compileSimpleDemo = async (code, componentName, fileName) => {
     ${renderCode[1]}
   ))`;
 
-  const file = imports + storySetup + stories;
+  const file = storySetup + imports + stories;
 
   await writeStoryFromCode(file, componentName, fileNameWithoutExtension);
 };
-
-const compileComplexDemo = async md => {};
 
 const writeStoryFromCode = async (
   file,
@@ -69,12 +67,7 @@ const processMarkdown = async (markdownFile, componentName, fileName) => {
   const code = getCode(markdown.content);
   const lastLineOfCode = code.substring(code.lastIndexOf('\n'));
 
-  if (lastLineOfCode.includes('ReactDOM')) {
-    console.log('Ignoring complex demo');
-  } else {
-    console.log(`Compiling ${componentName}`);
-    await compileSimpleDemo(code, componentName, fileName);
-  }
+  await compileSimpleDemo(code, componentName, fileName);
 };
 
 const processComponent = async componentName => {
@@ -101,7 +94,7 @@ const createStoriesFromAntdDemos = async () => {
   const dirs = p =>
     fs.readdirSync(p).filter(f => fs.statSync(path.join(p, f)).isDirectory());
   const directories = dirs(path.resolve(__dirname, '../antd/components'));
-  // await processComponent('badge');
+
   for (const directory of directories) {
     try {
       await processComponent(directory);

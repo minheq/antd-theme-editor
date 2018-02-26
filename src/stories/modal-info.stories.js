@@ -1,4 +1,8 @@
-import { Modal, Button } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('modal', module);
+  import { Modal, Button } from 'antd';
 
 function info() {
   Modal.info({
@@ -34,11 +38,7 @@ function warning() {
   });
 }
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('modal', module);
-  stories.add('info', () => (
+stories.add('info', () => (
     
   <div>
     <Button onClick={info}>Info</Button>

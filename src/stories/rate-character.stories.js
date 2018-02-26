@@ -1,10 +1,10 @@
-import { Rate, Icon } from 'antd';
-
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('rate', module);
-  stories.add('character', () => (
+  import { Rate, Icon } from 'antd';
+
+stories.add('character', () => (
     
   <div>
     <Rate character={<Icon type="heart" />} allowHalf />

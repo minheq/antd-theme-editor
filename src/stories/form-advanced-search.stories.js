@@ -1,4 +1,8 @@
-import { Form, Row, Col, Input, Button, Icon } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('form', module);
+  import { Form, Row, Col, Input, Button, Icon } from 'antd';
 const FormItem = Form.Item;
 
 class AdvancedSearchForm extends React.Component {
@@ -65,11 +69,7 @@ class AdvancedSearchForm extends React.Component {
 }
 
 const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
-  stories.add('advanced-search', () => (
+stories.add('advanced-search', () => (
     
   <div>
     <WrappedAdvancedSearchForm />

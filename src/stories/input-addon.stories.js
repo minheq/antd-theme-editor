@@ -1,4 +1,8 @@
-import { Input, Select, Icon } from 'antd';
+
+    import React from 'react';
+    import { storiesOf } from '@storybook/react';
+    const stories = storiesOf('input', module);
+  import { Input, Select, Icon } from 'antd';
 const Option = Select.Option;
 
 const selectBefore = (
@@ -16,11 +20,7 @@ const selectAfter = (
   </Select>
 );
 
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input', module);
-  stories.add('addon', () => (
+stories.add('addon', () => (
     
   <div>
     <div style={{ marginBottom: 16 }}>
