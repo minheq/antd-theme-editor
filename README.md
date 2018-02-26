@@ -2,7 +2,7 @@
 
 Quickly edit and preview ant design theme and css styles overrides.
 
-![image](https://user-images.githubusercontent.com/9356633/36664575-ad8466c8-1b17-11e8-8deb-40600aee856e.png)
+![image](https://user-images.githubusercontent.com/9356633/36666319-c65273c0-1b1c-11e8-856e-190503851fc3.png)
 
 ## Usage
 
