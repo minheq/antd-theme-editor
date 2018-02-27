@@ -18,7 +18,7 @@ Visit `localhost:6006` to view Storybook
 
 ### Editing antd default variables
 
-There is ready `src/ant-theme-override.less` for editing **antd default variables**
+There is ready `src/antd-theme-override.less` for editing **antd default variables**
 
 ### Editing css antd classes
 

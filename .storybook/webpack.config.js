@@ -4,13 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const lessToJs = require('less-vars-to-js');
 
-const themeVariables = lessToJs(
-  fs.readFileSync(
-    path.join(__dirname, '../src/ant-theme-override.less'),
-    'utf8'
-  )
-);
-
 module.exports = (baseConfig, env) => {
   const config = genDefaultConfig(baseConfig, env);
 
@@ -20,12 +13,7 @@ module.exports = (baseConfig, env) => {
     use: [
       { loader: 'style-loader' },
       { loader: 'css-loader' },
-      {
-        loader: 'less-loader',
-        options: {
-          sourceMap: true,
-        },
-      },
+      { loader: 'less-loader' },
     ],
   });
 
