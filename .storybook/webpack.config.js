@@ -14,12 +14,6 @@ const themeVariables = lessToJs(
 module.exports = (baseConfig, env) => {
   const config = genDefaultConfig(baseConfig, env);
 
-  // load on demand components and styles from 'antd'
-  config.module.rules[0].query.plugins.push([
-    'import',
-    { libraryName: 'antd', style: true },
-  ]);
-
   // load custom variables for theme
   config.module.rules.push({
     test: /\.less$/,
@@ -30,7 +24,6 @@ module.exports = (baseConfig, env) => {
         loader: 'less-loader',
         options: {
           sourceMap: true,
-          modifyVars: themeVariables,
         },
       },
     ],

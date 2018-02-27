@@ -26,7 +26,13 @@ You can also edit css file `src/style-override.css` for overriding/editing style
 
 ## Exporting
 
-After you are done editing the variables and styles, just copy the `ant-theme-override.less` and `src/style-override.css` files for use in your project
+After you are done editing the variables and styles, export via this command
+
+```
+yarn export
+```
+
+The exported files will be found in `dist` directory, copy and use in your project
 
 ## Updating stories
 

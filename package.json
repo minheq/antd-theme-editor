@@ -19,7 +19,8 @@
   "scripts": {
     "create-stories": "node ./scripts/createStoriesFromAntdDemos.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "export": "node ./scripts/exportFiles.js"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.14",
@@ -29,6 +30,7 @@
     "babel-core": "^6.26.0",
     "babel-plugin-import": "^1.6.5",
     "bluebird": "^3.5.1",
+    "fs-extra": "^5.0.0",
     "fs-readdir-promise": "^1.0.1",
     "fs-readfile-promise": "^3.0.1",
     "jsonml.js": "^0.1.0",
