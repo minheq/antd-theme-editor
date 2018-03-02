@@ -14,7 +14,7 @@ const compileClasses = async () => {
     filename: path.resolve(__dirname, `../src/classes-override.less`),
   });
 
-  await writeFile(path.resolve(__dirname, `../dist/override-classes.css`), css);
+  await writeFile(path.resolve(__dirname, `../dist/antd-classes-override.css`), css);
 
   console.log('Compiled less classes');
 };
