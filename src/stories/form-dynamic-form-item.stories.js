@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, Input, Icon, Button } from 'antd';
 const FormItem = Form.Item;
 
@@ -110,6 +110,6 @@ class DynamicFieldSet extends React.Component {
 }
 
 const WrappedDynamicFieldSet = Form.create()(DynamicFieldSet);
-stories.add('dynamic-form-item', () => (
+stories.addWithJSX('dynamic-form-item', () => (
     <WrappedDynamicFieldSet />
   ))

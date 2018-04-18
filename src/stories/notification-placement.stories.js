@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('notification', module);
+    const stories = storiesOf('antDesign.notification', module);
   import { Button, Select, notification } from 'antd';
 
 const { Option } = Select;
@@ -13,7 +13,7 @@ const openNotification = () => {
   });
 };
 
-stories.add('placement', () => (
+stories.addWithJSX('placement', () => (
     
   <div>
     <Select

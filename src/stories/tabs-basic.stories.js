@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tabs', module);
+    const stories = storiesOf('antDesign.tabs', module);
   import { Tabs } from 'antd';
 const TabPane = Tabs.TabPane;
 
@@ -9,7 +9,7 @@ function callback(key) {
   console.log(key);
 }
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     
   <Tabs defaultActiveKey="1" onChange={callback}>
     <TabPane tab="Tab 1" key="1">Content of Tab Pane 1</TabPane>

@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('spin', module);
+    const stories = storiesOf('antDesign.spin', module);
   import { Spin, Alert } from 'antd';
 
-stories.add('tip', () => (
+stories.addWithJSX('tip', () => (
     
   <Spin tip="Loading...">
     <Alert

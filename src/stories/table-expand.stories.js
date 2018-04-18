@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 
 const columns = [
@@ -17,7 +17,7 @@ const data = [
   { key: 3, name: 'Joe Black', age: 32, address: 'Sidney No. 1 Lake Park', description: 'My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park.' },
 ];
 
-stories.add('expand', () => (
+stories.addWithJSX('expand', () => (
     
   <Table
     columns={columns}

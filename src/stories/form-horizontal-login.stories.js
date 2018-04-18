@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, Icon, Input, Button } from 'antd';
 const FormItem = Form.Item;
 
@@ -66,6 +66,6 @@ class HorizontalLoginForm extends React.Component {
 
 const WrappedHorizontalLoginForm = Form.create()(HorizontalLoginForm);
 
-stories.add('horizontal-login', () => (
+stories.addWithJSX('horizontal-login', () => (
     <WrappedHorizontalLoginForm />
   ))

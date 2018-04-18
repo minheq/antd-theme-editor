@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
+    const stories = storiesOf('antDesign.dropdown', module);
   import { Menu, Dropdown } from 'antd';
 
 const menu = (
@@ -12,7 +12,7 @@ const menu = (
   </Menu>
 );
 
-stories.add('context-menu', () => (
+stories.addWithJSX('context-menu', () => (
     
   <Dropdown overlay={menu} trigger={['contextMenu']}>
     <span style={{ userSelect: 'none' }}>Right Click on Me</span>

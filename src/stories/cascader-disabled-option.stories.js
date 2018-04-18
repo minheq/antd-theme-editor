@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
+    const stories = storiesOf('antDesign.cascader', module);
   import { Cascader } from 'antd';
 
 const options = [{
@@ -33,7 +33,7 @@ function onChange(value) {
   console.log(value);
 }
 
-stories.add('disabled-option', () => (
+stories.addWithJSX('disabled-option', () => (
     
   <Cascader options={options} onChange={onChange} />
 

@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('steps', module);
+    const stories = storiesOf('antDesign.steps', module);
   import { Steps } from 'antd';
 const Step = Steps.Step;
 
-stories.add('error', () => (
+stories.addWithJSX('error', () => (
     
   <Steps current={1} status="error">
     <Step title="Finished" description="This is a description" />

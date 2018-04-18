@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tag', module);
+    const stories = storiesOf('antDesign.tag', module);
   import { Tag } from 'antd';
 
 function log(e) {
@@ -13,7 +13,7 @@ function preventDefault(e) {
   console.log('Clicked! But prevent default.');
 }
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     
   <div>
     <Tag>Tag 1</Tag>

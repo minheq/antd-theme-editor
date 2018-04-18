@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('anchor', module);
+    const stories = storiesOf('antDesign.anchor', module);
   import { Anchor } from 'antd';
 const { Link } = Anchor;
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     
   <Anchor>
     <Link href="#components-anchor-demo-basic" title="Basic demo" />

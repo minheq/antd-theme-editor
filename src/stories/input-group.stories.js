@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input', module);
+    const stories = storiesOf('antDesign.input', module);
   import { Input, Col, Select, InputNumber, DatePicker, AutoComplete, Cascader } from 'antd';
 const InputGroup = Input.Group;
 const Option = Select.Option;
@@ -128,6 +128,6 @@ class CompactDemo extends React.Component {
   }
 }
 
-stories.add('group', () => (
+stories.addWithJSX('group', () => (
     <CompactDemo />
   ))

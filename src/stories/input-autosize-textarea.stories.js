@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input', module);
+    const stories = storiesOf('antDesign.input', module);
   import { Input } from 'antd';
 const { TextArea } = Input;
 
-stories.add('autosize-textarea', () => (
+stories.addWithJSX('autosize-textarea', () => (
     
   <div>
     <TextArea placeholder="Autosize height based on content lines" autosize />

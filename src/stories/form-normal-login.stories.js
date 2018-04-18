@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, Icon, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
 
@@ -52,6 +52,6 @@ class NormalLoginForm extends React.Component {
 
 const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
 
-stories.add('normal-login', () => (
+stories.addWithJSX('normal-login', () => (
     <WrappedNormalLoginForm />
   ))

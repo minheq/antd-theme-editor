@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
+    const stories = storiesOf('antDesign.upload', module);
   import { Upload, Icon, message } from 'antd';
 
 function getBase64(img, callback) {
@@ -63,6 +63,6 @@ class Avatar extends React.Component {
   }
 }
 
-stories.add('avatar', () => (
+stories.addWithJSX('avatar', () => (
     <Avatar />
   ))

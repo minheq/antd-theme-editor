@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tooltip', module);
+    const stories = storiesOf('antDesign.tooltip', module);
   import { Tooltip, Button } from 'antd';
 
 const wrapStyles = {
@@ -11,7 +11,7 @@ const wrapStyles = {
   border: '1px solid #e9e9e9',
 };
 
-stories.add('auto-adjust-overflow', () => (
+stories.addWithJSX('auto-adjust-overflow', () => (
     
   <div style={wrapStyles}>
     <Tooltip placement="left" title="Prompt Text" getPopupContainer={trigger => trigger.parentElement}>

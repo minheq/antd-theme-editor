@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tabs', module);
+    const stories = storiesOf('antDesign.tabs', module);
   import { Tabs, Button } from 'antd';
 const TabPane = Tabs.TabPane;
 
@@ -65,6 +65,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('custom-add-trigger', () => (
+stories.addWithJSX('custom-add-trigger', () => (
     <Demo />
   ))

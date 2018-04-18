@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('steps', module);
+    const stories = storiesOf('antDesign.steps', module);
   import { Steps, Icon } from 'antd';
 const Step = Steps.Step;
 
-stories.add('icon', () => (
+stories.addWithJSX('icon', () => (
     
   <Steps>
     <Step status="finish" title="Login" icon={<Icon type="user" />} />

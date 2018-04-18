@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
+    const stories = storiesOf('antDesign.list', module);
   import { List, Avatar, Icon } from 'antd';
 
 const listData = [];
@@ -29,7 +29,7 @@ const IconText = ({ type, text }) => (
   </span>
 );
 
-stories.add('vertical', () => (
+stories.addWithJSX('vertical', () => (
     
   <List
     itemLayout="vertical"

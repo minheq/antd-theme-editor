@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
+    const stories = storiesOf('antDesign.mention', module);
   import { Mention } from 'antd';
 const { toContentState } = Mention;
 
@@ -29,6 +29,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('controllder-simple', () => (
+stories.addWithJSX('controllder-simple', () => (
     <App />
   ))

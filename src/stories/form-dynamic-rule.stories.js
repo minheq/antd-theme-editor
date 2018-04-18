@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
 
@@ -76,6 +76,6 @@ class DynamicRule extends React.Component {
 }
 
 const WrappedDynamicRule = Form.create()(DynamicRule);
-stories.add('dynamic-rule', () => (
+stories.addWithJSX('dynamic-rule', () => (
     <WrappedDynamicRule />
   ))

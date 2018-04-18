@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('message', module);
+    const stories = storiesOf('antDesign.message', module);
   import { message, Button } from 'antd';
 
 const success = () => {
@@ -16,7 +16,7 @@ const warning = () => {
   message.warning('This is message of warning');
 };
 
-stories.add('other', () => (
+stories.addWithJSX('other', () => (
     
   <div>
     <Button onClick={success}>Success</Button>

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
+    const stories = storiesOf('antDesign.upload', module);
   import { Upload, Button, Icon } from 'antd';
 
 class MyUpload extends React.Component {
@@ -55,6 +55,6 @@ class MyUpload extends React.Component {
   }
 }
 
-stories.add('fileList', () => (
+stories.addWithJSX('fileList', () => (
     <MyUpload />
   ))

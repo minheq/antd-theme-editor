@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
+    const stories = storiesOf('antDesign.list', module);
   import { List } from 'antd';
 
 const data = [
@@ -12,7 +12,7 @@ const data = [
   'Los Angeles battles huge wildfires.',
 ];
 
-stories.add('simple', () => (
+stories.addWithJSX('simple', () => (
     
   <div>
     <h3 style={{ marginBottom: 16 }}>Default Size</h3>

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tag', module);
+    const stories = storiesOf('antDesign.tag', module);
   import { Tag, Input, Tooltip, Icon } from 'antd';
 
 class EditableTagGroup extends React.Component {
@@ -80,6 +80,6 @@ class EditableTagGroup extends React.Component {
   }
 }
 
-stories.add('control', () => (
+stories.addWithJSX('control', () => (
     <EditableTagGroup />
   ))

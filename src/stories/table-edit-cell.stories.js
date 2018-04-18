@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table, Input, Icon, Button, Popconfirm } from 'antd';
 
 class EditableCell extends React.Component {
@@ -143,6 +143,6 @@ class EditableTable extends React.Component {
   }
 }
 
-stories.add('edit-cell', () => (
+stories.addWithJSX('edit-cell', () => (
     <EditableTable />
   ))

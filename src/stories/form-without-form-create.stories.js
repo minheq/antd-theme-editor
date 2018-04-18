@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, InputNumber } from 'antd';
 const FormItem = Form.Item;
 
@@ -59,6 +59,6 @@ class RawForm extends React.Component {
   }
 }
 
-stories.add('without-form-create', () => (
+stories.addWithJSX('without-form-create', () => (
     <RawForm />
   ))

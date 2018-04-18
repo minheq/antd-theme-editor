@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('spin', module);
+    const stories = storiesOf('antDesign.spin', module);
   import { Spin, Switch, Alert } from 'antd';
 
 class Card extends React.Component {
@@ -27,6 +27,6 @@ class Card extends React.Component {
   }
 }
 
-stories.add('nested', () => (
+stories.addWithJSX('nested', () => (
     <Card />
   ))

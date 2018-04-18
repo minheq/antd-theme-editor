@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table, Input, Button, Icon } from 'antd';
 
 const data = [{
@@ -105,6 +105,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('custom-filter-panel', () => (
+stories.addWithJSX('custom-filter-panel', () => (
     <App />
   ))

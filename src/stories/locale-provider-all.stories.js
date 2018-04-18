@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('locale-provider', module);
+    const stories = storiesOf('antDesign.locale-provider', module);
   import { LocaleProvider, Pagination, DatePicker, TimePicker, Calendar,
          Popconfirm, Table, Modal, Button, Select, Transfer, Radio } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
@@ -126,6 +126,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('all', () => (
+stories.addWithJSX('all', () => (
     <App />
   ))

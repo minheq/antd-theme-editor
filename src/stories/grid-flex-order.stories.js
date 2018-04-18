@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('grid', module);
+    const stories = storiesOf('antDesign.grid', module);
   import { Row, Col } from 'antd';
 
-stories.add('flex-order', () => (
+stories.addWithJSX('flex-order', () => (
     
   <div>
     <Row type="flex">

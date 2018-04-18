@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tree', module);
+    const stories = storiesOf('antDesign.tree', module);
   import { Tree } from 'antd';
 const TreeNode = Tree.TreeNode;
 
@@ -112,6 +112,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('draggable', () => (
+stories.addWithJSX('draggable', () => (
     <Demo />
   ))

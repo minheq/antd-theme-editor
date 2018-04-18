@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('auto-complete', module);
+    const stories = storiesOf('antDesign.auto-complete', module);
   import { AutoComplete, Input } from 'antd';
 const { TextArea } = Input;
 
@@ -48,6 +48,6 @@ class Complete extends React.Component {
   }
 }
 
-stories.add('custom', () => (
+stories.addWithJSX('custom', () => (
     <Complete />
   ))

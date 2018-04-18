@@ -36,10 +36,10 @@ const compileSimpleDemo = async (code, componentName, fileName) => {
   const storySetup = `
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('${componentName}', module);
+    const stories = storiesOf('antDesign.${componentName}', module);
   `;
 
-  const stories = `stories.add('${fileNameWithoutExtension}', () => (
+  const stories = `stories.addWithJSX('${fileNameWithoutExtension}', () => (
     ${renderCode[1]}
   ))`;
 

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
+    const stories = storiesOf('antDesign.select', module);
   import { Select, Radio } from 'antd';
 const Option = Select.Option;
 
@@ -78,6 +78,6 @@ class SelectSizesDemo extends React.Component {
   }
 }
 
-stories.add('size', () => (
+stories.addWithJSX('size', () => (
     <SelectSizesDemo />
   ))

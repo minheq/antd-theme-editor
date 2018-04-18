@@ -1,14 +1,14 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('pagination', module);
+    const stories = storiesOf('antDesign.pagination', module);
   import { Pagination } from 'antd';
 
 function showTotal(total) {
   return `Total ${total} items`;
 }
 
-stories.add('mini', () => (
+stories.addWithJSX('mini', () => (
     
   <div>
     <Pagination size="small" total={50} />

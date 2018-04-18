@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('transfer', module);
+    const stories = storiesOf('antDesign.transfer', module);
   import { Transfer, Button } from 'antd';
 
 class App extends React.Component {
@@ -62,6 +62,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('advanced', () => (
+stories.addWithJSX('advanced', () => (
     <App />
   ))

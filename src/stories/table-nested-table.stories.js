@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table, Badge, Menu, Dropdown, Icon } from 'antd';
 
 const menu = (
@@ -91,6 +91,6 @@ function NestedTable() {
   );
 }
 
-stories.add('nested-table', () => (
+stories.addWithJSX('nested-table', () => (
     <NestedTable />
   ))

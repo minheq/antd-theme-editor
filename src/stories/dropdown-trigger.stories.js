@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
+    const stories = storiesOf('antDesign.dropdown', module);
   import { Menu, Dropdown, Icon } from 'antd';
 
 const menu = (
@@ -17,7 +17,7 @@ const menu = (
   </Menu>
 );
 
-stories.add('trigger', () => (
+stories.addWithJSX('trigger', () => (
     
   <Dropdown overlay={menu} trigger={['click']}>
     <a className="ant-dropdown-link" href="#">

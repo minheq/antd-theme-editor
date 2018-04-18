@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('auto-complete', module);
+    const stories = storiesOf('antDesign.auto-complete', module);
   import { AutoComplete } from 'antd';
 
 function onSelect(value) {
@@ -37,6 +37,6 @@ class Complete extends React.Component {
   }
 }
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     <Complete />
   ))

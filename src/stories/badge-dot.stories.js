@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('badge', module);
+    const stories = storiesOf('antDesign.badge', module);
   import { Badge, Icon } from 'antd';
 
-stories.add('dot', () => (
+stories.addWithJSX('dot', () => (
     
   <div>
     <Badge dot>

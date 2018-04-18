@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
+    const stories = storiesOf('antDesign.upload', module);
   import { Upload, Icon, Modal } from 'antd';
 
 class PicturesWall extends React.Component {
@@ -54,6 +54,6 @@ class PicturesWall extends React.Component {
   }
 }
 
-stories.add('picture-card', () => (
+stories.addWithJSX('picture-card', () => (
     <PicturesWall />
   ))

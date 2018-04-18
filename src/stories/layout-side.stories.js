@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('layout', module);
+    const stories = storiesOf('antDesign.layout', module);
   import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -73,6 +73,6 @@ class SiderDemo extends React.Component {
   }
 }
 
-stories.add('side', () => (
+stories.addWithJSX('side', () => (
     <SiderDemo />
   ))

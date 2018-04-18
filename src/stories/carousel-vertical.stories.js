@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('carousel', module);
+    const stories = storiesOf('antDesign.carousel', module);
   import { Carousel } from 'antd';
 
-stories.add('vertical', () => (
+stories.addWithJSX('vertical', () => (
     
   <Carousel vertical>
     <div><h3>1</h3></div>

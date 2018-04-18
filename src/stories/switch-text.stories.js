@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('switch', module);
+    const stories = storiesOf('antDesign.switch', module);
   import { Switch, Icon } from 'antd';
 
-stories.add('text', () => (
+stories.addWithJSX('text', () => (
     
   <div>
     <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />

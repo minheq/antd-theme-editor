@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input', module);
+    const stories = storiesOf('antDesign.input', module);
   import { Input, Select, Icon } from 'antd';
 const Option = Select.Option;
 
@@ -20,7 +20,7 @@ const selectAfter = (
   </Select>
 );
 
-stories.add('addon', () => (
+stories.addWithJSX('addon', () => (
     
   <div>
     <div style={{ marginBottom: 16 }}>

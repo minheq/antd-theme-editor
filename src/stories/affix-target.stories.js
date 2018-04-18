@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('affix', module);
+    const stories = storiesOf('antDesign.affix', module);
   import { Affix, Button } from 'antd';
 
 class Demo extends React.Component {
@@ -20,6 +20,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('target', () => (
+stories.addWithJSX('target', () => (
     <Demo />
   ))

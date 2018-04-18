@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('pagination', module);
+    const stories = storiesOf('antDesign.pagination', module);
   import { Pagination } from 'antd';
 
 class App extends React.Component {
@@ -19,6 +19,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('controlled', () => (
+stories.addWithJSX('controlled', () => (
     <App />
   ))

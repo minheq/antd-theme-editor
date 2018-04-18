@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('time-picker', module);
+    const stories = storiesOf('antDesign.time-picker', module);
   import { TimePicker } from 'antd';
 
 class Demo extends React.Component {
@@ -19,6 +19,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('value', () => (
+stories.addWithJSX('value', () => (
     <Demo />
   ))

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
+    const stories = storiesOf('antDesign.upload', module);
   import { Upload, Button, Icon, message } from 'antd';
 import reqwest from 'reqwest';
 
@@ -88,6 +88,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('upload-manually', () => (
+stories.addWithJSX('upload-manually', () => (
     <Demo />
   ))

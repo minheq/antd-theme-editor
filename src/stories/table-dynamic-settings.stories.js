@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table, Icon, Switch, Radio, Form, Divider } from 'antd';
 const FormItem = Form.Item;
 
@@ -150,6 +150,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('dynamic-settings', () => (
+stories.addWithJSX('dynamic-settings', () => (
     <Demo />
   ))

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('badge', module);
+    const stories = storiesOf('antDesign.badge', module);
   import { Badge, Button, Icon, Switch } from 'antd';
 const ButtonGroup = Button.Group;
 
@@ -55,6 +55,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('change', () => (
+stories.addWithJSX('change', () => (
     <Demo />
   ))

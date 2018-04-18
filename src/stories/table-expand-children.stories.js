@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 
 const columns = [{
@@ -84,7 +84,7 @@ const rowSelection = {
   },
 };
 
-stories.add('expand-children', () => (
+stories.addWithJSX('expand-children', () => (
     
   <Table columns={columns} rowSelection={rowSelection} dataSource={data} />
 

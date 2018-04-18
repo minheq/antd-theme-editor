@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('popconfirm', module);
+    const stories = storiesOf('antDesign.popconfirm', module);
   import { Popconfirm, message } from 'antd';
 
 function confirm(e) {
@@ -14,7 +14,7 @@ function cancel(e) {
   message.error('Click on No');
 }
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     
   <Popconfirm title="Are you sure delete this task?" onConfirm={confirm} onCancel={cancel} okText="Yes" cancelText="No">
     <a href="#">Delete</a>

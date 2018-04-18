@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table, Button } from 'antd';
 
 const columns = [{
@@ -72,6 +72,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('row-selection-and-operation', () => (
+stories.addWithJSX('row-selection-and-operation', () => (
     <App />
   ))

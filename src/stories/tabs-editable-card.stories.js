@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tabs', module);
+    const stories = storiesOf('antDesign.tabs', module);
   import { Tabs } from 'antd';
 const TabPane = Tabs.TabPane;
 
@@ -60,6 +60,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('editable-card', () => (
+stories.addWithJSX('editable-card', () => (
     <Demo />
   ))

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
+    const stories = storiesOf('antDesign.list', module);
   import { List, Avatar, Button, Spin } from 'antd';
 
 import reqwest from 'reqwest';
@@ -81,6 +81,6 @@ class LoadMoreList extends React.Component {
   }
 }
 
-stories.add('loadmore', () => (
+stories.addWithJSX('loadmore', () => (
     <LoadMoreList />
   ))

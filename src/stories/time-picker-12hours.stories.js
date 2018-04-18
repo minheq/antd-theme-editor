@@ -1,14 +1,14 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('time-picker', module);
+    const stories = storiesOf('antDesign.time-picker', module);
   import { TimePicker } from 'antd';
 
 function onChange(time, timeString) {
   console.log(time, timeString);
 }
 
-stories.add('12hours', () => (
+stories.addWithJSX('12hours', () => (
     
   <div>
     <TimePicker use12Hours onChange={onChange} />

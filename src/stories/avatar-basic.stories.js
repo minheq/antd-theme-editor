@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('avatar', module);
+    const stories = storiesOf('antDesign.avatar', module);
   import { Avatar } from 'antd';
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     
   <div>
     <div>

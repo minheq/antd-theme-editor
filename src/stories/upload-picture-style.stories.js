@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
+    const stories = storiesOf('antDesign.upload', module);
   import { Upload, Button, Icon } from 'antd';
 
 const fileList = [{
@@ -31,7 +31,7 @@ const props2 = {
   className: 'upload-list-inline',
 };
 
-stories.add('picture-style', () => (
+stories.addWithJSX('picture-style', () => (
     
   <div>
     <Upload {...props}>

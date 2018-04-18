@@ -1,14 +1,14 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('alert', module);
+    const stories = storiesOf('antDesign.alert', module);
   import { Alert } from 'antd';
 
 const onClose = function (e) {
   console.log(e, 'I was closed.');
 };
 
-stories.add('closable', () => (
+stories.addWithJSX('closable', () => (
     
   <div>
     <Alert

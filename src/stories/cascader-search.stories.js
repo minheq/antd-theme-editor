@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
+    const stories = storiesOf('antDesign.cascader', module);
   import { Cascader } from 'antd';
 
 const options = [{
@@ -36,7 +36,7 @@ function onChange(value, selectedOptions) {
   console.log(value, selectedOptions);
 }
 
-stories.add('search', () => (
+stories.addWithJSX('search', () => (
     
   <Cascader
     options={options}

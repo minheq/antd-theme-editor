@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, DatePicker, TimePicker, Button } from 'antd';
 const FormItem = Form.Item;
 const MonthPicker = DatePicker.MonthPicker;
@@ -117,6 +117,6 @@ class TimeRelatedForm extends React.Component {
 
 const WrappedTimeRelatedForm = Form.create()(TimeRelatedForm);
 
-stories.add('time-related-controls', () => (
+stories.addWithJSX('time-related-controls', () => (
     <WrappedTimeRelatedForm />
   ))

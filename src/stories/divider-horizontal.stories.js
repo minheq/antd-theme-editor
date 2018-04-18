@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('divider', module);
+    const stories = storiesOf('antDesign.divider', module);
   import { Divider } from 'antd';
 
-stories.add('horizontal', () => (
+stories.addWithJSX('horizontal', () => (
     
   <div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 
 const columns = [{
@@ -48,7 +48,7 @@ const rowSelection = {
   }),
 };
 
-stories.add('row-selection', () => (
+stories.addWithJSX('row-selection', () => (
     
   <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
 

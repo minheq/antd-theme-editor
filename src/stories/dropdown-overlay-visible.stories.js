@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
+    const stories = storiesOf('antDesign.dropdown', module);
   import { Menu, Dropdown, Icon } from 'antd';
 
 class OverlayVisible extends React.Component {
@@ -37,6 +37,6 @@ class OverlayVisible extends React.Component {
   }
 }
 
-stories.add('overlay-visible', () => (
+stories.addWithJSX('overlay-visible', () => (
     <OverlayVisible />
   ))

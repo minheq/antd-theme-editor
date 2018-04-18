@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('message', module);
+    const stories = storiesOf('antDesign.message', module);
   import { message, Button } from 'antd';
 
 const success = () => {
@@ -10,7 +10,7 @@ const success = () => {
   setTimeout(hide, 2500);
 };
 
-stories.add('loading', () => (
+stories.addWithJSX('loading', () => (
     
   <Button onClick={success}>Display a loading indicator</Button>
 

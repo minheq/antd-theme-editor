@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('card', module);
+    const stories = storiesOf('antDesign.card', module);
   import { Card } from 'antd';
 
 const tabList = [{
@@ -68,7 +68,7 @@ class TabsCard extends React.Component {
   }
 }
 
-stories.add('tabs', () => (
+stories.addWithJSX('tabs', () => (
     
   <TabsCard />
 

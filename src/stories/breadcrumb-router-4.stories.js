@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('breadcrumb', module);
+    const stories = storiesOf('antDesign.breadcrumb', module);
   import { HashRouter as Router, Route, Switch, Link, withRouter } from 'react-router-dom';
 import { Breadcrumb, Alert } from 'antd';
 
@@ -59,7 +59,7 @@ const Home = withRouter((props) => {
   );
 });
 
-stories.add('router-4', () => (
+stories.addWithJSX('router-4', () => (
     
   <Router>
     <Home />

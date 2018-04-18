@@ -1,9 +1,9 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('radio', module);
+    const stories = storiesOf('antDesign.radio', module);
   import { Radio } from 'antd';
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     <Radio>Radio</Radio>
   ))

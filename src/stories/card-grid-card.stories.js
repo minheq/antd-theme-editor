@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('card', module);
+    const stories = storiesOf('antDesign.card', module);
   import { Card } from 'antd';
 
 const gridStyle = {
@@ -9,7 +9,7 @@ const gridStyle = {
   textAlign: 'center',
 };
 
-stories.add('grid-card', () => (
+stories.addWithJSX('grid-card', () => (
     
   <Card title="Card Title">
     <Card.Grid style={gridStyle}>Content</Card.Grid>

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input-number', module);
+    const stories = storiesOf('antDesign.input-number', module);
   import { InputNumber, Button } from 'antd';
 
 class App extends React.Component {
@@ -25,6 +25,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('disabled', () => (
+stories.addWithJSX('disabled', () => (
     <App />
   ))

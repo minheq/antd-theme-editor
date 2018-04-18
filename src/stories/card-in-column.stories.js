@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('card', module);
+    const stories = storiesOf('antDesign.card', module);
   import { Card, Col, Row } from 'antd';
 
-stories.add('in-column', () => (
+stories.addWithJSX('in-column', () => (
     
   <div style={{ background: '#ECECEC', padding: '30px' }}>
     <Row gutter={16}>

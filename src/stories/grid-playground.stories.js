@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('grid', module);
+    const stories = storiesOf('antDesign.grid', module);
   import { Row, Col, Slider } from 'antd';
 
 class App extends React.Component {
@@ -68,6 +68,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('playground', () => (
+stories.addWithJSX('playground', () => (
     <App />
   ))

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('menu', module);
+    const stories = storiesOf('antDesign.menu', module);
   import { Menu, Icon, Button } from 'antd';
 const SubMenu = Menu.SubMenu;
 
@@ -59,6 +59,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('inline-collapsed', () => (
+stories.addWithJSX('inline-collapsed', () => (
     <App />
   ))

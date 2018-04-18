@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
+    const stories = storiesOf('antDesign.mention', module);
   import { Mention } from 'antd';
 const { toString } = Mention;
 
@@ -45,7 +45,7 @@ class App extends React.Component {
   }
 }
 
-stories.add('multiple-trigger', () => (
+stories.addWithJSX('multiple-trigger', () => (
     
   <App />
 

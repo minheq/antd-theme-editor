@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
+    const stories = storiesOf('antDesign.mention', module);
   import { Mention, Avatar } from 'antd';
 const Nav = Mention.Nav;
 
@@ -49,6 +49,6 @@ class CustomNavMention extends React.Component {
   }
 }
 
-stories.add('avatar', () => (
+stories.addWithJSX('avatar', () => (
     <CustomNavMention />
   ))

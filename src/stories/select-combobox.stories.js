@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
+    const stories = storiesOf('antDesign.select', module);
   import { Select } from 'antd';
 const Option = Select.Option;
 
@@ -37,6 +37,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('combobox', () => (
+stories.addWithJSX('combobox', () => (
     <App />
   ))

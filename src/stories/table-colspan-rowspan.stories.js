@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 
 // In the fifth row, other columns are merged into first column
@@ -104,7 +104,7 @@ const data = [{
   address: 'Dublin No. 2 Lake Park',
 }];
 
-stories.add('colspan-rowspan', () => (
+stories.addWithJSX('colspan-rowspan', () => (
     <Table columns={columns} dataSource={data} bordered />
 
   ))

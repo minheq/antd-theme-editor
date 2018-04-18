@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input', module);
+    const stories = storiesOf('antDesign.input', module);
   import { Input, Icon } from 'antd';
 
 class App extends React.Component {
@@ -34,6 +34,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('presuffix', () => (
+stories.addWithJSX('presuffix', () => (
     <App />
   ))

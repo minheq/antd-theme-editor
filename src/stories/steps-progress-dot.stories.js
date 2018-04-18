@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('steps', module);
+    const stories = storiesOf('antDesign.steps', module);
   import { Steps } from 'antd';
 const Step = Steps.Step;
 
-stories.add('progress-dot', () => (
+stories.addWithJSX('progress-dot', () => (
     
   <Steps progressDot current={1}>
     <Step title="Finished" description="This is a description." />

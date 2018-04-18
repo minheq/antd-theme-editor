@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('time-picker', module);
+    const stories = storiesOf('antDesign.time-picker', module);
   import { TimePicker, Button } from 'antd';
 
 class TimePickerAddonDemo extends React.Component {
@@ -28,6 +28,6 @@ class TimePickerAddonDemo extends React.Component {
   }
 }
 
-stories.add('addon', () => (
+stories.addWithJSX('addon', () => (
     <TimePickerAddonDemo />
   ))

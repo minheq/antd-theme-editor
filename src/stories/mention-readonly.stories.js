@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
+    const stories = storiesOf('antDesign.mention', module);
   import { Mention } from 'antd';
 const { toString } = Mention;
 
@@ -35,7 +35,7 @@ function App() {
 }
 
 
-stories.add('readonly', () => (
+stories.addWithJSX('readonly', () => (
     
   <App />
 

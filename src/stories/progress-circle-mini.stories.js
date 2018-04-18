@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('progress', module);
+    const stories = storiesOf('antDesign.progress', module);
   import { Progress } from 'antd';
 
-stories.add('circle-mini', () => (
+stories.addWithJSX('circle-mini', () => (
     
   <div>
     <Progress type="circle" percent={30} width={80} />

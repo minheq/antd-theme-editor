@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('auto-complete', module);
+    const stories = storiesOf('antDesign.auto-complete', module);
   import { AutoComplete } from 'antd';
 
 const dataSource = ['Burns Bay Road', 'Downing Street', 'Wall Street'];
@@ -17,6 +17,6 @@ function Complete() {
   );
 }
 
-stories.add('non-case-sensitive', () => (
+stories.addWithJSX('non-case-sensitive', () => (
     <Complete />
   ))

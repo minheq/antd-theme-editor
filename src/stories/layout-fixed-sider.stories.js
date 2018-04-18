@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('layout', module);
+    const stories = storiesOf('antDesign.layout', module);
   import { Layout, Menu, Icon } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 
-stories.add('fixed-sider', () => (
+stories.addWithJSX('fixed-sider', () => (
     
   <Layout>
     <Sider style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}>

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import {
   Form, Select, InputNumber, Switch, Radio,
   Slider, Button, Upload, Icon, Rate,
@@ -189,6 +189,6 @@ class Demo extends React.Component {
 
 const WrappedDemo = Form.create()(Demo);
 
-stories.add('validate-other', () => (
+stories.addWithJSX('validate-other', () => (
     <WrappedDemo />
   ))

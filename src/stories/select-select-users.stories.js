@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
+    const stories = storiesOf('antDesign.select', module);
   import { Select, Spin } from 'antd';
 import debounce from 'lodash.debounce';
 const Option = Select.Option;
@@ -62,6 +62,6 @@ class UserRemoteSelect extends React.Component {
   }
 }
 
-stories.add('select-users', () => (
+stories.addWithJSX('select-users', () => (
     <UserRemoteSelect />
   ))

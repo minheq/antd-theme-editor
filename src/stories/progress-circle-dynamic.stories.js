@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('progress', module);
+    const stories = storiesOf('antDesign.progress', module);
   import { Progress, Button } from 'antd';
 const ButtonGroup = Button.Group;
 
@@ -36,6 +36,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('circle-dynamic', () => (
+stories.addWithJSX('circle-dynamic', () => (
     <App />
   ))

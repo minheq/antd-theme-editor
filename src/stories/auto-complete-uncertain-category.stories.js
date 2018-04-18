@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('auto-complete', module);
+    const stories = storiesOf('antDesign.auto-complete', module);
   import { Icon, Button, Input, AutoComplete } from 'antd';
 const Option = AutoComplete.Option;
 
@@ -77,6 +77,6 @@ class Complete extends React.Component {
   }
 }
 
-stories.add('uncertain-category', () => (
+stories.addWithJSX('uncertain-category', () => (
     <Complete />
   ))

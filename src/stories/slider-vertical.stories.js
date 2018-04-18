@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('slider', module);
+    const stories = storiesOf('antDesign.slider', module);
   import { Slider } from 'antd';
 
 const style = {
@@ -22,7 +22,7 @@ const marks = {
   },
 };
 
-stories.add('vertical', () => (
+stories.addWithJSX('vertical', () => (
     
   <div style={{ height: 300 }}>
     <div style={style}>
