@@ -1,22 +1,22 @@
-const markTwain = require('mark-twain');
-const JsonML = require('jsonml.js/lib/utils');
-const path = require('path');
-const Promise = require('bluebird');
-const readFile = require('fs-readfile-promise');
-const writeFile = require('node-fs-writefile-promise');
-const readDir = require('fs-readdir-promise');
-const fs = Promise.promisifyAll(require('fs'));
+const markTwain = require("mark-twain");
+const JsonML = require("jsonml.js/lib/utils");
+const path = require("path");
+const Promise = require("bluebird");
+const readFile = require("fs-readfile-promise");
+const writeFile = require("node-fs-writefile-promise");
+const readDir = require("fs-readdir-promise");
+const fs = Promise.promisifyAll(require("fs"));
 
 const getCode = tree => {
   let code;
   const find = node => {
     if (code) return;
     if (!JsonML.isElement(node)) return;
-    if (JsonML.getTagName(node) !== 'pre') {
+    if (JsonML.getTagName(node) !== "pre") {
       JsonML.getChildren(node).forEach(find);
       return;
     }
-    code = JsonML.getChildren(JsonML.getChildren(node)[0] || '')[0] || '';
+    code = JsonML.getChildren(JsonML.getChildren(node)[0] || "")[0] || "";
   };
   find(tree);
   return code;
@@ -31,7 +31,7 @@ const compileSimpleDemo = async (code, componentName, fileName) => {
     console.log(`Could not compile ${componentName} due to unmatched RegEx`);
     return;
   }
-  const imports = code.substring(0, code.indexOf('ReactDOM.render'));
+  const imports = code.substring(0, code.indexOf("ReactDOM.render"));
 
   const storySetup = `
     import React from 'react';
@@ -65,7 +65,7 @@ const writeStoryFromCode = async (
 const processMarkdown = async (markdownFile, componentName, fileName) => {
   const markdown = markTwain(markdownFile);
   const code = getCode(markdown.content);
-  const lastLineOfCode = code.substring(code.lastIndexOf('\n'));
+  const lastLineOfCode = code.substring(code.lastIndexOf("\n"));
 
   await compileSimpleDemo(code, componentName, fileName);
 };
@@ -93,7 +93,7 @@ const processComponent = async componentName => {
 const createStoriesFromAntdDemos = async () => {
   const dirs = p =>
     fs.readdirSync(p).filter(f => fs.statSync(path.join(p, f)).isDirectory());
-  const directories = dirs(path.resolve(__dirname, '../antd/components'));
+  const directories = dirs(path.resolve(__dirname, "../antd/components"));
 
   for (const directory of directories) {
     try {
@@ -105,5 +105,5 @@ const createStoriesFromAntdDemos = async () => {
 };
 
 createStoriesFromAntdDemos().then(() =>
-  console.log('Finished creating stories!')
+  console.log("Finished creating stories!")
 );

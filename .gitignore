@@ -5,10 +5,10 @@
 
 # testing
 /coverage
+/.vscode
 
 # production
 /build
-
 # misc
 .DS_Store
 .env.local
