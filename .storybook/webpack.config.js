@@ -1,18 +1,21 @@
 // load the default config generator.
-const fs = require("fs");
-const path = require("path");
-const lessToJs = require("less-vars-to-js");
+const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
+const fs = require('fs');
+const path = require('path');
+const lessToJs = require('less-vars-to-js');
 
-module.exports = (baseConfig, env, defaultConfig) => {
+module.exports = (baseConfig, env) => {
+  const config = genDefaultConfig(baseConfig, env);
+
   // load custom variables for theme
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.less$/,
     use: [
-      { loader: "style-loader" },
-      { loader: "css-loader" },
-      { loader: "less-loader", options: { javascriptEnabled: true } }
-    ]
+      { loader: 'style-loader' },
+      { loader: 'css-loader' },
+      { loader: 'less-loader' },
+    ],
   });
 
-  return defaultConfig;
+  return config;
 };
