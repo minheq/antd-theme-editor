@@ -5,11 +5,29 @@ Boilerplate to render [Ant Design](https://ant.design/) components into [Storybo
 ![image](https://user-images.githubusercontent.com/9356633/39115487-fbfb6c6e-470b-11e8-8a45-8a6846118b2e.png)
 
 
-## Usage
+## Pre-requisite
 
+1. Install required system dependencies
+* [Git](https://git-scm.com/)
+* [Node](https://nodejs.org/en/)
+* [Yarn](https://yarnpkg.com/en/)
+
+2. Clone the repository
 ```
 git clone https://github.com/minheq/antd-theme-editor.git
+```
+
+3. Install package dependencies of the project
+```
 yarn
+```
+
+...and you are ready!
+
+## Usage
+Run the command
+
+```
 yarn storybook
 ```
 
