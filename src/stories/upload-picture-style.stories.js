@@ -1,38 +1,43 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.upload", module);
+import { Upload, Button, Icon } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.upload', module);
-  import { Upload, Button, Icon } from 'antd';
-
-const fileList = [{
-  uid: -1,
-  name: 'xxx.png',
-  status: 'done',
-  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-}, {
-  uid: -2,
-  name: 'yyy.png',
-  status: 'done',
-  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-}];
+const fileList = [
+  {
+    uid: -1,
+    name: "xxx.png",
+    status: "done",
+    url:
+      "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+    thumbUrl:
+      "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+  },
+  {
+    uid: -2,
+    name: "yyy.png",
+    status: "done",
+    url:
+      "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+    thumbUrl:
+      "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+  }
+];
 
 const props = {
-  action: '//jsonplaceholder.typicode.com/posts/',
-  listType: 'picture',
-  defaultFileList: [...fileList],
+  action: "//jsonplaceholder.typicode.com/posts/",
+  listType: "picture",
+  defaultFileList: [...fileList]
 };
 
 const props2 = {
-  action: '//jsonplaceholder.typicode.com/posts/',
-  listType: 'picture',
+  action: "//jsonplaceholder.typicode.com/posts/",
+  listType: "picture",
   defaultFileList: [...fileList],
-  className: 'upload-list-inline',
+  className: "upload-list-inline"
 };
 
-stories.addWithJSX('picture-style', () => (
-    
+stories.addWithJSX("picture-style", () => (
   <div>
     <Upload {...props}>
       <Button>
@@ -47,5 +52,4 @@ stories.addWithJSX('picture-style', () => (
       </Button>
     </Upload>
   </div>
-
-  ))
+));

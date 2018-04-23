@@ -1,35 +1,41 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.cascader", module);
+import { Cascader } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.cascader', module);
-  import { Cascader } from 'antd';
-
-const options = [{
-  value: 'zhejiang',
-  label: 'Zhejiang',
-  children: [{
-    value: 'hangzhou',
-    label: 'Hangzhou',
-  }],
-}, {
-  value: 'jiangsu',
-  label: 'Jiangsu',
-  children: [{
-    value: 'nanjing',
-    label: 'Nanjing',
-  }],
-}];
+const options = [
+  {
+    value: "zhejiang",
+    label: "Zhejiang",
+    children: [
+      {
+        value: "hangzhou",
+        label: "Hangzhou"
+      }
+    ]
+  },
+  {
+    value: "jiangsu",
+    label: "Jiangsu",
+    children: [
+      {
+        value: "nanjing",
+        label: "Nanjing"
+      }
+    ]
+  }
+];
 
 class CitySwitcher extends React.Component {
   state = {
-    text: 'Unselect',
+    text: "Unselect"
   };
 
   onChange = (value, selectedOptions) => {
     this.setState({
-      text: selectedOptions.map(o => o.label).join(', '),
+      text: selectedOptions.map(o => o.label).join(", ")
     });
-  }
+  };
   render() {
     return (
       <span>
@@ -43,6 +49,4 @@ class CitySwitcher extends React.Component {
   }
 }
 
-stories.addWithJSX('custom-trigger', () => (
-    <CitySwitcher />
-  ))
+stories.addWithJSX("custom-trigger", () => <CitySwitcher />);

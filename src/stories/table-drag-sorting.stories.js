@@ -1,30 +1,29 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.table', module);
-  import { Table } from 'antd';
-import { DragDropContext, DragSource, DropTarget } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
-import update from 'immutability-helper';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.table", module);
+import { Table } from "antd";
+import { DragDropContext, DragSource, DropTarget } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
+import update from "immutability-helper";
 
 function dragDirection(
   dragIndex,
   hoverIndex,
   initialClientOffset,
   clientOffset,
-  sourceClientOffset,
+  sourceClientOffset
 ) {
   const hoverMiddleY = (initialClientOffset.y - sourceClientOffset.y) / 2;
   const hoverClientY = clientOffset.y - sourceClientOffset.y;
   if (dragIndex < hoverIndex && hoverClientY > hoverMiddleY) {
-    return 'downward';
+    return "downward";
   }
   if (dragIndex > hoverIndex && hoverClientY < hoverMiddleY) {
-    return 'upward';
+    return "upward";
   }
 }
 
-let BodyRow = (props) => {
+let BodyRow = props => {
   const {
     isOver,
     connectDragSource,
@@ -36,7 +35,7 @@ let BodyRow = (props) => {
     initialClientOffset,
     ...restProps
   } = props;
-  const style = { ...restProps.style, cursor: 'move' };
+  const style = { ...restProps.style, cursor: "move" };
 
   let className = restProps.className;
   if (isOver && initialClientOffset) {
@@ -47,31 +46,25 @@ let BodyRow = (props) => {
       clientOffset,
       sourceClientOffset
     );
-    if (direction === 'downward') {
-      className += ' drop-over-downward';
+    if (direction === "downward") {
+      className += " drop-over-downward";
     }
-    if (direction === 'upward') {
-      className += ' drop-over-upward';
+    if (direction === "upward") {
+      className += " drop-over-upward";
     }
   }
 
   return connectDragSource(
-    connectDropTarget(
-      <tr
-        {...restProps}
-        className={className}
-        style={style}
-      />
-    )
+    connectDropTarget(<tr {...restProps} className={className} style={style} />)
   );
 };
 
 const rowSource = {
   beginDrag(props) {
     return {
-      index: props.index,
+      index: props.index
     };
-  },
+  }
 };
 
 const rowTarget = {
@@ -92,61 +85,69 @@ const rowTarget = {
     // but it's good here for the sake of performance
     // to avoid expensive index searches.
     monitor.getItem().index = hoverIndex;
-  },
+  }
 };
 
-BodyRow = DropTarget('row', rowTarget, (connect, monitor) => ({
+BodyRow = DropTarget("row", rowTarget, (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver(),
-  sourceClientOffset: monitor.getSourceClientOffset(),
+  sourceClientOffset: monitor.getSourceClientOffset()
 }))(
-  DragSource('row', rowSource, (connect, monitor) => ({
+  DragSource("row", rowSource, (connect, monitor) => ({
     connectDragSource: connect.dragSource(),
     dragRow: monitor.getItem(),
     clientOffset: monitor.getClientOffset(),
-    initialClientOffset: monitor.getInitialClientOffset(),
+    initialClientOffset: monitor.getInitialClientOffset()
   }))(BodyRow)
 );
 
-const columns = [{
-  title: 'Name',
-  dataIndex: 'name',
-  key: 'name',
-}, {
-  title: 'Age',
-  dataIndex: 'age',
-  key: 'age',
-}, {
-  title: 'Address',
-  dataIndex: 'address',
-  key: 'address',
-}];
+const columns = [
+  {
+    title: "Name",
+    dataIndex: "name",
+    key: "name"
+  },
+  {
+    title: "Age",
+    dataIndex: "age",
+    key: "age"
+  },
+  {
+    title: "Address",
+    dataIndex: "address",
+    key: "address"
+  }
+];
 
 class DragSortingTable extends React.Component {
   state = {
-    data: [{
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    }, {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    }, {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-    }],
-  }
+    data: [
+      {
+        key: "1",
+        name: "John Brown",
+        age: 32,
+        address: "New York No. 1 Lake Park"
+      },
+      {
+        key: "2",
+        name: "Jim Green",
+        age: 42,
+        address: "London No. 1 Lake Park"
+      },
+      {
+        key: "3",
+        name: "Joe Black",
+        age: 32,
+        address: "Sidney No. 1 Lake Park"
+      }
+    ]
+  };
 
   components = {
     body: {
-      row: BodyRow,
-    },
-  }
+      row: BodyRow
+    }
+  };
 
   moveRow = (dragIndex, hoverIndex) => {
     const { data } = this.state;
@@ -155,11 +156,11 @@ class DragSortingTable extends React.Component {
     this.setState(
       update(this.state, {
         data: {
-          $splice: [[dragIndex, 1], [hoverIndex, 0, dragRow]],
-        },
-      }),
+          $splice: [[dragIndex, 1], [hoverIndex, 0, dragRow]]
+        }
+      })
     );
-  }
+  };
 
   render() {
     return (
@@ -169,7 +170,7 @@ class DragSortingTable extends React.Component {
         components={this.components}
         onRow={(record, index) => ({
           index,
-          moveRow: this.moveRow,
+          moveRow: this.moveRow
         })}
       />
     );
@@ -178,6 +179,4 @@ class DragSortingTable extends React.Component {
 
 const Demo = DragDropContext(HTML5Backend)(DragSortingTable);
 
-stories.addWithJSX('drag-sorting', () => (
-    <Demo />
-  ))
+stories.addWithJSX("drag-sorting", () => <Demo />);

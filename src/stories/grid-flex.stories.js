@@ -1,11 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.grid", module);
+import { Row, Col } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.grid', module);
-  import { Row, Col } from 'antd';
-
-stories.addWithJSX('flex', () => (
-    
+stories.addWithJSX("flex", () => (
   <div>
     <p>sub-element align left</p>
     <Row type="flex" justify="start">
@@ -47,4 +45,4 @@ stories.addWithJSX('flex', () => (
       <Col span={4}>col-4</Col>
     </Row>
   </div>
-  ))
+));

@@ -1,17 +1,16 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.button', module);
-  import { Button, Radio, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.button", module);
+import { Button, Radio, Icon } from "antd";
 
 class ButtonSize extends React.Component {
   state = {
-    size: 'large',
+    size: "large"
   };
 
-  handleSizeChange = (e) => {
+  handleSizeChange = e => {
     this.setState({ size: e.target.value });
-  }
+  };
 
   render() {
     const size = this.state.size;
@@ -22,14 +21,23 @@ class ButtonSize extends React.Component {
           <Radio.Button value="default">Default</Radio.Button>
           <Radio.Button value="small">Small</Radio.Button>
         </Radio.Group>
-        <br /><br />
-        <Button type="primary" size={size}>Primary</Button>
+        <br />
+        <br />
+        <Button type="primary" size={size}>
+          Primary
+        </Button>
         <Button size={size}>Normal</Button>
-        <Button type="dashed" size={size}>Dashed</Button>
-        <Button type="danger" size={size}>Danger</Button>
+        <Button type="dashed" size={size}>
+          Dashed
+        </Button>
+        <Button type="danger" size={size}>
+          Danger
+        </Button>
         <br />
         <Button type="primary" shape="circle" icon="download" size={size} />
-        <Button type="primary" icon="download" size={size}>Download</Button>
+        <Button type="primary" icon="download" size={size}>
+          Download
+        </Button>
         <br />
         <Button.Group size={size}>
           <Button type="primary">
@@ -44,6 +52,4 @@ class ButtonSize extends React.Component {
   }
 }
 
-stories.addWithJSX('size', () => (
-    <ButtonSize />
-  ))
+stories.addWithJSX("size", () => <ButtonSize />);

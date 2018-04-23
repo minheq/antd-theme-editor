@@ -1,20 +1,20 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.notification', module);
-  import { Button, notification } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.notification", module);
+import { Button, notification } from "antd";
 
 const openNotification = () => {
   const args = {
-    message: 'Notification Title',
-    description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
-    duration: 0,
+    message: "Notification Title",
+    description:
+      "I will never close automatically. I will be close automatically. I will never close automatically.",
+    duration: 0
   };
   notification.open(args);
 };
 
-stories.addWithJSX('duration', () => (
-    
-  <Button type="primary" onClick={openNotification}>Open the notification box</Button>
-
-  ))
+stories.addWithJSX("duration", () => (
+  <Button type="primary" onClick={openNotification}>
+    Open the notification box
+  </Button>
+));

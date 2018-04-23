@@ -1,11 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.alert", module);
+import { Alert } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.alert', module);
-  import { Alert } from 'antd';
-
-stories.addWithJSX('description', () => (
-    
+stories.addWithJSX("description", () => (
   <div>
     <Alert
       message="Success Text"
@@ -28,5 +26,4 @@ stories.addWithJSX('description', () => (
       type="error"
     />
   </div>
-
-  ))
+));

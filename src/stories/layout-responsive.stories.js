@@ -1,20 +1,20 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.layout', module);
-  import { Layout, Menu, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.layout", module);
+import { Layout, Menu, Icon } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
 
-stories.addWithJSX('responsive', () => (
-    
+stories.addWithJSX("responsive", () => (
   <Layout>
     <Sider
       breakpoint="lg"
       collapsedWidth="0"
-      onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
+      onCollapse={(collapsed, type) => {
+        console.log(collapsed, type);
+      }}
     >
       <div className="logo" />
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
         <Menu.Item key="1">
           <Icon type="user" />
           <span className="nav-text">nav 1</span>
@@ -34,16 +34,15 @@ stories.addWithJSX('responsive', () => (
       </Menu>
     </Sider>
     <Layout>
-      <Header style={{ background: '#fff', padding: 0 }} />
-      <Content style={{ margin: '24px 16px 0' }}>
-        <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+      <Header style={{ background: "#fff", padding: 0 }} />
+      <Content style={{ margin: "24px 16px 0" }}>
+        <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
           content
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
+      <Footer style={{ textAlign: "center" }}>
         Ant Design ©2016 Created by Ant UED
       </Footer>
     </Layout>
   </Layout>
-
-  ))
+));

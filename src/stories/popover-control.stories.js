@@ -1,21 +1,20 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.popover', module);
-  import { Popover, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.popover", module);
+import { Popover, Button } from "antd";
 
 class App extends React.Component {
   state = {
-    visible: false,
-  }
+    visible: false
+  };
   hide = () => {
     this.setState({
-      visible: false,
+      visible: false
     });
-  }
-  handleVisibleChange = (visible) => {
+  };
+  handleVisibleChange = visible => {
     this.setState({ visible });
-  }
+  };
   render() {
     return (
       <Popover
@@ -31,6 +30,4 @@ class App extends React.Component {
   }
 }
 
-stories.addWithJSX('control', () => (
-    <App />
-  ))
+stories.addWithJSX("control", () => <App />);

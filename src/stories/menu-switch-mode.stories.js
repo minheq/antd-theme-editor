@@ -1,37 +1,36 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.menu', module);
-  import { Menu, Icon, Switch } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.menu", module);
+import { Menu, Icon, Switch } from "antd";
 const { SubMenu } = Menu;
 
 class Sider extends React.Component {
   state = {
-    mode: 'inline',
-    theme: 'light',
-  }
-  changeMode = (value) => {
+    mode: "inline",
+    theme: "light"
+  };
+  changeMode = value => {
     this.setState({
-      mode: value ? 'vertical' : 'inline',
+      mode: value ? "vertical" : "inline"
     });
-  }
-  changeTheme = (value) => {
+  };
+  changeTheme = value => {
     this.setState({
-      theme: value ? 'dark' : 'light',
+      theme: value ? "dark" : "light"
     });
-  }
+  };
   render() {
     return (
       <div>
         <Switch onChange={this.changeMode} /> Change Mode
-        <span className="ant-divider" style={{ margin: '0 1em' }} />
+        <span className="ant-divider" style={{ margin: "0 1em" }} />
         <Switch onChange={this.changeTheme} /> Change Theme
         <br />
         <br />
         <Menu
           style={{ width: 256 }}
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
+          defaultSelectedKeys={["1"]}
+          defaultOpenKeys={["sub1"]}
           mode={this.state.mode}
           theme={this.state.theme}
         >
@@ -43,7 +42,15 @@ class Sider extends React.Component {
             <Icon type="calendar" />
             Navigation Two
           </Menu.Item>
-          <SubMenu key="sub1" title={<span><Icon type="appstore" /><span>Navigation Three</span></span>}>
+          <SubMenu
+            key="sub1"
+            title={
+              <span>
+                <Icon type="appstore" />
+                <span>Navigation Three</span>
+              </span>
+            }
+          >
             <Menu.Item key="3">Option 3</Menu.Item>
             <Menu.Item key="4">Option 4</Menu.Item>
             <SubMenu key="sub1-2" title="Submenu">
@@ -51,7 +58,15 @@ class Sider extends React.Component {
               <Menu.Item key="6">Option 6</Menu.Item>
             </SubMenu>
           </SubMenu>
-          <SubMenu key="sub2" title={<span><Icon type="setting" /><span>Navigation Four</span></span>}>
+          <SubMenu
+            key="sub2"
+            title={
+              <span>
+                <Icon type="setting" />
+                <span>Navigation Four</span>
+              </span>
+            }
+          >
             <Menu.Item key="7">Option 7</Menu.Item>
             <Menu.Item key="8">Option 8</Menu.Item>
             <Menu.Item key="9">Option 9</Menu.Item>
@@ -63,6 +78,4 @@ class Sider extends React.Component {
   }
 }
 
-stories.addWithJSX('switch-mode', () => (
-    <Sider />
-  ))
+stories.addWithJSX("switch-mode", () => <Sider />);

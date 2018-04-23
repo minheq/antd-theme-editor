@@ -1,12 +1,10 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.button', module);
-  import { Button, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.button", module);
+import { Button, Icon } from "antd";
 const ButtonGroup = Button.Group;
 
-stories.addWithJSX('button-group', () => (
-    
+stories.addWithJSX("button-group", () => (
   <div>
     <h4>Basic</h4>
     <ButtonGroup>
@@ -38,4 +36,4 @@ stories.addWithJSX('button-group', () => (
       <Button type="primary" icon="cloud-download" />
     </ButtonGroup>
   </div>
-  ))
+));

@@ -1,14 +1,13 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.transfer', module);
-  import { Transfer } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.transfer", module);
+import { Transfer } from "antd";
 
 class App extends React.Component {
   state = {
     mockData: [],
-    targetKeys: [],
-  }
+    targetKeys: []
+  };
   componentDidMount() {
     this.getMock();
   }
@@ -20,7 +19,7 @@ class App extends React.Component {
         key: i.toString(),
         title: `content${i + 1}`,
         description: `description of content${i + 1}`,
-        chosen: Math.random() * 2 > 1,
+        chosen: Math.random() * 2 > 1
       };
       if (data.chosen) {
         targetKeys.push(data.key);
@@ -28,13 +27,13 @@ class App extends React.Component {
       mockData.push(data);
     }
     this.setState({ mockData, targetKeys });
-  }
+  };
   filterOption = (inputValue, option) => {
     return option.description.indexOf(inputValue) > -1;
-  }
-  handleChange = (targetKeys) => {
+  };
+  handleChange = targetKeys => {
     this.setState({ targetKeys });
-  }
+  };
   render() {
     return (
       <Transfer
@@ -49,6 +48,4 @@ class App extends React.Component {
   }
 }
 
-stories.addWithJSX('search', () => (
-    <App />
-  ))
+stories.addWithJSX("search", () => <App />);

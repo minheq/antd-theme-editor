@@ -1,20 +1,17 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.pagination', module);
-  import { Pagination } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.pagination", module);
+import { Pagination } from "antd";
 
 function itemRender(current, type, originalElement) {
-  if (type === 'prev') {
+  if (type === "prev") {
     return <a>Previous</a>;
-  } else if (type === 'next') {
+  } else if (type === "next") {
     return <a>Next</a>;
   }
   return originalElement;
 }
 
-stories.addWithJSX('itemRender', () => (
-    
+stories.addWithJSX("itemRender", () => (
   <Pagination total={500} itemRender={itemRender} />
-
-  ))
+));

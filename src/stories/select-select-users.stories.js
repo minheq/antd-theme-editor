@@ -1,9 +1,8 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.select', module);
-  import { Select, Spin } from 'antd';
-import debounce from 'lodash/debounce';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.select", module);
+import { Select, Spin } from "antd";
+import debounce from "lodash/debounce";
 const Option = Select.Option;
 
 class UserRemoteSelect extends React.Component {
@@ -15,33 +14,34 @@ class UserRemoteSelect extends React.Component {
   state = {
     data: [],
     value: [],
-    fetching: false,
-  }
-  fetchUser = (value) => {
-    console.log('fetching user', value);
+    fetching: false
+  };
+  fetchUser = value => {
+    console.log("fetching user", value);
     this.lastFetchId += 1;
     const fetchId = this.lastFetchId;
     this.setState({ data: [], fetching: true });
-    fetch('https://randomuser.me/api/?results=5')
+    fetch("https://randomuser.me/api/?results=5")
       .then(response => response.json())
-      .then((body) => {
-        if (fetchId !== this.lastFetchId) { // for fetch callback order
+      .then(body => {
+        if (fetchId !== this.lastFetchId) {
+          // for fetch callback order
           return;
         }
         const data = body.results.map(user => ({
           text: `${user.name.first} ${user.name.last}`,
-          value: user.login.username,
+          value: user.login.username
         }));
         this.setState({ data, fetching: false });
       });
-  }
-  handleChange = (value) => {
+  };
+  handleChange = value => {
     this.setState({
       value,
       data: [],
-      fetching: false,
+      fetching: false
     });
-  }
+  };
   render() {
     const { fetching, data, value } = this.state;
     return (
@@ -54,7 +54,7 @@ class UserRemoteSelect extends React.Component {
         filterOption={false}
         onSearch={this.fetchUser}
         onChange={this.handleChange}
-        style={{ width: '100%' }}
+        style={{ width: "100%" }}
       >
         {data.map(d => <Option key={d.value}>{d.text}</Option>)}
       </Select>
@@ -62,6 +62,4 @@ class UserRemoteSelect extends React.Component {
   }
 }
 
-stories.addWithJSX('select-users', () => (
-    <UserRemoteSelect />
-  ))
+stories.addWithJSX("select-users", () => <UserRemoteSelect />);

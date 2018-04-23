@@ -1,11 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.divider", module);
+import { Divider } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.divider', module);
-  import { Divider } from 'antd';
-
-stories.addWithJSX('vertical', () => (
-    
+stories.addWithJSX("vertical", () => (
   <div>
     Text
     <Divider type="vertical" />
@@ -13,5 +11,4 @@ stories.addWithJSX('vertical', () => (
     <Divider type="vertical" />
     <a href="#">Link</a>
   </div>
-
-  ))
+));

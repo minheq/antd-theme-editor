@@ -1,23 +1,22 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.checkbox', module);
-  import { Checkbox } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.checkbox", module);
+import { Checkbox } from "antd";
 const CheckboxGroup = Checkbox.Group;
 
-const plainOptions = ['Apple', 'Pear', 'Orange'];
-const defaultCheckedList = ['Apple', 'Orange'];
+const plainOptions = ["Apple", "Pear", "Orange"];
+const defaultCheckedList = ["Apple", "Orange"];
 
 class App extends React.Component {
   state = {
     checkedList: defaultCheckedList,
     indeterminate: true,
-    checkAll: false,
+    checkAll: false
   };
   render() {
     return (
       <div>
-        <div style={{ borderBottom: '1px solid #E9E9E9' }}>
+        <div style={{ borderBottom: "1px solid #E9E9E9" }}>
           <Checkbox
             indeterminate={this.state.indeterminate}
             onChange={this.onCheckAllChange}
@@ -27,26 +26,29 @@ class App extends React.Component {
           </Checkbox>
         </div>
         <br />
-        <CheckboxGroup options={plainOptions} value={this.state.checkedList} onChange={this.onChange} />
+        <CheckboxGroup
+          options={plainOptions}
+          value={this.state.checkedList}
+          onChange={this.onChange}
+        />
       </div>
     );
   }
-  onChange = (checkedList) => {
+  onChange = checkedList => {
     this.setState({
       checkedList,
-      indeterminate: !!checkedList.length && (checkedList.length < plainOptions.length),
-      checkAll: checkedList.length === plainOptions.length,
+      indeterminate:
+        !!checkedList.length && checkedList.length < plainOptions.length,
+      checkAll: checkedList.length === plainOptions.length
     });
-  }
-  onCheckAllChange = (e) => {
+  };
+  onCheckAllChange = e => {
     this.setState({
       checkedList: e.target.checked ? plainOptions : [],
       indeterminate: false,
-      checkAll: e.target.checked,
+      checkAll: e.target.checked
     });
-  }
+  };
 }
 
-stories.addWithJSX('check-all', () => (
-    <App />
-  ))
+stories.addWithJSX("check-all", () => <App />);

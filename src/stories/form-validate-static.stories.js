@@ -1,24 +1,31 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.form', module);
-  import { Form, Input, DatePicker, Col, TimePicker, Select, Cascader, InputNumber } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.form", module);
+import {
+  Form,
+  Input,
+  DatePicker,
+  Col,
+  TimePicker,
+  Select,
+  Cascader,
+  InputNumber
+} from "antd";
 const FormItem = Form.Item;
 const Option = Select.Option;
 
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },
-    sm: { span: 5 },
+    sm: { span: 5 }
   },
   wrapperCol: {
     xs: { span: 24 },
-    sm: { span: 12 },
-  },
+    sm: { span: 12 }
+  }
 };
 
-stories.addWithJSX('validate-static', () => (
-    
+stories.addWithJSX("validate-static", () => (
   <Form>
     <FormItem
       {...formItemLayout}
@@ -29,11 +36,7 @@ stories.addWithJSX('validate-static', () => (
       <Input placeholder="unavailable choice" id="error" />
     </FormItem>
 
-    <FormItem
-      {...formItemLayout}
-      label="Warning"
-      validateStatus="warning"
-    >
+    <FormItem {...formItemLayout} label="Warning" validateStatus="warning">
       <Input placeholder="Warning" id="warning" />
     </FormItem>
 
@@ -81,7 +84,7 @@ stories.addWithJSX('validate-static', () => (
       hasFeedback
       validateStatus="success"
     >
-      <DatePicker style={{ width: '100%' }} />
+      <DatePicker style={{ width: "100%" }} />
     </FormItem>
 
     <FormItem
@@ -90,7 +93,7 @@ stories.addWithJSX('validate-static', () => (
       hasFeedback
       validateStatus="warning"
     >
-      <TimePicker style={{ width: '100%' }} />
+      <TimePicker style={{ width: "100%" }} />
     </FormItem>
 
     <FormItem
@@ -113,20 +116,23 @@ stories.addWithJSX('validate-static', () => (
       validateStatus="validating"
       help="The information is being validated..."
     >
-      <Cascader defaultValue={['1']} options={[]} />
+      <Cascader defaultValue={["1"]} options={[]} />
     </FormItem>
 
-    <FormItem
-      label="inline"
-      {...formItemLayout}
-    >
+    <FormItem label="inline" {...formItemLayout}>
       <Col span={11}>
         <FormItem validateStatus="error" help="Please select the correct date">
           <DatePicker />
         </FormItem>
       </Col>
       <Col span={2}>
-        <span style={{ display: 'inline-block', width: '100%', textAlign: 'center' }}>
+        <span
+          style={{
+            display: "inline-block",
+            width: "100%",
+            textAlign: "center"
+          }}
+        >
           -
         </span>
       </Col>
@@ -143,8 +149,7 @@ stories.addWithJSX('validate-static', () => (
       hasFeedback
       validateStatus="success"
     >
-      <InputNumber style={{ width: '100%' }} />
+      <InputNumber style={{ width: "100%" }} />
     </FormItem>
   </Form>
-
-  ))
+));

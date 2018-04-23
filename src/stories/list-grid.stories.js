@@ -1,26 +1,24 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.list', module);
-  import { List, Card } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.list", module);
+import { List, Card } from "antd";
 
 const data = [
   {
-    title: 'Title 1',
+    title: "Title 1"
   },
   {
-    title: 'Title 2',
+    title: "Title 2"
   },
   {
-    title: 'Title 3',
+    title: "Title 3"
   },
   {
-    title: 'Title 4',
-  },
+    title: "Title 4"
+  }
 ];
 
-stories.addWithJSX('grid', () => (
-    
+stories.addWithJSX("grid", () => (
   <List
     grid={{ gutter: 16, column: 4 }}
     dataSource={data}
@@ -30,5 +28,4 @@ stories.addWithJSX('grid', () => (
       </List.Item>
     )}
   />
-
-  ))
+));

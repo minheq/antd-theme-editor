@@ -1,17 +1,16 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.card', module);
-  import { Card, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.card", module);
+import { Card, Button } from "antd";
 
 class LoadingCard extends React.Component {
   state = {
-    loading: true,
-  }
+    loading: true
+  };
 
   handleClick = () => {
     this.setState({ loading: !this.state.loading });
-  }
+  };
 
   render() {
     return (
@@ -19,14 +18,12 @@ class LoadingCard extends React.Component {
         <Card loading={this.state.loading} title="Card title">
           Whatever content
         </Card>
-        <Button onClick={this.handleClick} style={{ marginTop: 16 }}>Toggle loading</Button>
+        <Button onClick={this.handleClick} style={{ marginTop: 16 }}>
+          Toggle loading
+        </Button>
       </div>
     );
   }
 }
 
-stories.addWithJSX('loading', () => (
-    
-  <LoadingCard />
-
-  ))
+stories.addWithJSX("loading", () => <LoadingCard />);

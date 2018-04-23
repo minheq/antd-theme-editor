@@ -1,25 +1,37 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.dropdown', module);
-  import { Menu, Dropdown, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.dropdown", module);
+import { Menu, Dropdown, Button } from "antd";
 
 const menu = (
   <Menu>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.alipay.com/"
+      >
+        1st menu item
+      </a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.taobao.com/"
+      >
+        2nd menu item
+      </a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+        3rd menu item
+      </a>
     </Menu.Item>
   </Menu>
 );
 
-stories.addWithJSX('placement', () => (
-    
+stories.addWithJSX("placement", () => (
   <div>
     <Dropdown overlay={menu} placement="bottomLeft">
       <Button>bottomLeft</Button>
@@ -41,5 +53,4 @@ stories.addWithJSX('placement', () => (
       <Button>topRight</Button>
     </Dropdown>
   </div>
-
-  ))
+));

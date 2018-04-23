@@ -1,55 +1,54 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.date-picker', module);
-  import { DatePicker } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.date-picker", module);
+import { DatePicker } from "antd";
 
 class DateRange extends React.Component {
   state = {
     startValue: null,
     endValue: null,
-    endOpen: false,
+    endOpen: false
   };
 
-  disabledStartDate = (startValue) => {
+  disabledStartDate = startValue => {
     const endValue = this.state.endValue;
     if (!startValue || !endValue) {
       return false;
     }
     return startValue.valueOf() > endValue.valueOf();
-  }
+  };
 
-  disabledEndDate = (endValue) => {
+  disabledEndDate = endValue => {
     const startValue = this.state.startValue;
     if (!endValue || !startValue) {
       return false;
     }
     return endValue.valueOf() <= startValue.valueOf();
-  }
+  };
 
   onChange = (field, value) => {
     this.setState({
-      [field]: value,
+      [field]: value
     });
-  }
+  };
 
-  onStartChange = (value) => {
-    this.onChange('startValue', value);
-  }
+  onStartChange = value => {
+    this.onChange("startValue", value);
+  };
 
-  onEndChange = (value) => {
-    this.onChange('endValue', value);
-  }
+  onEndChange = value => {
+    this.onChange("endValue", value);
+  };
 
-  handleStartOpenChange = (open) => {
+  handleStartOpenChange = open => {
     if (!open) {
       this.setState({ endOpen: true });
     }
-  }
+  };
 
-  handleEndOpenChange = (open) => {
+  handleEndOpenChange = open => {
     this.setState({ endOpen: open });
-  }
+  };
 
   render() {
     const { startValue, endValue, endOpen } = this.state;
@@ -79,6 +78,4 @@ class DateRange extends React.Component {
   }
 }
 
-stories.addWithJSX('start-end', () => (
-    <DateRange />
-  ))
+stories.addWithJSX("start-end", () => <DateRange />);

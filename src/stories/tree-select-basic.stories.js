@@ -1,25 +1,24 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tree-select', module);
-  import { TreeSelect } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tree-select", module);
+import { TreeSelect } from "antd";
 const TreeNode = TreeSelect.TreeNode;
 
 class Demo extends React.Component {
   state = {
-    value: undefined,
-  }
-  onChange = (value) => {
+    value: undefined
+  };
+  onChange = value => {
     console.log(arguments);
     this.setState({ value });
-  }
+  };
   render() {
     return (
       <TreeSelect
         showSearch
         style={{ width: 300 }}
         value={this.state.value}
-        dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+        dropdownStyle={{ maxHeight: 400, overflow: "auto" }}
         placeholder="Please select"
         allowClear
         treeDefaultExpandAll
@@ -31,7 +30,11 @@ class Demo extends React.Component {
             <TreeNode value="leaf2" title="your leaf" key="random1" />
           </TreeNode>
           <TreeNode value="parent 1-1" title="parent 1-1" key="random2">
-            <TreeNode value="sss" title={<b style={{ color: '#08c' }}>sss</b>} key="random3" />
+            <TreeNode
+              value="sss"
+              title={<b style={{ color: "#08c" }}>sss</b>}
+              key="random3"
+            />
           </TreeNode>
         </TreeNode>
       </TreeSelect>
@@ -39,6 +42,4 @@ class Demo extends React.Component {
   }
 }
 
-stories.addWithJSX('basic', () => (
-    <Demo />
-  ))
+stories.addWithJSX("basic", () => <Demo />);

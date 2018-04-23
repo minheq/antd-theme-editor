@@ -1,16 +1,15 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.rate', module);
-  import { Rate } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.rate", module);
+import { Rate } from "antd";
 
 class Rater extends React.Component {
   state = {
-    value: 3,
-  }
-  handleChange = (value) => {
+    value: 3
+  };
+  handleChange = value => {
     this.setState({ value });
-  }
+  };
   render() {
     const { value } = this.state;
     return (
@@ -22,6 +21,4 @@ class Rater extends React.Component {
   }
 }
 
-stories.addWithJSX('text', () => (
-    <Rater />
-  ))
+stories.addWithJSX("text", () => <Rater />);

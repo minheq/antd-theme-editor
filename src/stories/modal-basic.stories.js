@@ -1,32 +1,33 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.modal', module);
-  import { Modal, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.modal", module);
+import { Modal, Button } from "antd";
 
 class App extends React.Component {
-  state = { visible: false }
+  state = { visible: false };
   showModal = () => {
     this.setState({
-      visible: true,
+      visible: true
     });
-  }
-  handleOk = (e) => {
+  };
+  handleOk = e => {
     console.log(e);
     this.setState({
-      visible: false,
+      visible: false
     });
-  }
-  handleCancel = (e) => {
+  };
+  handleCancel = e => {
     console.log(e);
     this.setState({
-      visible: false,
+      visible: false
     });
-  }
+  };
   render() {
     return (
       <div>
-        <Button type="primary" onClick={this.showModal}>Open</Button>
+        <Button type="primary" onClick={this.showModal}>
+          Open
+        </Button>
         <Modal
           title="Basic Modal"
           visible={this.state.visible}
@@ -42,6 +43,4 @@ class App extends React.Component {
   }
 }
 
-stories.addWithJSX('basic', () => (
-    <App />
-  ))
+stories.addWithJSX("basic", () => <App />);

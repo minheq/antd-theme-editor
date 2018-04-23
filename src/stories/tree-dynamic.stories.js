@@ -1,38 +1,37 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tree', module);
-  import { Tree } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tree", module);
+import { Tree } from "antd";
 const TreeNode = Tree.TreeNode;
 
 class Demo extends React.Component {
   state = {
     treeData: [
-      { title: 'Expand to load', key: '0' },
-      { title: 'Expand to load', key: '1' },
-      { title: 'Tree Node', key: '2', isLeaf: true },
-    ],
-  }
-  onLoadData = (treeNode) => {
-    return new Promise((resolve) => {
+      { title: "Expand to load", key: "0" },
+      { title: "Expand to load", key: "1" },
+      { title: "Tree Node", key: "2", isLeaf: true }
+    ]
+  };
+  onLoadData = treeNode => {
+    return new Promise(resolve => {
       if (treeNode.props.children) {
         resolve();
         return;
       }
       setTimeout(() => {
         treeNode.props.dataRef.children = [
-          { title: 'Child Node', key: `${treeNode.props.eventKey}-0` },
-          { title: 'Child Node', key: `${treeNode.props.eventKey}-1` },
+          { title: "Child Node", key: `${treeNode.props.eventKey}-0` },
+          { title: "Child Node", key: `${treeNode.props.eventKey}-1` }
         ];
         this.setState({
-          treeData: [...this.state.treeData],
+          treeData: [...this.state.treeData]
         });
         resolve();
       }, 1000);
     });
-  }
-  renderTreeNodes = (data) => {
-    return data.map((item) => {
+  };
+  renderTreeNodes = data => {
+    return data.map(item => {
       if (item.children) {
         return (
           <TreeNode title={item.title} key={item.key} dataRef={item}>
@@ -42,7 +41,7 @@ class Demo extends React.Component {
       }
       return <TreeNode {...item} dataRef={item} />;
     });
-  }
+  };
   render() {
     return (
       <Tree loadData={this.onLoadData}>
@@ -52,6 +51,4 @@ class Demo extends React.Component {
   }
 }
 
-stories.addWithJSX('dynamic', () => (
-    <Demo />
-  ))
+stories.addWithJSX("dynamic", () => <Demo />);

@@ -1,19 +1,20 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.checkbox', module);
-  import { Checkbox, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.checkbox", module);
+import { Checkbox, Button } from "antd";
 
 class App extends React.Component {
   state = {
     checked: true,
-    disabled: false,
+    disabled: false
   };
   render() {
-    const label = `${this.state.checked ? 'Checked' : 'Unchecked'}-${this.state.disabled ? 'Disabled' : 'Enabled'}`;
+    const label = `${this.state.checked ? "Checked" : "Unchecked"}-${
+      this.state.disabled ? "Disabled" : "Enabled"
+    }`;
     return (
       <div>
-        <p style={{ marginBottom: '20px' }}>
+        <p style={{ marginBottom: "20px" }}>
           <Checkbox
             checked={this.state.checked}
             disabled={this.state.disabled}
@@ -23,20 +24,16 @@ class App extends React.Component {
           </Checkbox>
         </p>
         <p>
-          <Button
-            type="primary"
-            size="small"
-            onClick={this.toggleChecked}
-          >
-            {!this.state.checked ? 'Check' : 'Uncheck'}
+          <Button type="primary" size="small" onClick={this.toggleChecked}>
+            {!this.state.checked ? "Check" : "Uncheck"}
           </Button>
           <Button
-            style={{ marginLeft: '10px' }}
+            style={{ marginLeft: "10px" }}
             type="primary"
             size="small"
             onClick={this.toggleDisable}
           >
-            {!this.state.disabled ? 'Disable' : 'Enable'}
+            {!this.state.disabled ? "Disable" : "Enable"}
           </Button>
         </p>
       </div>
@@ -44,18 +41,16 @@ class App extends React.Component {
   }
   toggleChecked = () => {
     this.setState({ checked: !this.state.checked });
-  }
+  };
   toggleDisable = () => {
     this.setState({ disabled: !this.state.disabled });
-  }
-  onChange = (e) => {
-    console.log('checked = ', e.target.checked);
+  };
+  onChange = e => {
+    console.log("checked = ", e.target.checked);
     this.setState({
-      checked: e.target.checked,
+      checked: e.target.checked
     });
-  }
+  };
 }
 
-stories.addWithJSX('controller', () => (
-    <App />
-  ))
+stories.addWithJSX("controller", () => <App />);

@@ -1,23 +1,27 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.slider', module);
-  import { Slider, InputNumber, Row, Col } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.slider", module);
+import { Slider, InputNumber, Row, Col } from "antd";
 
 class IntegerStep extends React.Component {
   state = {
-    inputValue: 1,
-  }
-  onChange = (value) => {
+    inputValue: 1
+  };
+  onChange = value => {
     this.setState({
-      inputValue: value,
+      inputValue: value
     });
-  }
+  };
   render() {
     return (
       <Row>
         <Col span={12}>
-          <Slider min={1} max={20} onChange={this.onChange} value={this.state.inputValue} />
+          <Slider
+            min={1}
+            max={20}
+            onChange={this.onChange}
+            value={this.state.inputValue}
+          />
         </Col>
         <Col span={4}>
           <InputNumber
@@ -35,18 +39,24 @@ class IntegerStep extends React.Component {
 
 class DecimalStep extends React.Component {
   state = {
-    inputValue: 0,
-  }
-  onChange = (value) => {
+    inputValue: 0
+  };
+  onChange = value => {
     this.setState({
-      inputValue: value,
+      inputValue: value
     });
-  }
+  };
   render() {
     return (
       <Row>
         <Col span={12}>
-          <Slider min={0} max={1} onChange={this.onChange} value={this.state.inputValue} step={0.01} />
+          <Slider
+            min={0}
+            max={1}
+            onChange={this.onChange}
+            value={this.state.inputValue}
+            step={0.01}
+          />
         </Col>
         <Col span={4}>
           <InputNumber
@@ -63,11 +73,9 @@ class DecimalStep extends React.Component {
   }
 }
 
-stories.addWithJSX('input-number', () => (
-    
+stories.addWithJSX("input-number", () => (
   <div>
     <IntegerStep />
     <DecimalStep />
   </div>
-
-  ))
+));

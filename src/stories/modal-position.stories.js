@@ -1,14 +1,13 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.modal', module);
-  import { Modal, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.modal", module);
+import { Modal, Button } from "antd";
 
 class App extends React.Component {
   state = {
     modal1Visible: false,
-    modal2Visible: false,
-  }
+    modal2Visible: false
+  };
   setModal1Visible(modal1Visible) {
     this.setState({ modal1Visible });
   }
@@ -18,7 +17,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Button type="primary" onClick={() => this.setModal1Visible(true)}>Display a modal dialog at 20px to Top</Button>
+        <Button type="primary" onClick={() => this.setModal1Visible(true)}>
+          Display a modal dialog at 20px to Top
+        </Button>
         <Modal
           title="20px to Top"
           style={{ top: 20 }}
@@ -30,8 +31,11 @@ class App extends React.Component {
           <p>some contents...</p>
           <p>some contents...</p>
         </Modal>
-        <br /><br />
-        <Button type="primary" onClick={() => this.setModal2Visible(true)}>Vertically centered modal dialog</Button>
+        <br />
+        <br />
+        <Button type="primary" onClick={() => this.setModal2Visible(true)}>
+          Vertically centered modal dialog
+        </Button>
         <Modal
           title="Vertically centered modal dialog"
           wrapClassName="vertical-center-modal"
@@ -48,6 +52,4 @@ class App extends React.Component {
   }
 }
 
-stories.addWithJSX('position', () => (
-    <App />
-  ))
+stories.addWithJSX("position", () => <App />);

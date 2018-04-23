@@ -1,10 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.auto-complete", module);
+import { AutoComplete } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.auto-complete', module);
-  import { AutoComplete } from 'antd';
-
-const dataSource = ['Burns Bay Road', 'Downing Street', 'Wall Street'];
+const dataSource = ["Burns Bay Road", "Downing Street", "Wall Street"];
 
 function Complete() {
   return (
@@ -12,11 +11,13 @@ function Complete() {
       style={{ width: 200 }}
       dataSource={dataSource}
       placeholder="try to type `b`"
-      filterOption={(inputValue, option) => option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
+      filterOption={(inputValue, option) =>
+        option.props.children
+          .toUpperCase()
+          .indexOf(inputValue.toUpperCase()) !== -1
+      }
     />
   );
 }
 
-stories.addWithJSX('non-case-sensitive', () => (
-    <Complete />
-  ))
+stories.addWithJSX("non-case-sensitive", () => <Complete />);

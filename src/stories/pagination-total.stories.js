@@ -1,11 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.pagination", module);
+import { Pagination } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.pagination', module);
-  import { Pagination } from 'antd';
-
-stories.addWithJSX('total', () => (
-    
+stories.addWithJSX("total", () => (
   <div>
     <Pagination
       total={85}
@@ -21,5 +19,4 @@ stories.addWithJSX('total', () => (
       defaultCurrent={1}
     />
   </div>
-
-  ))
+));

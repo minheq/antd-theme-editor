@@ -1,17 +1,16 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.dropdown', module);
-  import { Menu, Dropdown, Button, Icon, message } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.dropdown", module);
+import { Menu, Dropdown, Button, Icon, message } from "antd";
 
 function handleButtonClick(e) {
-  message.info('Click on left button.');
-  console.log('click left button', e);
+  message.info("Click on left button.");
+  console.log("click left button", e);
 }
 
 function handleMenuClick(e) {
-  message.info('Click on menu item.');
-  console.log('click', e);
+  message.info("Click on menu item.");
+  console.log("click", e);
 }
 
 const menu = (
@@ -22,8 +21,7 @@ const menu = (
   </Menu>
 );
 
-stories.addWithJSX('dropdown-button', () => (
-    
+stories.addWithJSX("dropdown-button", () => (
   <div>
     <Dropdown.Button onClick={handleButtonClick} overlay={menu}>
       Dropdown
@@ -42,5 +40,4 @@ stories.addWithJSX('dropdown-button', () => (
       </Button>
     </Dropdown>
   </div>
-
-  ))
+));

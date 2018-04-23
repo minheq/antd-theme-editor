@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.dropdown', module);
-  import { Menu, Dropdown, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.dropdown", module);
+import { Menu, Dropdown, Icon } from "antd";
 const SubMenu = Menu.SubMenu;
 
 const menu = (
@@ -20,12 +19,10 @@ const menu = (
   </Menu>
 );
 
-stories.addWithJSX('sub-menu', () => (
-    
+stories.addWithJSX("sub-menu", () => (
   <Dropdown overlay={menu}>
     <a className="ant-dropdown-link" href="#">
       Cascading menu <Icon type="down" />
     </a>
   </Dropdown>
-
-  ))
+));

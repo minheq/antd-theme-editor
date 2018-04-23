@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.collapse', module);
-  import { Collapse } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.collapse", module);
+import { Collapse } from "antd";
 const Panel = Collapse.Panel;
 
 function callback(key) {
@@ -15,9 +14,8 @@ const text = `
   it can be found as a welcome guest in many households across the world.
 `;
 
-stories.addWithJSX('basic', () => (
-    
-  <Collapse defaultActiveKey={['1']} onChange={callback}>
+stories.addWithJSX("basic", () => (
+  <Collapse defaultActiveKey={["1"]} onChange={callback}>
     <Panel header="This is panel header 1" key="1">
       <p>{text}</p>
     </Panel>
@@ -28,5 +26,4 @@ stories.addWithJSX('basic', () => (
       <p>{text}</p>
     </Panel>
   </Collapse>
-
-  ))
+));

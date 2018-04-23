@@ -1,21 +1,20 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.menu', module);
-  import { Menu, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.menu", module);
+import { Menu, Icon } from "antd";
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 class App extends React.Component {
   state = {
-    current: 'mail',
-  }
-  handleClick = (e) => {
-    console.log('click ', e);
+    current: "mail"
+  };
+  handleClick = e => {
+    console.log("click ", e);
     this.setState({
-      current: e.key,
+      current: e.key
     });
-  }
+  };
   render() {
     return (
       <Menu
@@ -29,7 +28,13 @@ class App extends React.Component {
         <Menu.Item key="app" disabled>
           <Icon type="appstore" />Navigation Two
         </Menu.Item>
-        <SubMenu title={<span><Icon type="setting" />Navigation Three - Submenu</span>}>
+        <SubMenu
+          title={
+            <span>
+              <Icon type="setting" />Navigation Three - Submenu
+            </span>
+          }
+        >
           <MenuItemGroup title="Item 1">
             <Menu.Item key="setting:1">Option 1</Menu.Item>
             <Menu.Item key="setting:2">Option 2</Menu.Item>
@@ -40,13 +45,17 @@ class App extends React.Component {
           </MenuItemGroup>
         </SubMenu>
         <Menu.Item key="alipay">
-          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
+          <a
+            href="https://ant.design"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Navigation Four - Link
+          </a>
         </Menu.Item>
       </Menu>
     );
   }
 }
 
-stories.addWithJSX('horizontal', () => (
-    <App />
-  ))
+stories.addWithJSX("horizontal", () => <App />);

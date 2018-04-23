@@ -1,23 +1,22 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tag', module);
-  import { Tag } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tag", module);
+import { Tag } from "antd";
 const CheckableTag = Tag.CheckableTag;
 
-const tagsFromServer = ['Movies', 'Books', 'Music', 'Sports'];
+const tagsFromServer = ["Movies", "Books", "Music", "Sports"];
 
 class HotTags extends React.Component {
   state = {
-    selectedTags: [],
+    selectedTags: []
   };
 
   handleChange(tag, checked) {
     const { selectedTags } = this.state;
-    const nextSelectedTags = checked ?
-            [...selectedTags, tag] :
-            selectedTags.filter(t => t !== tag);
-    console.log('You are interested in: ', nextSelectedTags);
+    const nextSelectedTags = checked
+      ? [...selectedTags, tag]
+      : selectedTags.filter(t => t !== tag);
+    console.log("You are interested in: ", nextSelectedTags);
     this.setState({ selectedTags: nextSelectedTags });
   }
 
@@ -25,7 +24,7 @@ class HotTags extends React.Component {
     const { selectedTags } = this.state;
     return (
       <div>
-        <h6 style={{ marginRight: 8, display: 'inline' }}>Categories:</h6>
+        <h6 style={{ marginRight: 8, display: "inline" }}>Categories:</h6>
         {tagsFromServer.map(tag => (
           <CheckableTag
             key={tag}
@@ -40,6 +39,4 @@ class HotTags extends React.Component {
   }
 }
 
-stories.addWithJSX('hot-tags', () => (
-    <HotTags />
-  ))
+stories.addWithJSX("hot-tags", () => <HotTags />);

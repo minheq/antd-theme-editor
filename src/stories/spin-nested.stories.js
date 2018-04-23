@@ -1,14 +1,13 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.spin', module);
-  import { Spin, Switch, Alert } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.spin", module);
+import { Spin, Switch, Alert } from "antd";
 
 class Card extends React.Component {
-  state = { loading: false }
-  toggle = (value) => {
+  state = { loading: false };
+  toggle = value => {
     this.setState({ loading: value });
-  }
+  };
   render() {
     return (
       <div>
@@ -20,13 +19,14 @@ class Card extends React.Component {
           />
         </Spin>
         <div style={{ marginTop: 16 }}>
-          Loading state：<Switch checked={this.state.loading} onChange={this.toggle} />
+          Loading state：<Switch
+            checked={this.state.loading}
+            onChange={this.toggle}
+          />
         </div>
       </div>
     );
   }
 }
 
-stories.addWithJSX('nested', () => (
-    <Card />
-  ))
+stories.addWithJSX("nested", () => <Card />);

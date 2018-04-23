@@ -1,48 +1,65 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.input', module);
-  import { Input, Col, Select, InputNumber, DatePicker, AutoComplete, Cascader } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.input", module);
+import {
+  Input,
+  Col,
+  Select,
+  InputNumber,
+  DatePicker,
+  AutoComplete,
+  Cascader
+} from "antd";
 const InputGroup = Input.Group;
 const Option = Select.Option;
 
-const options = [{
-  value: 'zhejiang',
-  label: 'Zhejiang',
-  children: [{
-    value: 'hangzhou',
-    label: 'Hangzhou',
-    children: [{
-      value: 'xihu',
-      label: 'West Lake',
-    }],
-  }],
-}, {
-  value: 'jiangsu',
-  label: 'Jiangsu',
-  children: [{
-    value: 'nanjing',
-    label: 'Nanjing',
-    children: [{
-      value: 'zhonghuamen',
-      label: 'Zhong Hua Men',
-    }],
-  }],
-}];
+const options = [
+  {
+    value: "zhejiang",
+    label: "Zhejiang",
+    children: [
+      {
+        value: "hangzhou",
+        label: "Hangzhou",
+        children: [
+          {
+            value: "xihu",
+            label: "West Lake"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    value: "jiangsu",
+    label: "Jiangsu",
+    children: [
+      {
+        value: "nanjing",
+        label: "Nanjing",
+        children: [
+          {
+            value: "zhonghuamen",
+            label: "Zhong Hua Men"
+          }
+        ]
+      }
+    ]
+  }
+];
 
 class CompactDemo extends React.Component {
   state = {
-    dataSource: [],
-  }
-  handleChange = (value) => {
+    dataSource: []
+  };
+  handleChange = value => {
     this.setState({
-      dataSource: !value || value.indexOf('@') >= 0 ? [] : [
-        `${value}@gmail.com`,
-        `${value}@163.com`,
-        `${value}@qq.com`,
-      ],
+      dataSource:
+        !value || value.indexOf("@") >= 0
+          ? []
+          : [`${value}@gmail.com`, `${value}@163.com`, `${value}@qq.com`]
     });
-  }
+  };
   render() {
     return (
       <div>
@@ -56,8 +73,8 @@ class CompactDemo extends React.Component {
         </InputGroup>
         <br />
         <InputGroup compact>
-          <Input style={{ width: '20%' }} defaultValue="0571" />
-          <Input style={{ width: '30%' }} defaultValue="26888888" />
+          <Input style={{ width: "20%" }} defaultValue="0571" />
+          <Input style={{ width: "30%" }} defaultValue="26888888" />
         </InputGroup>
         <br />
         <InputGroup compact>
@@ -65,7 +82,10 @@ class CompactDemo extends React.Component {
             <Option value="Zhejiang">Zhejiang</Option>
             <Option value="Jiangsu">Jiangsu</Option>
           </Select>
-          <Input style={{ width: '50%' }} defaultValue="Xihu District, Hangzhou" />
+          <Input
+            style={{ width: "50%" }}
+            defaultValue="Xihu District, Hangzhou"
+          />
         </InputGroup>
         <br />
         <InputGroup compact>
@@ -73,12 +93,12 @@ class CompactDemo extends React.Component {
             <Option value="Option1">Option1</Option>
             <Option value="Option2">Option2</Option>
           </Select>
-          <Input style={{ width: '50%' }} defaultValue="input content" />
+          <Input style={{ width: "50%" }} defaultValue="input content" />
           <InputNumber />
         </InputGroup>
         <br />
         <InputGroup compact>
-          <Input style={{ width: '50%' }} defaultValue="input content" />
+          <Input style={{ width: "50%" }} defaultValue="input content" />
           <DatePicker />
         </InputGroup>
         <br />
@@ -98,9 +118,24 @@ class CompactDemo extends React.Component {
             <Option value="1">Between</Option>
             <Option value="2">Except</Option>
           </Select>
-          <Input style={{ width: 100, textAlign: 'center' }} placeholder="Minimum" />
-          <Input style={{ width: 30, borderLeft: 0, pointerEvents: 'none', backgroundColor: '#fff' }} placeholder="~" disabled />
-          <Input style={{ width: 100, textAlign: 'center', borderLeft: 0 }} placeholder="Maximum" />
+          <Input
+            style={{ width: 100, textAlign: "center" }}
+            placeholder="Minimum"
+          />
+          <Input
+            style={{
+              width: 30,
+              borderLeft: 0,
+              pointerEvents: "none",
+              backgroundColor: "#fff"
+            }}
+            placeholder="~"
+            disabled
+          />
+          <Input
+            style={{ width: 100, textAlign: "center", borderLeft: 0 }}
+            placeholder="Maximum"
+          />
         </InputGroup>
         <br />
         <InputGroup compact>
@@ -117,17 +152,19 @@ class CompactDemo extends React.Component {
         </InputGroup>
         <br />
         <InputGroup compact>
-          <Select style={{ width: '30%' }} defaultValue="Home">
+          <Select style={{ width: "30%" }} defaultValue="Home">
             <Option value="Home">Home</Option>
             <Option value="Company">Company</Option>
           </Select>
-          <Cascader style={{ width: '70%' }} options={options} placeholder="Select Address" />
+          <Cascader
+            style={{ width: "70%" }}
+            options={options}
+            placeholder="Select Address"
+          />
         </InputGroup>
       </div>
     );
   }
 }
 
-stories.addWithJSX('group', () => (
-    <CompactDemo />
-  ))
+stories.addWithJSX("group", () => <CompactDemo />);

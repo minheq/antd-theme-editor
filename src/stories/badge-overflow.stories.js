@@ -1,11 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.badge", module);
+import { Badge } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.badge', module);
-  import { Badge } from 'antd';
-
-stories.addWithJSX('overflow', () => (
-    
+stories.addWithJSX("overflow", () => (
   <div>
     <Badge count={99}>
       <a href="#" className="head-example" />
@@ -20,5 +18,4 @@ stories.addWithJSX('overflow', () => (
       <a href="#" className="head-example" />
     </Badge>
   </div>
-
-  ))
+));

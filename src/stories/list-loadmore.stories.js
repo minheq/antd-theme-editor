@@ -1,62 +1,74 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.list", module);
+import { List, Avatar, Button, Spin } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.list', module);
-  import { List, Avatar, Button, Spin } from 'antd';
+import reqwest from "reqwest";
 
-import reqwest from 'reqwest';
-
-const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
+const fakeDataUrl =
+  "https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo";
 
 class LoadMoreList extends React.Component {
   state = {
     loading: true,
     loadingMore: false,
     showLoadingMore: true,
-    data: [],
-  }
+    data: []
+  };
   componentDidMount() {
-    this.getData((res) => {
+    this.getData(res => {
       this.setState({
         loading: false,
-        data: res.results,
+        data: res.results
       });
     });
   }
-  getData = (callback) => {
+  getData = callback => {
     reqwest({
       url: fakeDataUrl,
-      type: 'json',
-      method: 'get',
-      contentType: 'application/json',
-      success: (res) => {
+      type: "json",
+      method: "get",
+      contentType: "application/json",
+      success: res => {
         callback(res);
-      },
+      }
     });
-  }
+  };
   onLoadMore = () => {
     this.setState({
-      loadingMore: true,
+      loadingMore: true
     });
-    this.getData((res) => {
+    this.getData(res => {
       const data = this.state.data.concat(res.results);
-      this.setState({
-        data,
-        loadingMore: false,
-      }, () => {
-        // Resetting window's offsetTop so as to display react-virtualized demo underfloor.
-        // In real scene, you can using public method of react-virtualized:
-        // https://stackoverflow.com/questions/46700726/how-to-use-public-method-updateposition-of-react-virtualized
-        window.dispatchEvent(new Event('resize'));
-      });
+      this.setState(
+        {
+          data,
+          loadingMore: false
+        },
+        () => {
+          // Resetting window's offsetTop so as to display react-virtualized demo underfloor.
+          // In real scene, you can using public method of react-virtualized:
+          // https://stackoverflow.com/questions/46700726/how-to-use-public-method-updateposition-of-react-virtualized
+          window.dispatchEvent(new Event("resize"));
+        }
+      );
     });
-  }
+  };
   render() {
     const { loading, loadingMore, showLoadingMore, data } = this.state;
     const loadMore = showLoadingMore ? (
-      <div style={{ textAlign: 'center', marginTop: 12, height: 32, lineHeight: '32px' }}>
+      <div
+        style={{
+          textAlign: "center",
+          marginTop: 12,
+          height: 32,
+          lineHeight: "32px"
+        }}
+      >
         {loadingMore && <Spin />}
-        {!loadingMore && <Button onClick={this.onLoadMore}>loading more</Button>}
+        {!loadingMore && (
+          <Button onClick={this.onLoadMore}>loading more</Button>
+        )}
       </div>
     ) : null;
     return (
@@ -69,7 +81,9 @@ class LoadMoreList extends React.Component {
         renderItem={item => (
           <List.Item actions={[<a>edit</a>, <a>more</a>]}>
             <List.Item.Meta
-              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+              avatar={
+                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+              }
               title={<a href="https://ant.design">{item.name.last}</a>}
               description="Ant Design, a design language for background applications, is refined by Ant UED Team"
             />
@@ -81,6 +95,4 @@ class LoadMoreList extends React.Component {
   }
 }
 
-stories.addWithJSX('loadmore', () => (
-    <LoadMoreList />
-  ))
+stories.addWithJSX("loadmore", () => <LoadMoreList />);

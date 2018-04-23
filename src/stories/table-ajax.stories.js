@@ -1,61 +1,64 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.table", module);
+import { Table } from "antd";
+import reqwest from "reqwest";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.table', module);
-  import { Table } from 'antd';
-import reqwest from 'reqwest';
-
-const columns = [{
-  title: 'Name',
-  dataIndex: 'name',
-  sorter: true,
-  render: name => `${name.first} ${name.last}`,
-  width: '20%',
-}, {
-  title: 'Gender',
-  dataIndex: 'gender',
-  filters: [
-    { text: 'Male', value: 'male' },
-    { text: 'Female', value: 'female' },
-  ],
-  width: '20%',
-}, {
-  title: 'Email',
-  dataIndex: 'email',
-}];
+const columns = [
+  {
+    title: "Name",
+    dataIndex: "name",
+    sorter: true,
+    render: name => `${name.first} ${name.last}`,
+    width: "20%"
+  },
+  {
+    title: "Gender",
+    dataIndex: "gender",
+    filters: [
+      { text: "Male", value: "male" },
+      { text: "Female", value: "female" }
+    ],
+    width: "20%"
+  },
+  {
+    title: "Email",
+    dataIndex: "email"
+  }
+];
 
 class App extends React.Component {
   state = {
     data: [],
     pagination: {},
-    loading: false,
+    loading: false
   };
   handleTableChange = (pagination, filters, sorter) => {
     const pager = { ...this.state.pagination };
     pager.current = pagination.current;
     this.setState({
-      pagination: pager,
+      pagination: pager
     });
     this.fetch({
       results: pagination.pageSize,
       page: pagination.current,
       sortField: sorter.field,
       sortOrder: sorter.order,
-      ...filters,
+      ...filters
     });
-  }
+  };
   fetch = (params = {}) => {
-    console.log('params:', params);
+    console.log("params:", params);
     this.setState({ loading: true });
     reqwest({
-      url: 'https://randomuser.me/api',
-      method: 'get',
+      url: "https://randomuser.me/api",
+      method: "get",
       data: {
         results: 10,
-        ...params,
+        ...params
       },
-      type: 'json',
-    }).then((data) => {
+      type: "json"
+    }).then(data => {
       const pagination = { ...this.state.pagination };
       // Read total count from server
       // pagination.total = data.totalCount;
@@ -63,16 +66,17 @@ class App extends React.Component {
       this.setState({
         loading: false,
         data: data.results,
-        pagination,
+        pagination
       });
     });
-  }
+  };
   componentDidMount() {
     this.fetch();
   }
   render() {
     return (
-      <Table columns={columns}
+      <Table
+        columns={columns}
         rowKey={record => record.registered}
         dataSource={this.state.data}
         pagination={this.state.pagination}
@@ -83,6 +87,4 @@ class App extends React.Component {
   }
 }
 
-stories.addWithJSX('ajax', () => (
-    <App />
-  ))
+stories.addWithJSX("ajax", () => <App />);

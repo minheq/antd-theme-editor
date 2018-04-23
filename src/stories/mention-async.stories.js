@@ -1,37 +1,36 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.mention", module);
+import { Mention } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.mention', module);
-  import { Mention } from 'antd';
-
-const users = ['afc163', 'benjycui', 'yiminghe', 'jljsj33', 'dqaria', 'RaoHai'];
+const users = ["afc163", "benjycui", "yiminghe", "jljsj33", "dqaria", "RaoHai"];
 
 class AsyncMention extends React.Component {
   state = {
     suggestions: [],
-    loading: false,
-  }
+    loading: false
+  };
   fetchSuggestions = (value, callback) => {
     setTimeout(() => {
       callback(users.filter(item => item.indexOf(value) !== -1));
     }, 500);
-  }
-  onSearchChange = (value) => {
-    this.fetchSuggestions(value, (suggestions) => {
+  };
+  onSearchChange = value => {
+    this.fetchSuggestions(value, suggestions => {
       this.setState({
         suggestions,
-        loading: false,
+        loading: false
       });
     });
     this.setState({
-      loading: true,
+      loading: true
     });
-  }
+  };
   render() {
     const { suggestions, loading } = this.state;
     return (
       <Mention
-        style={{ width: '100%' }}
+        style={{ width: "100%" }}
         loading={loading}
         suggestions={suggestions}
         onSearchChange={this.onSearchChange}
@@ -40,6 +39,4 @@ class AsyncMention extends React.Component {
   }
 }
 
-stories.addWithJSX('async', () => (
-    <AsyncMention />
-  ))
+stories.addWithJSX("async", () => <AsyncMention />);

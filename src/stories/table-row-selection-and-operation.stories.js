@@ -1,19 +1,22 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.table", module);
+import { Table, Button } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.table', module);
-  import { Table, Button } from 'antd';
-
-const columns = [{
-  title: 'Name',
-  dataIndex: 'name',
-}, {
-  title: 'Age',
-  dataIndex: 'age',
-}, {
-  title: 'Address',
-  dataIndex: 'address',
-}];
+const columns = [
+  {
+    title: "Name",
+    dataIndex: "name"
+  },
+  {
+    title: "Age",
+    dataIndex: "age"
+  },
+  {
+    title: "Address",
+    dataIndex: "address"
+  }
+];
 
 const data = [];
 for (let i = 0; i < 46; i++) {
@@ -21,14 +24,14 @@ for (let i = 0; i < 46; i++) {
     key: i,
     name: `Edward King ${i}`,
     age: 32,
-    address: `London, Park Lane no. ${i}`,
+    address: `London, Park Lane no. ${i}`
   });
 }
 
 class App extends React.Component {
   state = {
     selectedRowKeys: [], // Check here to configure the default column
-    loading: false,
+    loading: false
   };
   start = () => {
     this.setState({ loading: true });
@@ -36,19 +39,19 @@ class App extends React.Component {
     setTimeout(() => {
       this.setState({
         selectedRowKeys: [],
-        loading: false,
+        loading: false
       });
     }, 1000);
-  }
-  onSelectChange = (selectedRowKeys) => {
-    console.log('selectedRowKeys changed: ', selectedRowKeys);
+  };
+  onSelectChange = selectedRowKeys => {
+    console.log("selectedRowKeys changed: ", selectedRowKeys);
     this.setState({ selectedRowKeys });
-  }
+  };
   render() {
     const { loading, selectedRowKeys } = this.state;
     const rowSelection = {
       selectedRowKeys,
-      onChange: this.onSelectChange,
+      onChange: this.onSelectChange
     };
     const hasSelected = selectedRowKeys.length > 0;
     return (
@@ -63,15 +66,17 @@ class App extends React.Component {
             Reload
           </Button>
           <span style={{ marginLeft: 8 }}>
-            {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
+            {hasSelected ? `Selected ${selectedRowKeys.length} items` : ""}
           </span>
         </div>
-        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+        <Table
+          rowSelection={rowSelection}
+          columns={columns}
+          dataSource={data}
+        />
       </div>
     );
   }
 }
 
-stories.addWithJSX('row-selection-and-operation', () => (
-    <App />
-  ))
+stories.addWithJSX("row-selection-and-operation", () => <App />);

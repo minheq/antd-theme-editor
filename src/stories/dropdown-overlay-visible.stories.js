@@ -1,21 +1,20 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.dropdown', module);
-  import { Menu, Dropdown, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.dropdown", module);
+import { Menu, Dropdown, Icon } from "antd";
 
 class OverlayVisible extends React.Component {
   state = {
-    visible: false,
+    visible: false
   };
-  handleMenuClick = (e) => {
-    if (e.key === '3') {
+  handleMenuClick = e => {
+    if (e.key === "3") {
       this.setState({ visible: false });
     }
-  }
-  handleVisibleChange = (flag) => {
+  };
+  handleVisibleChange = flag => {
     this.setState({ visible: flag });
-  }
+  };
   render() {
     const menu = (
       <Menu onClick={this.handleMenuClick}>
@@ -25,7 +24,8 @@ class OverlayVisible extends React.Component {
       </Menu>
     );
     return (
-      <Dropdown overlay={menu}
+      <Dropdown
+        overlay={menu}
         onVisibleChange={this.handleVisibleChange}
         visible={this.state.visible}
       >
@@ -37,6 +37,4 @@ class OverlayVisible extends React.Component {
   }
 }
 
-stories.addWithJSX('overlay-visible', () => (
-    <OverlayVisible />
-  ))
+stories.addWithJSX("overlay-visible", () => <OverlayVisible />);

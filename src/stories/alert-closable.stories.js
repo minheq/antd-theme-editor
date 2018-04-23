@@ -1,15 +1,13 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.alert", module);
+import { Alert } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.alert', module);
-  import { Alert } from 'antd';
-
-const onClose = function (e) {
-  console.log(e, 'I was closed.');
+const onClose = function(e) {
+  console.log(e, "I was closed.");
 };
 
-stories.addWithJSX('closable', () => (
-    
+stories.addWithJSX("closable", () => (
   <div>
     <Alert
       message="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
@@ -25,5 +23,4 @@ stories.addWithJSX('closable', () => (
       onClose={onClose}
     />
   </div>
-
-  ))
+));

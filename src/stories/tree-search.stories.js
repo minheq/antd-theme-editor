@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tree', module);
-  import { Tree, Input } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tree", module);
+import { Tree, Input } from "antd";
 
 const TreeNode = Tree.TreeNode;
 const Search = Input.Search;
@@ -13,7 +12,7 @@ const z = 1;
 const gData = [];
 
 const generateData = (_level, _preKey, _tns) => {
-  const preKey = _preKey || '0';
+  const preKey = _preKey || "0";
   const tns = _tns || gData;
 
   const children = [];
@@ -36,7 +35,7 @@ const generateData = (_level, _preKey, _tns) => {
 generateData(z);
 
 const dataList = [];
-const generateList = (data) => {
+const generateList = data => {
   for (let i = 0; i < data.length; i++) {
     const node = data[i];
     const key = node.key;
@@ -66,54 +65,64 @@ const getParentKey = (key, tree) => {
 class SearchTree extends React.Component {
   state = {
     expandedKeys: [],
-    searchValue: '',
-    autoExpandParent: true,
-  }
-  onExpand = (expandedKeys) => {
+    searchValue: "",
+    autoExpandParent: true
+  };
+  onExpand = expandedKeys => {
     this.setState({
       expandedKeys,
-      autoExpandParent: false,
+      autoExpandParent: false
     });
-  }
-  onChange = (e) => {
+  };
+  onChange = e => {
     const value = e.target.value;
-    const expandedKeys = dataList.map((item) => {
-      if (item.key.indexOf(value) > -1) {
-        return getParentKey(item.key, gData);
-      }
-      return null;
-    }).filter((item, i, self) => item && self.indexOf(item) === i);
+    const expandedKeys = dataList
+      .map(item => {
+        if (item.key.indexOf(value) > -1) {
+          return getParentKey(item.key, gData);
+        }
+        return null;
+      })
+      .filter((item, i, self) => item && self.indexOf(item) === i);
     this.setState({
       expandedKeys,
       searchValue: value,
-      autoExpandParent: true,
+      autoExpandParent: true
     });
-  }
+  };
   render() {
     const { searchValue, expandedKeys, autoExpandParent } = this.state;
-    const loop = data => data.map((item) => {
-      const index = item.key.indexOf(searchValue);
-      const beforeStr = item.key.substr(0, index);
-      const afterStr = item.key.substr(index + searchValue.length);
-      const title = index > -1 ? (
-        <span>
-          {beforeStr}
-          <span style={{ color: '#f50' }}>{searchValue}</span>
-          {afterStr}
-        </span>
-      ) : <span>{item.key}</span>;
-      if (item.children) {
-        return (
-          <TreeNode key={item.key} title={title}>
-            {loop(item.children)}
-          </TreeNode>
-        );
-      }
-      return <TreeNode key={item.key} title={title} />;
-    });
+    const loop = data =>
+      data.map(item => {
+        const index = item.key.indexOf(searchValue);
+        const beforeStr = item.key.substr(0, index);
+        const afterStr = item.key.substr(index + searchValue.length);
+        const title =
+          index > -1 ? (
+            <span>
+              {beforeStr}
+              <span style={{ color: "#f50" }}>{searchValue}</span>
+              {afterStr}
+            </span>
+          ) : (
+            <span>{item.key}</span>
+          );
+        if (item.children) {
+          return (
+            <TreeNode key={item.key} title={title}>
+              {loop(item.children)}
+            </TreeNode>
+          );
+        }
+        return <TreeNode key={item.key} title={title} />;
+      });
     return (
       <div>
-        <Search style={{ marginBottom: 8 }} placeholder="Search" onChange={this.onChange} />
+        <Search
+          style={{ marginBottom: 8 }}
+          placeholder="Search"
+          onChange={this.onChange}
+        />
         <Tree
           onExpand={this.onExpand}
           expandedKeys={expandedKeys}
@@ -126,6 +135,4 @@ class SearchTree extends React.Component {
   }
 }
 
-stories.addWithJSX('search', () => (
-    <SearchTree />
-  ))
+stories.addWithJSX("search", () => <SearchTree />);

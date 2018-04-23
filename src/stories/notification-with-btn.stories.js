@@ -1,11 +1,12 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.notification', module);
-  import { Button, notification } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.notification", module);
+import { Button, notification } from "antd";
 
 const close = () => {
-  console.log('Notification was closed. Either the close button was clicked or duration time elapsed.');
+  console.log(
+    "Notification was closed. Either the close button was clicked or duration time elapsed."
+  );
 };
 
 const openNotification = () => {
@@ -16,18 +17,17 @@ const openNotification = () => {
     </Button>
   );
   notification.open({
-    message: 'Notification Title',
-    description: 'A function will be be called after the notification is closed (automatically after the "duration" time of manually).',
+    message: "Notification Title",
+    description:
+      'A function will be be called after the notification is closed (automatically after the "duration" time of manually).',
     btn,
     key,
-    onClose: close,
+    onClose: close
   });
 };
 
-stories.addWithJSX('with-btn', () => (
-    
+stories.addWithJSX("with-btn", () => (
   <Button type="primary" onClick={openNotification}>
     Open the notification box
   </Button>
-
-  ))
+));

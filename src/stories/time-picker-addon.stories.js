@@ -1,17 +1,16 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.time-picker', module);
-  import { TimePicker, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.time-picker", module);
+import { TimePicker, Button } from "antd";
 
 class TimePickerAddonDemo extends React.Component {
   state = { open: false };
 
-  handleOpenChange = (open) => {
+  handleOpenChange = open => {
     this.setState({ open });
-  }
+  };
 
-  handleClose = () => this.setState({ open: false })
+  handleClose = () => this.setState({ open: false });
 
   render() {
     return (
@@ -28,6 +27,4 @@ class TimePickerAddonDemo extends React.Component {
   }
 }
 
-stories.addWithJSX('addon', () => (
-    <TimePickerAddonDemo />
-  ))
+stories.addWithJSX("addon", () => <TimePickerAddonDemo />);

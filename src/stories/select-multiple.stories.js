@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.select', module);
-  import { Select } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.select", module);
+import { Select } from "antd";
 const Option = Select.Option;
 
 const children = [];
@@ -14,16 +13,14 @@ function handleChange(value) {
   console.log(`selected ${value}`);
 }
 
-stories.addWithJSX('multiple', () => (
-    
+stories.addWithJSX("multiple", () => (
   <Select
     mode="multiple"
-    style={{ width: '100%' }}
+    style={{ width: "100%" }}
     placeholder="Please select"
-    defaultValue={['a10', 'c12']}
+    defaultValue={["a10", "c12"]}
     onChange={handleChange}
   >
     {children}
   </Select>
-
-  ))
+));

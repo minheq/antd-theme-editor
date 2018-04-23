@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.collapse', module);
-  import { Collapse } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.collapse", module);
+import { Collapse } from "antd";
 const Panel = Collapse.Panel;
 
 const text = `
@@ -11,8 +10,7 @@ const text = `
   it can be found as a welcome guest in many households across the world.
 `;
 
-stories.addWithJSX('accordion', () => (
-    
+stories.addWithJSX("accordion", () => (
   <Collapse accordion>
     <Panel header="This is panel header 1" key="1">
       <p>{text}</p>
@@ -24,5 +22,4 @@ stories.addWithJSX('accordion', () => (
       <p>{text}</p>
     </Panel>
   </Collapse>
-
-  ))
+));

@@ -1,18 +1,17 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.date-picker', module);
-  import { DatePicker, Radio } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.date-picker", module);
+import { DatePicker, Radio } from "antd";
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 
 class PickerSizesDemo extends React.Component {
   state = {
-    size: 'default',
+    size: "default"
   };
 
-  handleSizeChange = (e) => {
+  handleSizeChange = e => {
     this.setState({ size: e.target.value });
-  }
+  };
 
   render() {
     const { size } = this.state;
@@ -23,7 +22,8 @@ class PickerSizesDemo extends React.Component {
           <Radio.Button value="default">Default</Radio.Button>
           <Radio.Button value="small">Small</Radio.Button>
         </Radio.Group>
-        <br /><br />
+        <br />
+        <br />
         <DatePicker size={size} />
         <br />
         <MonthPicker size={size} placeholder="Select Month" />
@@ -36,6 +36,4 @@ class PickerSizesDemo extends React.Component {
   }
 }
 
-stories.addWithJSX('size', () => (
-    <PickerSizesDemo />
-  ))
+stories.addWithJSX("size", () => <PickerSizesDemo />);

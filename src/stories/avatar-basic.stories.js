@@ -1,11 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.avatar", module);
+import { Avatar } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.avatar', module);
-  import { Avatar } from 'antd';
-
-stories.addWithJSX('basic', () => (
-    
+stories.addWithJSX("basic", () => (
   <div>
     <div>
       <Avatar size="large" icon="user" />
@@ -18,5 +16,4 @@ stories.addWithJSX('basic', () => (
       <Avatar shape="square" size="small" icon="user" />
     </div>
   </div>
-
-  ))
+));

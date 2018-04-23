@@ -1,22 +1,21 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.button', module);
-  import { Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.button", module);
+import { Button } from "antd";
 
 class App extends React.Component {
   state = {
     loading: false,
-    iconLoading: false,
-  }
+    iconLoading: false
+  };
 
   enterLoading = () => {
     this.setState({ loading: true });
-  }
+  };
 
   enterIconLoading = () => {
     this.setState({ iconLoading: true });
-  }
+  };
 
   render() {
     return (
@@ -28,10 +27,19 @@ class App extends React.Component {
           Loading
         </Button>
         <br />
-        <Button type="primary" loading={this.state.loading} onClick={this.enterLoading}>
+        <Button
+          type="primary"
+          loading={this.state.loading}
+          onClick={this.enterLoading}
+        >
           Click me!
         </Button>
-        <Button type="primary" icon="poweroff" loading={this.state.iconLoading} onClick={this.enterIconLoading}>
+        <Button
+          type="primary"
+          icon="poweroff"
+          loading={this.state.iconLoading}
+          onClick={this.enterIconLoading}
+        >
           Click me!
         </Button>
         <br />
@@ -42,6 +50,4 @@ class App extends React.Component {
   }
 }
 
-stories.addWithJSX('loading', () => (
-    <App />
-  ))
+stories.addWithJSX("loading", () => <App />);

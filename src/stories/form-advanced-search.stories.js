@@ -1,30 +1,29 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.form', module);
-  import { Form, Row, Col, Input, Button, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.form", module);
+import { Form, Row, Col, Input, Button, Icon } from "antd";
 const FormItem = Form.Item;
 
 class AdvancedSearchForm extends React.Component {
   state = {
-    expand: false,
+    expand: false
   };
 
-  handleSearch = (e) => {
+  handleSearch = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
-      console.log('Received values of form: ', values);
+      console.log("Received values of form: ", values);
     });
-  }
+  };
 
   handleReset = () => {
     this.props.form.resetFields();
-  }
+  };
 
   toggle = () => {
     const { expand } = this.state;
     this.setState({ expand: !expand });
-  }
+  };
 
   // To generate mock Form.Item
   getFields() {
@@ -33,16 +32,16 @@ class AdvancedSearchForm extends React.Component {
     const children = [];
     for (let i = 0; i < 10; i++) {
       children.push(
-        <Col span={8} key={i} style={{ display: i < count ? 'block' : 'none' }}>
+        <Col span={8} key={i} style={{ display: i < count ? "block" : "none" }}>
           <FormItem label={`Field ${i}`}>
             {getFieldDecorator(`field-${i}`, {
-              rules: [{
-                required: true,
-                message: 'Input something!',
-              }],
-            })(
-              <Input placeholder="placeholder" />
-            )}
+              rules: [
+                {
+                  required: true,
+                  message: "Input something!"
+                }
+              ]
+            })(<Input placeholder="placeholder" />)}
           </FormItem>
         </Col>
       );
@@ -52,19 +51,18 @@ class AdvancedSearchForm extends React.Component {
 
   render() {
     return (
-      <Form
-        className="ant-advanced-search-form"
-        onSubmit={this.handleSearch}
-      >
+      <Form className="ant-advanced-search-form" onSubmit={this.handleSearch}>
         <Row gutter={24}>{this.getFields()}</Row>
         <Row>
-          <Col span={24} style={{ textAlign: 'right' }}>
-            <Button type="primary" htmlType="submit">Search</Button>
+          <Col span={24} style={{ textAlign: "right" }}>
+            <Button type="primary" htmlType="submit">
+              Search
+            </Button>
             <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
               Clear
             </Button>
             <a style={{ marginLeft: 8, fontSize: 12 }} onClick={this.toggle}>
-              Collapse <Icon type={this.state.expand ? 'up' : 'down'} />
+              Collapse <Icon type={this.state.expand ? "up" : "down"} />
             </a>
           </Col>
         </Row>
@@ -74,10 +72,9 @@ class AdvancedSearchForm extends React.Component {
 }
 
 const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
-stories.addWithJSX('advanced-search', () => (
-    
+stories.addWithJSX("advanced-search", () => (
   <div>
     <WrappedAdvancedSearchForm />
     <div className="search-result-list">Search Result List</div>
   </div>
-  ))
+));

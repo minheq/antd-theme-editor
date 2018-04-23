@@ -1,29 +1,27 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.slider', module);
-  import { Slider } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.slider", module);
+import { Slider } from "antd";
 
 const style = {
-  float: 'left',
+  float: "left",
   height: 300,
-  marginLeft: 70,
+  marginLeft: 70
 };
 
 const marks = {
-  0: '0°C',
-  26: '26°C',
-  37: '37°C',
+  0: "0°C",
+  26: "26°C",
+  37: "37°C",
   100: {
     style: {
-      color: '#f50',
+      color: "#f50"
     },
-    label: <strong>100°C</strong>,
-  },
+    label: <strong>100°C</strong>
+  }
 };
 
-stories.addWithJSX('vertical', () => (
-    
+stories.addWithJSX("vertical", () => (
   <div style={{ height: 300 }}>
     <div style={style}>
       <Slider vertical defaultValue={30} />
@@ -35,4 +33,4 @@ stories.addWithJSX('vertical', () => (
       <Slider vertical range marks={marks} defaultValue={[26, 37]} />
     </div>
   </div>
-  ))
+));

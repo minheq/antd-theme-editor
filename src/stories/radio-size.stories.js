@@ -1,13 +1,11 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.radio', module);
-  import { Radio } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.radio", module);
+import { Radio } from "antd";
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
-stories.addWithJSX('size', () => (
-    
+stories.addWithJSX("size", () => (
   <div>
     <div>
       <RadioGroup defaultValue="a" size="large">
@@ -34,5 +32,4 @@ stories.addWithJSX('size', () => (
       </RadioGroup>
     </div>
   </div>
-
-  ))
+));

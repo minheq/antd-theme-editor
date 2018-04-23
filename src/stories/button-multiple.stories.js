@@ -1,11 +1,10 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.button', module);
-  import { Button, Menu, Dropdown, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.button", module);
+import { Button, Menu, Dropdown, Icon } from "antd";
 
 function handleMenuClick(e) {
-  console.log('click', e);
+  console.log("click", e);
 }
 
 const menu = (
@@ -16,8 +15,7 @@ const menu = (
   </Menu>
 );
 
-stories.addWithJSX('multiple', () => (
-    
+stories.addWithJSX("multiple", () => (
   <div>
     <Button type="primary">primary</Button>
     <Button>secondary</Button>
@@ -27,4 +25,4 @@ stories.addWithJSX('multiple', () => (
       </Button>
     </Dropdown>
   </div>
-  ))
+));

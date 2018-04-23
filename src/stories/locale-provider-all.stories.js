@@ -1,50 +1,66 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.locale-provider', module);
-  import { LocaleProvider, Pagination, DatePicker, TimePicker, Calendar,
-         Popconfirm, Table, Modal, Button, Select, Transfer, Radio } from 'antd';
-import zhCN from 'antd/lib/locale-provider/zh_CN';
-import moment from 'moment';
-import 'moment/locale/zh-cn';
-moment.locale('en');
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.locale-provider", module);
+import {
+  LocaleProvider,
+  Pagination,
+  DatePicker,
+  TimePicker,
+  Calendar,
+  Popconfirm,
+  Table,
+  Modal,
+  Button,
+  Select,
+  Transfer,
+  Radio
+} from "antd";
+import zhCN from "antd/lib/locale-provider/zh_CN";
+import moment from "moment";
+import "moment/locale/zh-cn";
+moment.locale("en");
 
 const Option = Select.Option;
 const RangePicker = DatePicker.RangePicker;
 
-const columns = [{
-  title: 'Name',
-  dataIndex: 'name',
-  filters: [{
-    text: 'filter1',
-    value: 'filter1',
-  }],
-}, {
-  title: 'Age',
-  dataIndex: 'age',
-}];
+const columns = [
+  {
+    title: "Name",
+    dataIndex: "name",
+    filters: [
+      {
+        text: "filter1",
+        value: "filter1"
+      }
+    ]
+  },
+  {
+    title: "Age",
+    dataIndex: "age"
+  }
+];
 
 class Page extends React.Component {
   state = {
-    visible: false,
-  }
+    visible: false
+  };
   showModal = () => {
     this.setState({ visible: true });
-  }
+  };
   hideModal = () => {
     this.setState({ visible: false });
-  }
+  };
   render() {
     const info = () => {
       Modal.info({
-        title: 'some info',
-        content: 'some info',
+        title: "some info",
+        content: "some info"
       });
     };
     const confirm = () => {
       Modal.confirm({
-        title: 'some info',
-        content: 'some info',
+        title: "some info",
+        content: "some info"
       });
     };
     return (
@@ -62,7 +78,9 @@ class Page extends React.Component {
           <RangePicker style={{ width: 200 }} />
         </div>
         <div className="example">
-          <Button type="primary" onClick={this.showModal}>Show Modal</Button>
+          <Button type="primary" onClick={this.showModal}>
+            Show Modal
+          </Button>
           <Button onClick={info}>Show info</Button>
           <Button onClick={confirm}>Show confirm</Button>
           <Popconfirm title="Question?">
@@ -77,13 +95,19 @@ class Page extends React.Component {
             render={item => item.title}
           />
         </div>
-        <div style={{ width: 319, border: '1px solid #d9d9d9', borderRadius: 4 }}>
+        <div
+          style={{ width: 319, border: "1px solid #d9d9d9", borderRadius: 4 }}
+        >
           <Calendar fullscreen={false} value={moment()} />
         </div>
         <div className="example">
           <Table dataSource={[]} columns={columns} />
         </div>
-        <Modal title="Locale Modal" visible={this.state.visible} onCancel={this.hideModal}>
+        <Modal
+          title="Locale Modal"
+          visible={this.state.visible}
+          onCancel={this.hideModal}
+        >
           <p>Locale Modal</p>
         </Modal>
       </div>
@@ -96,36 +120,42 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      locale: null,
+      locale: null
     };
   }
-  changeLocale = (e) => {
+  changeLocale = e => {
     const localeValue = e.target.value;
     this.setState({ locale: localeValue });
     if (!localeValue) {
-      moment.locale('en');
+      moment.locale("en");
     } else {
-      moment.locale('zh-cn');
+      moment.locale("zh-cn");
     }
-  }
+  };
   render() {
     return (
       <div>
         <div className="change-locale">
           <span style={{ marginRight: 16 }}>Change locale of components: </span>
           <Radio.Group defaultValue={undefined} onChange={this.changeLocale}>
-            <Radio.Button key="en" value={undefined}>English</Radio.Button>
-            <Radio.Button key="cn" value={zhCN}>中文</Radio.Button>
+            <Radio.Button key="en" value={undefined}>
+              English
+            </Radio.Button>
+            <Radio.Button key="cn" value={zhCN}>
+              中文
+            </Radio.Button>
           </Radio.Group>
         </div>
         <LocaleProvider locale={this.state.locale}>
-          <Page key={forceRerender++ /* HACK: just refresh in production environment */} />
+          <Page
+            key={
+              forceRerender++ /* HACK: just refresh in production environment */
+            }
+          />
         </LocaleProvider>
       </div>
     );
   }
 }
 
-stories.addWithJSX('all', () => (
-    <App />
-  ))
+stories.addWithJSX("all", () => <App />);

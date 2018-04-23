@@ -1,21 +1,19 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.date-picker', module);
-  import { DatePicker } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.date-picker", module);
+import { DatePicker } from "antd";
 const { RangePicker } = DatePicker;
 
 function onChange(value, dateString) {
-  console.log('Selected Time: ', value);
-  console.log('Formatted Selected Time: ', dateString);
+  console.log("Selected Time: ", value);
+  console.log("Formatted Selected Time: ", dateString);
 }
 
 function onOk(value) {
-  console.log('onOk: ', value);
+  console.log("onOk: ", value);
 }
 
-stories.addWithJSX('time', () => (
-    
+stories.addWithJSX("time", () => (
   <div>
     <DatePicker
       showTime
@@ -26,12 +24,11 @@ stories.addWithJSX('time', () => (
     />
     <br />
     <RangePicker
-      showTime={{ format: 'HH:mm' }}
+      showTime={{ format: "HH:mm" }}
       format="YYYY-MM-DD HH:mm"
-      placeholder={['Start Time', 'End Time']}
+      placeholder={["Start Time", "End Time"]}
       onChange={onChange}
       onOk={onOk}
     />
   </div>
-
-  ))
+));

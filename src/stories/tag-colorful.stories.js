@@ -1,11 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tag", module);
+import { Tag } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tag', module);
-  import { Tag } from 'antd';
-
-stories.addWithJSX('colorful', () => (
-    
+stories.addWithJSX("colorful", () => (
   <div>
     <h4 style={{ marginBottom: 16 }}>Presets:</h4>
     <div>
@@ -21,7 +19,7 @@ stories.addWithJSX('colorful', () => (
       <Tag color="geekblue">geekblue</Tag>
       <Tag color="purple">purple</Tag>
     </div>
-    <h4 style={{ margin: '16px 0' }}>Custom:</h4>
+    <h4 style={{ margin: "16px 0" }}>Custom:</h4>
     <div>
       <Tag color="#f50">#f50</Tag>
       <Tag color="#2db7f5">#2db7f5</Tag>
@@ -29,5 +27,4 @@ stories.addWithJSX('colorful', () => (
       <Tag color="#108ee9">#108ee9</Tag>
     </div>
   </div>
-
-  ))
+));

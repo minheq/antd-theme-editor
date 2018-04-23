@@ -1,19 +1,17 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tabs', module);
-  import { Tabs, Select } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tabs", module);
+import { Tabs, Select } from "antd";
 const TabPane = Tabs.TabPane;
 const Option = Select.Option;
 
-
 class Demo extends React.Component {
   state = {
-    tabPosition: 'top',
-  }
-  changeTabPosition = (tabPosition) => {
+    tabPosition: "top"
+  };
+  changeTabPosition = tabPosition => {
     this.setState({ tabPosition });
-  }
+  };
   render() {
     return (
       <div>
@@ -31,15 +29,19 @@ class Demo extends React.Component {
           </Select>
         </div>
         <Tabs tabPosition={this.state.tabPosition}>
-          <TabPane tab="Tab 1" key="1">Content of Tab 1</TabPane>
-          <TabPane tab="Tab 2" key="2">Content of Tab 2</TabPane>
-          <TabPane tab="Tab 3" key="3">Content of Tab 3</TabPane>
+          <TabPane tab="Tab 1" key="1">
+            Content of Tab 1
+          </TabPane>
+          <TabPane tab="Tab 2" key="2">
+            Content of Tab 2
+          </TabPane>
+          <TabPane tab="Tab 3" key="3">
+            Content of Tab 3
+          </TabPane>
         </Tabs>
       </div>
     );
   }
 }
 
-stories.addWithJSX('position', () => (
-    <Demo />
-  ))
+stories.addWithJSX("position", () => <Demo />);

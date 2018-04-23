@@ -1,9 +1,8 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.dropdown', module);
-  import { Menu, Dropdown, Icon, message } from 'antd';
-const onClick = function ({ key }) {
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.dropdown", module);
+import { Menu, Dropdown, Icon, message } from "antd";
+const onClick = function({ key }) {
   message.info(`Click on item ${key}`);
 };
 
@@ -15,12 +14,10 @@ const menu = (
   </Menu>
 );
 
-stories.addWithJSX('event', () => (
-    
+stories.addWithJSX("event", () => (
   <Dropdown overlay={menu}>
     <a className="ant-dropdown-link" href="#">
       Hover me, Click menu item <Icon type="down" />
     </a>
   </Dropdown>
-
-  ))
+));

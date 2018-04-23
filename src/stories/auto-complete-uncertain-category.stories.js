@@ -1,12 +1,11 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.auto-complete', module);
-  import { Icon, Button, Input, AutoComplete } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.auto-complete", module);
+import { Icon, Button, Input, AutoComplete } from "antd";
 const Option = AutoComplete.Option;
 
 function onSelect(value) {
-  console.log('onSelect', value);
+  console.log("onSelect", value);
 }
 
 function getRandomInt(max, min = 0) {
@@ -14,11 +13,13 @@ function getRandomInt(max, min = 0) {
 }
 
 function searchResult(query) {
-  return (new Array(getRandomInt(5))).join('.').split('.')
+  return new Array(getRandomInt(5))
+    .join(".")
+    .split(".")
     .map((item, idx) => ({
       query,
       category: `${query}${idx}`,
-      count: getRandomInt(200, 100),
+      count: getRandomInt(200, 100)
     }));
 }
 
@@ -41,14 +42,14 @@ function renderOption(item) {
 
 class Complete extends React.Component {
   state = {
-    dataSource: [],
-  }
+    dataSource: []
+  };
 
-  handleSearch = (value) => {
+  handleSearch = value => {
     this.setState({
-      dataSource: value ? searchResult(value) : [],
+      dataSource: value ? searchResult(value) : []
     });
-  }
+  };
 
   render() {
     const { dataSource } = this.state;
@@ -57,7 +58,7 @@ class Complete extends React.Component {
         <AutoComplete
           className="global-search"
           size="large"
-          style={{ width: '100%' }}
+          style={{ width: "100%" }}
           dataSource={dataSource.map(renderOption)}
           onSelect={onSelect}
           onSearch={this.handleSearch}
@@ -65,11 +66,11 @@ class Complete extends React.Component {
           optionLabelProp="text"
         >
           <Input
-            suffix={(
+            suffix={
               <Button className="search-btn" size="large" type="primary">
                 <Icon type="search" />
               </Button>
-            )}
+            }
           />
         </AutoComplete>
       </div>
@@ -77,6 +78,4 @@ class Complete extends React.Component {
   }
 }
 
-stories.addWithJSX('uncertain-category', () => (
-    <Complete />
-  ))
+stories.addWithJSX("uncertain-category", () => <Complete />);

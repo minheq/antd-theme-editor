@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.popover', module);
-  import { Popover, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.popover", module);
+import { Popover, Button } from "antd";
 
 const content = (
   <div>
@@ -11,10 +10,8 @@ const content = (
   </div>
 );
 
-stories.addWithJSX('basic', () => (
-    
+stories.addWithJSX("basic", () => (
   <Popover content={content} title="Title">
     <Button type="primary">Hover me</Button>
   </Popover>
-
-  ))
+));

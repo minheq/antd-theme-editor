@@ -1,10 +1,9 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.select', module);
-  import { Select } from 'antd';
-import jsonp from 'fetch-jsonp';
-import querystring from 'querystring';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.select", module);
+import { Select } from "antd";
+import jsonp from "fetch-jsonp";
+import querystring from "querystring";
 const Option = Select.Option;
 
 let timeout;
@@ -19,19 +18,19 @@ function fetch(value, callback) {
 
   function fake() {
     const str = querystring.encode({
-      code: 'utf-8',
-      q: value,
+      code: "utf-8",
+      q: value
     });
     jsonp(`https://suggest.taobao.com/sug?${str}`)
       .then(response => response.json())
-      .then((d) => {
+      .then(d => {
         if (currentValue === value) {
           const result = d.result;
           const data = [];
-          result.forEach((r) => {
+          result.forEach(r => {
             data.push({
               value: r[0],
-              text: r[0],
+              text: r[0]
             });
           });
           callback(data);
@@ -45,14 +44,16 @@ function fetch(value, callback) {
 class SearchInput extends React.Component {
   state = {
     data: [],
-    value: '',
-  }
-  handleChange = (value) => {
+    value: ""
+  };
+  handleChange = value => {
     this.setState({ value });
     fetch(value, data => this.setState({ data }));
-  }
+  };
   render() {
-    const options = this.state.data.map(d => <Option key={d.value}>{d.text}</Option>);
+    const options = this.state.data.map(d => (
+      <Option key={d.value}>{d.text}</Option>
+    ));
     return (
       <Select
         mode="combobox"
@@ -70,8 +71,6 @@ class SearchInput extends React.Component {
   }
 }
 
-stories.addWithJSX('search-box', () => (
-    
+stories.addWithJSX("search-box", () => (
   <SearchInput placeholder="input search text" style={{ width: 200 }} />
-
-  ))
+));

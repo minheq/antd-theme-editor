@@ -1,9 +1,8 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.locale-provider', module);
-  import { Pagination, LocaleProvider } from 'antd';
-import zhCN from 'antd/lib/locale-provider/zh_CN';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.locale-provider", module);
+import { Pagination, LocaleProvider } from "antd";
+import zhCN from "antd/lib/locale-provider/zh_CN";
 
 const App = () => (
   <div>
@@ -11,10 +10,8 @@ const App = () => (
   </div>
 );
 
-stories.addWithJSX('basic', () => (
-    
+stories.addWithJSX("basic", () => (
   <LocaleProvider locale={zhCN}>
     <App />
   </LocaleProvider>
-
-  ))
+));

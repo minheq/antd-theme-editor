@@ -1,14 +1,13 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.transfer', module);
-  import { Transfer } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.transfer", module);
+import { Transfer } from "antd";
 
 class App extends React.Component {
   state = {
     mockData: [],
-    targetKeys: [],
-  }
+    targetKeys: []
+  };
   componentDidMount() {
     this.getMock();
   }
@@ -20,7 +19,7 @@ class App extends React.Component {
         key: i.toString(),
         title: `content${i + 1}`,
         description: `description of content${i + 1}`,
-        chosen: Math.random() * 2 > 1,
+        chosen: Math.random() * 2 > 1
       };
       if (data.chosen) {
         targetKeys.push(data.key);
@@ -28,12 +27,12 @@ class App extends React.Component {
       mockData.push(data);
     }
     this.setState({ mockData, targetKeys });
-  }
+  };
   handleChange = (targetKeys, direction, moveKeys) => {
     console.log(targetKeys, direction, moveKeys);
     this.setState({ targetKeys });
-  }
-  renderItem = (item) => {
+  };
+  renderItem = item => {
     const customLabel = (
       <span className="custom-item">
         {item.title} - {item.description}
@@ -42,16 +41,16 @@ class App extends React.Component {
 
     return {
       label: customLabel, // for displayed item
-      value: item.title, // for title and filter matching
+      value: item.title // for title and filter matching
     };
-  }
+  };
   render() {
     return (
       <Transfer
         dataSource={this.state.mockData}
         listStyle={{
           width: 300,
-          height: 300,
+          height: 300
         }}
         targetKeys={this.state.targetKeys}
         onChange={this.handleChange}
@@ -61,6 +60,4 @@ class App extends React.Component {
   }
 }
 
-stories.addWithJSX('custom-item', () => (
-    <App />
-  ))
+stories.addWithJSX("custom-item", () => <App />);

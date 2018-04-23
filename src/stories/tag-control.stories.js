@@ -1,29 +1,28 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tag', module);
-  import { Tag, Input, Tooltip, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tag", module);
+import { Tag, Input, Tooltip, Icon } from "antd";
 
 class EditableTagGroup extends React.Component {
   state = {
-    tags: ['Unremovable', 'Tag 2', 'Tag 3'],
+    tags: ["Unremovable", "Tag 2", "Tag 3"],
     inputVisible: false,
-    inputValue: '',
+    inputValue: ""
   };
 
-  handleClose = (removedTag) => {
+  handleClose = removedTag => {
     const tags = this.state.tags.filter(tag => tag !== removedTag);
     console.log(tags);
     this.setState({ tags });
-  }
+  };
 
   showInput = () => {
     this.setState({ inputVisible: true }, () => this.input.focus());
-  }
+  };
 
-  handleInputChange = (e) => {
+  handleInputChange = e => {
     this.setState({ inputValue: e.target.value });
-  }
+  };
 
   handleInputConfirm = () => {
     const state = this.state;
@@ -36,11 +35,11 @@ class EditableTagGroup extends React.Component {
     this.setState({
       tags,
       inputVisible: false,
-      inputValue: '',
+      inputValue: ""
     });
-  }
+  };
 
-  saveInputRef = input => this.input = input
+  saveInputRef = input => (this.input = input);
 
   render() {
     const { tags, inputVisible, inputValue } = this.state;
@@ -49,11 +48,21 @@ class EditableTagGroup extends React.Component {
         {tags.map((tag, index) => {
           const isLongTag = tag.length > 20;
           const tagElem = (
-            <Tag key={tag} closable={index !== 0} afterClose={() => this.handleClose(tag)}>
+            <Tag
+              key={tag}
+              closable={index !== 0}
+              afterClose={() => this.handleClose(tag)}
+            >
               {isLongTag ? `${tag.slice(0, 20)}...` : tag}
             </Tag>
           );
-          return isLongTag ? <Tooltip title={tag} key={tag}>{tagElem}</Tooltip> : tagElem;
+          return isLongTag ? (
+            <Tooltip title={tag} key={tag}>
+              {tagElem}
+            </Tooltip>
+          ) : (
+            tagElem
+          );
         })}
         {inputVisible && (
           <Input
@@ -70,7 +79,7 @@ class EditableTagGroup extends React.Component {
         {!inputVisible && (
           <Tag
             onClick={this.showInput}
-            style={{ background: '#fff', borderStyle: 'dashed' }}
+            style={{ background: "#fff", borderStyle: "dashed" }}
           >
             <Icon type="plus" /> New Tag
           </Tag>
@@ -80,6 +89,4 @@ class EditableTagGroup extends React.Component {
   }
 }
 
-stories.addWithJSX('control', () => (
-    <EditableTagGroup />
-  ))
+stories.addWithJSX("control", () => <EditableTagGroup />);

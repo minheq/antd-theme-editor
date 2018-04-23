@@ -1,12 +1,10 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.layout', module);
-  import { Layout } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.layout", module);
+import { Layout } from "antd";
 const { Header, Footer, Sider, Content } = Layout;
 
-stories.addWithJSX('basic', () => (
-    
+stories.addWithJSX("basic", () => (
   <div>
     <Layout>
       <Header>Header</Header>
@@ -41,5 +39,4 @@ stories.addWithJSX('basic', () => (
       </Layout>
     </Layout>
   </div>
-
-  ))
+));

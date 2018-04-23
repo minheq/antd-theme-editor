@@ -1,14 +1,13 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.spin', module);
-  import { Spin, Alert, Switch } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.spin", module);
+import { Spin, Alert, Switch } from "antd";
 
 class Card extends React.Component {
-  state = { loading: false }
-  toggle = (value) => {
+  state = { loading: false };
+  toggle = value => {
     this.setState({ loading: value });
-  }
+  };
   render() {
     const container = (
       <Alert
@@ -19,15 +18,18 @@ class Card extends React.Component {
     );
     return (
       <div>
-        <Spin spinning={this.state.loading} delay={500} >{container}</Spin>
+        <Spin spinning={this.state.loading} delay={500}>
+          {container}
+        </Spin>
         <div style={{ marginTop: 16 }}>
-          Loading state：<Switch checked={this.state.loading} onChange={this.toggle} />
+          Loading state：<Switch
+            checked={this.state.loading}
+            onChange={this.toggle}
+          />
         </div>
       </div>
     );
   }
 }
 
-stories.addWithJSX('delayAndDebounce', () => (
-    <Card />
-  ))
+stories.addWithJSX("delayAndDebounce", () => <Card />);

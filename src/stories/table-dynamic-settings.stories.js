@@ -1,114 +1,120 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.table', module);
-  import { Table, Icon, Switch, Radio, Form, Divider } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.table", module);
+import { Table, Icon, Switch, Radio, Form, Divider } from "antd";
 const FormItem = Form.Item;
 
-const columns = [{
-  title: 'Name',
-  dataIndex: 'name',
-  key: 'name',
-  width: 150,
-  render: text => <a href="javascript:;">{text}</a>,
-}, {
-  title: 'Age',
-  dataIndex: 'age',
-  key: 'age',
-  width: 70,
-}, {
-  title: 'Address',
-  dataIndex: 'address',
-  key: 'address',
-}, {
-  title: 'Action',
-  key: 'action',
-  width: 360,
-  render: (text, record) => (
-    <span>
-      <a href="javascript:;">Action 一 {record.name}</a>
-      <Divider type="vertical" />
-      <a href="javascript:;">Delete</a>
-      <Divider type="vertical" />
-      <a href="javascript:;" className="ant-dropdown-link">
-        More actions <Icon type="down" />
-      </a>
-    </span>
-  ),
-}];
+const columns = [
+  {
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+    width: 150,
+    render: text => <a href="javascript:;">{text}</a>
+  },
+  {
+    title: "Age",
+    dataIndex: "age",
+    key: "age",
+    width: 70
+  },
+  {
+    title: "Address",
+    dataIndex: "address",
+    key: "address"
+  },
+  {
+    title: "Action",
+    key: "action",
+    width: 360,
+    render: (text, record) => (
+      <span>
+        <a href="javascript:;">Action 一 {record.name}</a>
+        <Divider type="vertical" />
+        <a href="javascript:;">Delete</a>
+        <Divider type="vertical" />
+        <a href="javascript:;" className="ant-dropdown-link">
+          More actions <Icon type="down" />
+        </a>
+      </span>
+    )
+  }
+];
 
 const data = [];
 for (let i = 1; i <= 10; i++) {
   data.push({
     key: i,
-    name: 'John Brown',
+    name: "John Brown",
     age: `${i}2`,
     address: `New York No. ${i} Lake Park`,
-    description: `My name is John Brown, I am ${i}2 years old, living in New York No. ${i} Lake Park.`,
+    description: `My name is John Brown, I am ${i}2 years old, living in New York No. ${i} Lake Park.`
   });
 }
 
 const expandedRowRender = record => <p>{record.description}</p>;
-const title = () => 'Here is title';
+const title = () => "Here is title";
 const showHeader = true;
-const footer = () => 'Here is footer';
+const footer = () => "Here is footer";
 const scroll = { y: 240 };
-const pagination = { position: 'bottom' };
+const pagination = { position: "bottom" };
 
 class Demo extends React.Component {
   state = {
     bordered: false,
     loading: false,
     pagination,
-    size: 'default',
+    size: "default",
     expandedRowRender,
     title: undefined,
     showHeader,
     footer,
     rowSelection: {},
-    scroll: undefined,
-  }
+    scroll: undefined
+  };
 
-  handleToggle = (prop) => {
-    return (enable) => {
+  handleToggle = prop => {
+    return enable => {
       this.setState({ [prop]: enable });
     };
-  }
+  };
 
-  handleSizeChange = (e) => {
+  handleSizeChange = e => {
     this.setState({ size: e.target.value });
-  }
+  };
 
-  handleExpandChange = (enable) => {
-    this.setState({ expandedRowRender: enable ? expandedRowRender : undefined });
-  }
+  handleExpandChange = enable => {
+    this.setState({
+      expandedRowRender: enable ? expandedRowRender : undefined
+    });
+  };
 
-  handleTitleChange = (enable) => {
+  handleTitleChange = enable => {
     this.setState({ title: enable ? title : undefined });
-  }
+  };
 
-  handleHeaderChange = (enable) => {
+  handleHeaderChange = enable => {
     this.setState({ showHeader: enable ? showHeader : false });
-  }
+  };
 
-  handleFooterChange = (enable) => {
+  handleFooterChange = enable => {
     this.setState({ footer: enable ? footer : undefined });
-  }
+  };
 
-  handleRowSelectionChange = (enable) => {
+  handleRowSelectionChange = enable => {
     this.setState({ rowSelection: enable ? {} : undefined });
-  }
+  };
 
-  handleScollChange = (enable) => {
+  handleScollChange = enable => {
     this.setState({ scroll: enable ? scroll : undefined });
-  }
+  };
 
-  handlePaginationChange = (e) => {
+  handlePaginationChange = e => {
     const { value } = e.target;
     this.setState({
-      pagination: value === 'none' ? false : { position: value },
+      pagination: value === "none" ? false : { position: value }
     });
-  }
+  };
 
   render() {
     const state = this.state;
@@ -117,31 +123,59 @@ class Demo extends React.Component {
         <div className="components-table-demo-control-bar">
           <Form layout="inline">
             <FormItem label="Bordered">
-              <Switch checked={state.bordered} onChange={this.handleToggle('bordered')} />
+              <Switch
+                checked={state.bordered}
+                onChange={this.handleToggle("bordered")}
+              />
             </FormItem>
             <FormItem label="loading">
-              <Switch checked={state.loading} onChange={this.handleToggle('loading')} />
+              <Switch
+                checked={state.loading}
+                onChange={this.handleToggle("loading")}
+              />
             </FormItem>
             <FormItem label="Title">
-              <Switch checked={!!state.title} onChange={this.handleTitleChange} />
+              <Switch
+                checked={!!state.title}
+                onChange={this.handleTitleChange}
+              />
             </FormItem>
             <FormItem label="Column Header">
-              <Switch checked={!!state.showHeader} onChange={this.handleHeaderChange} />
+              <Switch
+                checked={!!state.showHeader}
+                onChange={this.handleHeaderChange}
+              />
             </FormItem>
             <FormItem label="Footer">
-              <Switch checked={!!state.footer} onChange={this.handleFooterChange} />
+              <Switch
+                checked={!!state.footer}
+                onChange={this.handleFooterChange}
+              />
             </FormItem>
             <FormItem label="Expandable">
-              <Switch checked={!!state.expandedRowRender} onChange={this.handleExpandChange} />
+              <Switch
+                checked={!!state.expandedRowRender}
+                onChange={this.handleExpandChange}
+              />
             </FormItem>
             <FormItem label="Checkbox">
-              <Switch checked={!!state.rowSelection} onChange={this.handleRowSelectionChange} />
+              <Switch
+                checked={!!state.rowSelection}
+                onChange={this.handleRowSelectionChange}
+              />
             </FormItem>
             <FormItem label="Fixed Header">
-              <Switch checked={!!state.scroll} onChange={this.handleScollChange} />
+              <Switch
+                checked={!!state.scroll}
+                onChange={this.handleScollChange}
+              />
             </FormItem>
             <FormItem label="Size">
-              <Radio.Group size="default" value={state.size} onChange={this.handleSizeChange}>
+              <Radio.Group
+                size="default"
+                value={state.size}
+                onChange={this.handleSizeChange}
+              >
                 <Radio.Button value="default">Default</Radio.Button>
                 <Radio.Button value="middle">Middle</Radio.Button>
                 <Radio.Button value="small">Small</Radio.Button>
@@ -149,7 +183,7 @@ class Demo extends React.Component {
             </FormItem>
             <FormItem label="Pagination">
               <Radio.Group
-                value={state.pagination ? state.pagination.position : 'none'}
+                value={state.pagination ? state.pagination.position : "none"}
                 onChange={this.handlePaginationChange}
               >
                 <Radio.Button value="top">Top</Radio.Button>
@@ -166,6 +200,4 @@ class Demo extends React.Component {
   }
 }
 
-stories.addWithJSX('dynamic-settings', () => (
-    <Demo />
-  ))
+stories.addWithJSX("dynamic-settings", () => <Demo />);

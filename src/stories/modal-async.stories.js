@@ -1,44 +1,46 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.modal', module);
-  import { Modal, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.modal", module);
+import { Modal, Button } from "antd";
 
 class App extends React.Component {
   state = {
-    ModalText: 'Content of the modal',
+    ModalText: "Content of the modal",
     visible: false,
-    confirmLoading: false,
-  }
+    confirmLoading: false
+  };
   showModal = () => {
     this.setState({
-      visible: true,
+      visible: true
     });
-  }
+  };
   handleOk = () => {
     this.setState({
-      ModalText: 'The modal will be closed after two seconds',
-      confirmLoading: true,
+      ModalText: "The modal will be closed after two seconds",
+      confirmLoading: true
     });
     setTimeout(() => {
       this.setState({
         visible: false,
-        confirmLoading: false,
+        confirmLoading: false
       });
     }, 2000);
-  }
+  };
   handleCancel = () => {
-    console.log('Clicked cancel button');
+    console.log("Clicked cancel button");
     this.setState({
-      visible: false,
+      visible: false
     });
-  }
+  };
   render() {
     const { visible, confirmLoading, ModalText } = this.state;
     return (
       <div>
-        <Button type="primary" onClick={this.showModal}>Open</Button>
-        <Modal title="Title"
+        <Button type="primary" onClick={this.showModal}>
+          Open
+        </Button>
+        <Modal
+          title="Title"
           visible={visible}
           onOk={this.handleOk}
           confirmLoading={confirmLoading}
@@ -51,6 +53,4 @@ class App extends React.Component {
   }
 }
 
-stories.addWithJSX('async', () => (
-    <App />
-  ))
+stories.addWithJSX("async", () => <App />);

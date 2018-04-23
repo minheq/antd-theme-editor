@@ -1,11 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.badge", module);
+import { Badge, Icon } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.badge', module);
-  import { Badge, Icon } from 'antd';
-
-stories.addWithJSX('dot', () => (
-    
+stories.addWithJSX("dot", () => (
   <div>
     <Badge dot>
       <Icon type="notification" />
@@ -17,5 +15,4 @@ stories.addWithJSX('dot', () => (
       <a href="#">Link something</a>
     </Badge>
   </div>
-
-  ))
+));

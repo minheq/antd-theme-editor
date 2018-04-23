@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.select', module);
-  import { Select, Radio } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.select", module);
+import { Select, Radio } from "antd";
 const Option = Select.Option;
 
 const children = [];
@@ -16,12 +15,12 @@ function handleChange(value) {
 
 class SelectSizesDemo extends React.Component {
   state = {
-    size: 'default',
+    size: "default"
   };
 
-  handleSizeChange = (e) => {
+  handleSizeChange = e => {
     this.setState({ size: e.target.value });
-  }
+  };
 
   render() {
     const { size } = this.state;
@@ -32,7 +31,8 @@ class SelectSizesDemo extends React.Component {
           <Radio.Button value="default">Default</Radio.Button>
           <Radio.Button value="small">Small</Radio.Button>
         </Radio.Group>
-        <br /><br />
+        <br />
+        <br />
         <Select
           size={size}
           defaultValue="a1"
@@ -56,9 +56,9 @@ class SelectSizesDemo extends React.Component {
           mode="multiple"
           size={size}
           placeholder="Please select"
-          defaultValue={['a10', 'c12']}
+          defaultValue={["a10", "c12"]}
           onChange={handleChange}
-          style={{ width: '100%' }}
+          style={{ width: "100%" }}
         >
           {children}
         </Select>
@@ -67,9 +67,9 @@ class SelectSizesDemo extends React.Component {
           mode="tags"
           size={size}
           placeholder="Please select"
-          defaultValue={['a10', 'c12']}
+          defaultValue={["a10", "c12"]}
           onChange={handleChange}
-          style={{ width: '100%' }}
+          style={{ width: "100%" }}
         >
           {children}
         </Select>
@@ -78,6 +78,4 @@ class SelectSizesDemo extends React.Component {
   }
 }
 
-stories.addWithJSX('size', () => (
-    <SelectSizesDemo />
-  ))
+stories.addWithJSX("size", () => <SelectSizesDemo />);

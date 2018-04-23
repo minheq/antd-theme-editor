@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.form', module);
-  import { Form, Input, Select, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.form", module);
+import { Form, Input, Select, Button } from "antd";
 const FormItem = Form.Item;
 const Option = Select.Option;
 
@@ -13,39 +12,39 @@ class PriceInput extends React.Component {
     const value = props.value || {};
     this.state = {
       number: value.number || 0,
-      currency: value.currency || 'rmb',
+      currency: value.currency || "rmb"
     };
   }
   componentWillReceiveProps(nextProps) {
     // Should be a controlled component.
-    if ('value' in nextProps) {
+    if ("value" in nextProps) {
       const value = nextProps.value;
       this.setState(value);
     }
   }
-  handleNumberChange = (e) => {
+  handleNumberChange = e => {
     const number = parseInt(e.target.value || 0, 10);
     if (isNaN(number)) {
       return;
     }
-    if (!('value' in this.props)) {
+    if (!("value" in this.props)) {
       this.setState({ number });
     }
     this.triggerChange({ number });
-  }
-  handleCurrencyChange = (currency) => {
-    if (!('value' in this.props)) {
+  };
+  handleCurrencyChange = currency => {
+    if (!("value" in this.props)) {
       this.setState({ currency });
     }
     this.triggerChange({ currency });
-  }
-  triggerChange = (changedValue) => {
+  };
+  triggerChange = changedValue => {
     // Should provide an event to pass value to Form.
     const onChange = this.props.onChange;
     if (onChange) {
       onChange(Object.assign({}, this.state, changedValue));
     }
-  }
+  };
   render() {
     const { size } = this.props;
     const state = this.state;
@@ -56,12 +55,12 @@ class PriceInput extends React.Component {
           size={size}
           value={state.number}
           onChange={this.handleNumberChange}
-          style={{ width: '65%', marginRight: '3%' }}
+          style={{ width: "65%", marginRight: "3%" }}
         />
         <Select
           value={state.currency}
           size={size}
-          style={{ width: '32%' }}
+          style={{ width: "32%" }}
           onChange={this.handleCurrencyChange}
         >
           <Option value="rmb">RMB</Option>
@@ -73,33 +72,35 @@ class PriceInput extends React.Component {
 }
 
 class Demo extends React.Component {
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        console.log("Received values of form: ", values);
       }
     });
-  }
+  };
   checkPrice = (rule, value, callback) => {
     if (value.number > 0) {
       callback();
       return;
     }
-    callback('Price must greater than zero!');
-  }
+    callback("Price must greater than zero!");
+  };
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
       <Form layout="inline" onSubmit={this.handleSubmit}>
         <FormItem label="Price">
-          {getFieldDecorator('price', {
-            initialValue: { number: 0, currency: 'rmb' },
-            rules: [{ validator: this.checkPrice }],
+          {getFieldDecorator("price", {
+            initialValue: { number: 0, currency: "rmb" },
+            rules: [{ validator: this.checkPrice }]
           })(<PriceInput />)}
         </FormItem>
         <FormItem>
-          <Button type="primary" htmlType="submit">Submit</Button>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
         </FormItem>
       </Form>
     );
@@ -108,6 +109,4 @@ class Demo extends React.Component {
 
 const WrappedDemo = Form.create()(Demo);
 
-stories.addWithJSX('customized-form-controls', () => (
-    <WrappedDemo />
-  ))
+stories.addWithJSX("customized-form-controls", () => <WrappedDemo />);

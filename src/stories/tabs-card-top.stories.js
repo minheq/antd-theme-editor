@@ -1,12 +1,10 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tabs', module);
-  import { Tabs } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tabs", module);
+import { Tabs } from "antd";
 const TabPane = Tabs.TabPane;
 
-stories.addWithJSX('card-top', () => (
-    
+stories.addWithJSX("card-top", () => (
   <div className="card-container">
     <Tabs type="card">
       <TabPane tab="Tab Title 1" key="1">
@@ -26,5 +24,4 @@ stories.addWithJSX('card-top', () => (
       </TabPane>
     </Tabs>
   </div>
-
-  ))
+));

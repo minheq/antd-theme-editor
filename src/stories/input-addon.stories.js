@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.input', module);
-  import { Input, Select, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.input", module);
+import { Input, Select, Icon } from "antd";
 const Option = Select.Option;
 
 const selectBefore = (
@@ -20,18 +19,20 @@ const selectAfter = (
   </Select>
 );
 
-stories.addWithJSX('addon', () => (
-    
+stories.addWithJSX("addon", () => (
   <div>
     <div style={{ marginBottom: 16 }}>
       <Input addonBefore="Http://" addonAfter=".com" defaultValue="mysite" />
     </div>
     <div style={{ marginBottom: 16 }}>
-      <Input addonBefore={selectBefore} addonAfter={selectAfter} defaultValue="mysite" />
+      <Input
+        addonBefore={selectBefore}
+        addonAfter={selectAfter}
+        defaultValue="mysite"
+      />
     </div>
     <div style={{ marginBottom: 16 }}>
       <Input addonAfter={<Icon type="setting" />} defaultValue="mysite" />
     </div>
   </div>
-
-  ))
+));

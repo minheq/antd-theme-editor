@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tabs', module);
-  import { Tabs, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tabs", module);
+import { Tabs, Button } from "antd";
 const TabPane = Tabs.TabPane;
 
 class Demo extends React.Component {
@@ -10,28 +9,28 @@ class Demo extends React.Component {
     super(props);
     this.newTabIndex = 0;
     const panes = [
-      { title: 'Tab 1', content: 'Content of Tab Pane 1', key: '1' },
-      { title: 'Tab 2', content: 'Content of Tab Pane 2', key: '2' },
+      { title: "Tab 1", content: "Content of Tab Pane 1", key: "1" },
+      { title: "Tab 2", content: "Content of Tab Pane 2", key: "2" }
     ];
     this.state = {
       activeKey: panes[0].key,
-      panes,
+      panes
     };
   }
 
-  onChange = (activeKey) => {
+  onChange = activeKey => {
     this.setState({ activeKey });
-  }
+  };
   onEdit = (targetKey, action) => {
     this[action](targetKey);
-  }
+  };
   add = () => {
     const panes = this.state.panes;
     const activeKey = `newTab${this.newTabIndex++}`;
-    panes.push({ title: 'New Tab', content: 'New Tab Pane', key: activeKey });
+    panes.push({ title: "New Tab", content: "New Tab Pane", key: activeKey });
     this.setState({ panes, activeKey });
-  }
-  remove = (targetKey) => {
+  };
+  remove = targetKey => {
     let activeKey = this.state.activeKey;
     let lastIndex;
     this.state.panes.forEach((pane, i) => {
@@ -44,7 +43,7 @@ class Demo extends React.Component {
       activeKey = panes[lastIndex].key;
     }
     this.setState({ panes, activeKey });
-  }
+  };
   render() {
     return (
       <div>
@@ -58,13 +57,15 @@ class Demo extends React.Component {
           type="editable-card"
           onEdit={this.onEdit}
         >
-          {this.state.panes.map(pane => <TabPane tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
+          {this.state.panes.map(pane => (
+            <TabPane tab={pane.title} key={pane.key}>
+              {pane.content}
+            </TabPane>
+          ))}
         </Tabs>
       </div>
     );
   }
 }
 
-stories.addWithJSX('custom-add-trigger', () => (
-    <Demo />
-  ))
+stories.addWithJSX("custom-add-trigger", () => <Demo />);

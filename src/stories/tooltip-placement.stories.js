@@ -1,17 +1,15 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.tooltip', module);
-  import { Tooltip, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.tooltip", module);
+import { Tooltip, Button } from "antd";
 
 const text = <span>prompt text</span>;
 
 const buttonWidth = 70;
 
-stories.addWithJSX('placement', () => (
-    
+stories.addWithJSX("placement", () => (
   <div className="demo">
-    <div style={{ marginLeft: buttonWidth, whiteSpace: 'nowrap' }}>
+    <div style={{ marginLeft: buttonWidth, whiteSpace: "nowrap" }}>
       <Tooltip placement="topLeft" title={text}>
         <Button>TL</Button>
       </Tooltip>
@@ -22,7 +20,7 @@ stories.addWithJSX('placement', () => (
         <Button>TR</Button>
       </Tooltip>
     </div>
-    <div style={{ width: buttonWidth, float: 'left' }}>
+    <div style={{ width: buttonWidth, float: "left" }}>
       <Tooltip placement="leftTop" title={text}>
         <Button>LT</Button>
       </Tooltip>
@@ -33,7 +31,7 @@ stories.addWithJSX('placement', () => (
         <Button>LB</Button>
       </Tooltip>
     </div>
-    <div style={{ width: buttonWidth, marginLeft: (buttonWidth * 4) + 24 }}>
+    <div style={{ width: buttonWidth, marginLeft: buttonWidth * 4 + 24 }}>
       <Tooltip placement="rightTop" title={text}>
         <Button>RT</Button>
       </Tooltip>
@@ -44,7 +42,9 @@ stories.addWithJSX('placement', () => (
         <Button>RB</Button>
       </Tooltip>
     </div>
-    <div style={{ marginLeft: buttonWidth, clear: 'both', whiteSpace: 'nowrap' }}>
+    <div
+      style={{ marginLeft: buttonWidth, clear: "both", whiteSpace: "nowrap" }}
+    >
       <Tooltip placement="bottomLeft" title={text}>
         <Button>BL</Button>
       </Tooltip>
@@ -56,5 +56,4 @@ stories.addWithJSX('placement', () => (
       </Tooltip>
     </div>
   </div>
-
-  ))
+));

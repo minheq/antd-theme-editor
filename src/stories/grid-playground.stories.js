@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.grid', module);
-  import { Row, Col, Slider } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.grid", module);
+import { Row, Col, Slider } from "antd";
 
 class App extends React.Component {
   gutters = {};
@@ -11,22 +10,26 @@ class App extends React.Component {
     super();
     this.state = {
       gutterKey: 1,
-      colCountKey: 2,
+      colCountKey: 2
     };
-    [8, 16, 24, 32, 40, 48].forEach((value, i) => { this.gutters[i] = value; });
-    [2, 3, 4, 6, 8, 12].forEach((value, i) => { this.colCounts[i] = value; });
+    [8, 16, 24, 32, 40, 48].forEach((value, i) => {
+      this.gutters[i] = value;
+    });
+    [2, 3, 4, 6, 8, 12].forEach((value, i) => {
+      this.colCounts[i] = value;
+    });
   }
-  onGutterChange = (gutterKey) => {
+  onGutterChange = gutterKey => {
     this.setState({ gutterKey });
-  }
-  onColCountChange = (colCountKey) => {
+  };
+  onColCountChange = colCountKey => {
     this.setState({ colCountKey });
-  }
+  };
   render() {
     const { gutterKey, colCountKey } = this.state;
     const cols = [];
     const colCount = this.colCounts[colCountKey];
-    let colCode = '';
+    let colCode = "";
     for (let i = 0; i < colCount; i++) {
       cols.push(
         <Col key={i.toString()} span={24 / colCount}>
@@ -39,7 +42,7 @@ class App extends React.Component {
       <div>
         <div style={{ marginBottom: 16 }}>
           <span style={{ marginRight: 6 }}>Gutter (px): </span>
-          <div style={{ width: '50%' }}>
+          <div style={{ width: "50%" }}>
             <Slider
               min={0}
               max={Object.keys(this.gutters).length - 1}
@@ -50,7 +53,7 @@ class App extends React.Component {
             />
           </div>
           <span style={{ marginRight: 6 }}>Column Count:</span>
-          <div style={{ width: '50%' }}>
+          <div style={{ width: "50%" }}>
             <Slider
               min={0}
               max={Object.keys(this.colCounts).length - 1}
@@ -62,12 +65,12 @@ class App extends React.Component {
           </div>
         </div>
         <Row gutter={this.gutters[gutterKey]}>{cols}</Row>
-        <pre>{`<Row gutter={${this.gutters[gutterKey]}}>\n${colCode}</Row>`}</pre>
+        <pre>{`<Row gutter={${
+          this.gutters[gutterKey]
+        }}>\n${colCode}</Row>`}</pre>
       </div>
     );
   }
 }
 
-stories.addWithJSX('playground', () => (
-    <App />
-  ))
+stories.addWithJSX("playground", () => <App />);

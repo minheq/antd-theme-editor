@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.form', module);
-  import { Button, Modal, Form, Input, Radio } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.form", module);
+import { Button, Modal, Form, Input, Radio } from "antd";
 const FormItem = Form.Item;
 
 const CollectionCreateForm = Form.create()(
@@ -20,18 +19,21 @@ const CollectionCreateForm = Form.create()(
         >
           <Form layout="vertical">
             <FormItem label="Title">
-              {getFieldDecorator('title', {
-                rules: [{ required: true, message: 'Please input the title of collection!' }],
-              })(
-                <Input />
-              )}
+              {getFieldDecorator("title", {
+                rules: [
+                  {
+                    required: true,
+                    message: "Please input the title of collection!"
+                  }
+                ]
+              })(<Input />)}
             </FormItem>
             <FormItem label="Description">
-              {getFieldDecorator('description')(<Input type="textarea" />)}
+              {getFieldDecorator("description")(<Input type="textarea" />)}
             </FormItem>
             <FormItem className="collection-create-form_last-form-item">
-              {getFieldDecorator('modifier', {
-                initialValue: 'public',
+              {getFieldDecorator("modifier", {
+                initialValue: "public"
               })(
                 <Radio.Group>
                   <Radio value="public">Public</Radio>
@@ -48,14 +50,14 @@ const CollectionCreateForm = Form.create()(
 
 class CollectionsPage extends React.Component {
   state = {
-    visible: false,
+    visible: false
   };
   showModal = () => {
     this.setState({ visible: true });
-  }
+  };
   handleCancel = () => {
     this.setState({ visible: false });
-  }
+  };
   handleCreate = () => {
     const form = this.formRef.props.form;
     form.validateFields((err, values) => {
@@ -63,18 +65,20 @@ class CollectionsPage extends React.Component {
         return;
       }
 
-      console.log('Received values of form: ', values);
+      console.log("Received values of form: ", values);
       form.resetFields();
       this.setState({ visible: false });
     });
-  }
-  saveFormRef = (formRef) => {
+  };
+  saveFormRef = formRef => {
     this.formRef = formRef;
-  }
+  };
   render() {
     return (
       <div>
-        <Button type="primary" onClick={this.showModal}>New Collection</Button>
+        <Button type="primary" onClick={this.showModal}>
+          New Collection
+        </Button>
         <CollectionCreateForm
           wrappedComponentRef={this.saveFormRef}
           visible={this.state.visible}
@@ -86,6 +90,4 @@ class CollectionsPage extends React.Component {
   }
 }
 
-stories.addWithJSX('form-in-modal', () => (
-    <CollectionsPage />
-  ))
+stories.addWithJSX("form-in-modal", () => <CollectionsPage />);

@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.dropdown', module);
-  import { Menu, Dropdown } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.dropdown", module);
+import { Menu, Dropdown } from "antd";
 
 const menu = (
   <Menu>
@@ -12,10 +11,8 @@ const menu = (
   </Menu>
 );
 
-stories.addWithJSX('context-menu', () => (
-    
-  <Dropdown overlay={menu} trigger={['contextMenu']}>
-    <span style={{ userSelect: 'none' }}>Right Click on Me</span>
+stories.addWithJSX("context-menu", () => (
+  <Dropdown overlay={menu} trigger={["contextMenu"]}>
+    <span style={{ userSelect: "none" }}>Right Click on Me</span>
   </Dropdown>
-
-  ))
+));

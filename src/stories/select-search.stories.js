@@ -1,8 +1,7 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.select', module);
-  import { Select } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.select", module);
+import { Select } from "antd";
 const Option = Select.Option;
 
 function handleChange(value) {
@@ -10,15 +9,14 @@ function handleChange(value) {
 }
 
 function handleBlur() {
-  console.log('blur');
+  console.log("blur");
 }
 
 function handleFocus() {
-  console.log('focus');
+  console.log("focus");
 }
 
-stories.addWithJSX('search', () => (
-    
+stories.addWithJSX("search", () => (
   <Select
     showSearch
     style={{ width: 200 }}
@@ -27,11 +25,12 @@ stories.addWithJSX('search', () => (
     onChange={handleChange}
     onFocus={handleFocus}
     onBlur={handleBlur}
-    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+    filterOption={(input, option) =>
+      option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+    }
   >
     <Option value="jack">Jack</Option>
     <Option value="lucy">Lucy</Option>
     <Option value="tom">Tom</Option>
   </Select>
-
-  ))
+));

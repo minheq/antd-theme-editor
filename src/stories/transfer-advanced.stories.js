@@ -1,14 +1,13 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.transfer', module);
-  import { Transfer, Button } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.transfer", module);
+import { Transfer, Button } from "antd";
 
 class App extends React.Component {
   state = {
     mockData: [],
-    targetKeys: [],
-  }
+    targetKeys: []
+  };
   componentDidMount() {
     this.getMock();
   }
@@ -20,7 +19,7 @@ class App extends React.Component {
         key: i.toString(),
         title: `content${i + 1}`,
         description: `description of content${i + 1}`,
-        chosen: Math.random() * 2 > 1,
+        chosen: Math.random() * 2 > 1
       };
       if (data.chosen) {
         targetKeys.push(data.key);
@@ -28,21 +27,21 @@ class App extends React.Component {
       mockData.push(data);
     }
     this.setState({ mockData, targetKeys });
-  }
-  handleChange = (targetKeys) => {
+  };
+  handleChange = targetKeys => {
     this.setState({ targetKeys });
-  }
+  };
   renderFooter = () => {
     return (
       <Button
         size="small"
-        style={{ float: 'right', margin: 5 }}
+        style={{ float: "right", margin: 5 }}
         onClick={this.getMock}
       >
         reload
       </Button>
     );
-  }
+  };
   render() {
     return (
       <Transfer
@@ -50,9 +49,9 @@ class App extends React.Component {
         showSearch
         listStyle={{
           width: 250,
-          height: 300,
+          height: 300
         }}
-        operations={['to right', 'to left']}
+        operations={["to right", "to left"]}
         targetKeys={this.state.targetKeys}
         onChange={this.handleChange}
         render={item => `${item.title}-${item.description}`}
@@ -62,6 +61,4 @@ class App extends React.Component {
   }
 }
 
-stories.addWithJSX('advanced', () => (
-    <App />
-  ))
+stories.addWithJSX("advanced", () => <App />);

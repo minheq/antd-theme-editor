@@ -1,29 +1,24 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.layout', module);
-  import { Layout, Menu, Icon } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.layout", module);
+import { Layout, Menu, Icon } from "antd";
 const { Header, Sider, Content } = Layout;
 
 class SiderDemo extends React.Component {
   state = {
-    collapsed: false,
+    collapsed: false
   };
   toggle = () => {
     this.setState({
-      collapsed: !this.state.collapsed,
+      collapsed: !this.state.collapsed
     });
-  }
+  };
   render() {
     return (
       <Layout>
-        <Sider
-          trigger={null}
-          collapsible
-          collapsed={this.state.collapsed}
-        >
+        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1">
               <Icon type="user" />
               <span>nav 1</span>
@@ -39,14 +34,21 @@ class SiderDemo extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }}>
+          <Header style={{ background: "#fff", padding: 0 }}>
             <Icon
               className="trigger"
-              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              type={this.state.collapsed ? "menu-unfold" : "menu-fold"}
               onClick={this.toggle}
             />
           </Header>
-          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+          <Content
+            style={{
+              margin: "24px 16px",
+              padding: 24,
+              background: "#fff",
+              minHeight: 280
+            }}
+          >
             Content
           </Content>
         </Layout>
@@ -55,6 +57,4 @@ class SiderDemo extends React.Component {
   }
 }
 
-stories.addWithJSX('custom-trigger', () => (
-    <SiderDemo />
-  ))
+stories.addWithJSX("custom-trigger", () => <SiderDemo />);

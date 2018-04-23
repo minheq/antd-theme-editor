@@ -1,11 +1,9 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.badge", module);
+import { Badge } from "antd";
 
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.badge', module);
-  import { Badge } from 'antd';
-
-stories.addWithJSX('status', () => (
-    
+stories.addWithJSX("status", () => (
   <div>
     <Badge status="success" />
     <Badge status="error" />
@@ -23,5 +21,4 @@ stories.addWithJSX('status', () => (
     <br />
     <Badge status="warning" text="Warning" />
   </div>
-
-  ))
+));

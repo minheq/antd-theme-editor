@@ -1,26 +1,25 @@
-
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('antDesign.popconfirm', module);
-  import { Popconfirm, Switch, message } from 'antd';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+const stories = storiesOf("antDesign.popconfirm", module);
+import { Popconfirm, Switch, message } from "antd";
 
 class App extends React.Component {
   state = {
     visible: false,
-    condition: true, // Whether meet the condition, if not show popconfirm.
-  }
-  changeCondition = (value) => {
+    condition: true // Whether meet the condition, if not show popconfirm.
+  };
+  changeCondition = value => {
     this.setState({ condition: value });
-  }
+  };
   confirm = () => {
     this.setState({ visible: false });
-    message.success('Next step.');
-  }
+    message.success("Next step.");
+  };
   cancel = () => {
     this.setState({ visible: false });
-    message.error('Click on cancel.');
-  }
-  handleVisibleChange = (visible) => {
+    message.error("Click on cancel.");
+  };
+  handleVisibleChange = visible => {
     if (!visible) {
       this.setState({ visible });
       return;
@@ -32,7 +31,7 @@ class App extends React.Component {
     } else {
       this.setState({ visible }); // show the popconfirm
     }
-  }
+  };
   render() {
     return (
       <div>
@@ -49,12 +48,13 @@ class App extends React.Component {
         </Popconfirm>
         <br />
         <br />
-        Whether directly execute：<Switch defaultChecked onChange={this.changeCondition} />
+        Whether directly execute：<Switch
+          defaultChecked
+          onChange={this.changeCondition}
+        />
       </div>
     );
   }
 }
 
-stories.addWithJSX('dynamic-trigger', () => (
-    <App />
-  ))
+stories.addWithJSX("dynamic-trigger", () => <App />);
