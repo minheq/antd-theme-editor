@@ -1,8 +1,9 @@
-# Ant Design Theme Editor
+# Ant Design Theme Editor [![Build Status](https://travis-ci.org/minheq/antd-theme-editor.svg?branch=master)](https://travis-ci.org/minheq/antd-theme-editor)
 
 Boilerplate to render [Ant Design](https://ant.design/) components into [Storybook](https://storybook.js.org/), so you can easily edit the theme
 
-![image](https://user-images.githubusercontent.com/9356633/36666319-c65273c0-1b1c-11e8-856e-190503851fc3.png)
+![image](https://user-images.githubusercontent.com/9356633/39115487-fbfb6c6e-470b-11e8-8a45-8a6846118b2e.png)
+
 
 ## Usage
 
