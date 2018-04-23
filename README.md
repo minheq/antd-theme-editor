@@ -43,6 +43,7 @@ Stories are already created based on the antd repository. You can also update th
 git submodule update --init --recursive // Adds antd submodule to the project
 git submodule update --remote --rebase  // Update antd submodule if it is outdated
 yarn create-stories                     // Creates the stories
+yarn prettier                           // Run prettier code formatting on the created stories
 ```
 
 The script runs the file `scripts/createStoriesFromAntdDemos.js`.
