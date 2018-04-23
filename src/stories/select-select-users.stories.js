@@ -3,7 +3,7 @@
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('antDesign.select', module);
   import { Select, Spin } from 'antd';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash/debounce';
 const Option = Select.Option;
 
 class UserRemoteSelect extends React.Component {

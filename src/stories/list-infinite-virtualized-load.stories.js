@@ -30,7 +30,7 @@ class VirtualizedExample extends React.Component {
       },
     });
   }
-  componentWillMount() {
+  componentDidMount() {
     this.getData((res) => {
       this.setState({
         data: res.results,
@@ -113,7 +113,7 @@ class VirtualizedExample extends React.Component {
       <List>
         {
           data.length > 0 && (
-            <WindowScroller scrollElement={null}>
+            <WindowScroller>
               {infiniteLoader}
             </WindowScroller>
           )

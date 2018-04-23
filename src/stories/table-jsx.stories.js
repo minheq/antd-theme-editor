@@ -56,11 +56,11 @@ stories.addWithJSX('jsx', () => (
       key="action"
       render={(text, record) => (
         <span>
-          <a href="#">Action 一 {record.name}</a>
+          <a href="javascript:;">Action 一 {record.name}</a>
           <Divider type="vertical" />
-          <a href="#">Delete</a>
+          <a href="javascript:;">Delete</a>
           <Divider type="vertical" />
-          <a href="#" className="ant-dropdown-link">
+          <a href="javascript:;" className="ant-dropdown-link">
             More actions <Icon type="down" />
           </a>
         </span>

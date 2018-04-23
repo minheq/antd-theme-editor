@@ -13,8 +13,8 @@ stories.addWithJSX('disabled', () => (
     <Button>Default</Button>
     <Button disabled>Default(disabled)</Button>
     <br />
-    <Button>Ghost</Button>
-    <Button disabled>Ghost(disabled)</Button>
+    <Button ghost>Ghost</Button>
+    <Button ghost disabled>Ghost(disabled)</Button>
     <br />
     <Button type="dashed">Dashed</Button>
     <Button type="dashed" disabled>Dashed(disabled)</Button>

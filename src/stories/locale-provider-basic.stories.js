@@ -3,7 +3,7 @@
     import { storiesOf } from '@storybook/react';
     const stories = storiesOf('antDesign.locale-provider', module);
   import { Pagination, LocaleProvider } from 'antd';
-import enUS from 'antd/lib/locale-provider/en_US';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 
 const App = () => (
   <div>
@@ -13,7 +13,7 @@ const App = () => (
 
 stories.addWithJSX('basic', () => (
     
-  <LocaleProvider locale={enUS}>
+  <LocaleProvider locale={zhCN}>
     <App />
   </LocaleProvider>
 

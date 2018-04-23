@@ -26,7 +26,7 @@ class InfiniteListExample extends React.Component {
       },
     });
   }
-  componentWillMount() {
+  componentDidMount() {
     this.getData((res) => {
       this.setState({
         data: res.results,
@@ -77,7 +77,11 @@ class InfiniteListExample extends React.Component {
               </List.Item>
             )}
           >
-            {this.state.loading && this.state.hasMore && <Spin className="demo-loading" />}
+            {this.state.loading && this.state.hasMore && (
+              <div className="demo-loading-container">
+                <Spin />
+              </div>
+            )}
           </List>
         </InfiniteScroll>
       </div>
