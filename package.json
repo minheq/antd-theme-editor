@@ -17,9 +17,10 @@
     "reqwest": "^2.0.5"
   },
   "scripts": {
-    "create-stories": "node ./scripts/createStoriesFromAntdDemos.js",
+    "create-stories": "node ./scripts/createStoriesFromAntdDemos.js && yarn prettier",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "prettier": "prettier --write \"{scripts,exportFiles,src}/**/*.js\"",
     "export": "node ./scripts/exportFiles.js"
   },
   "devDependencies": {
