@@ -1,5 +1,7 @@
 language: node_js
 
+git:
+  submodules: false
 node_js:
   - 8.11.1
 install:
