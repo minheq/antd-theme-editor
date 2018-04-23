@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('breadcrumb', module);
+    const stories = storiesOf('antDesign.breadcrumb', module);
   import { Router, Route, Link, hashHistory } from 'react-router';
 import { Breadcrumb, Alert } from 'antd';
 
@@ -28,7 +28,7 @@ const Home = ({ routes, params, children }) => (
   </div>
 );
 
-stories.add('router', () => (
+stories.addWithJSX('router', () => (
     
   <Router history={hashHistory}>
     <Route name="home" breadcrumbName="Home" path="/" component={Home}>

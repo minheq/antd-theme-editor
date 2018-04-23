@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('time-picker', module);
+    const stories = storiesOf('antDesign.time-picker', module);
   import { TimePicker } from 'antd';
 
-stories.add('interval-options', () => (
+stories.addWithJSX('interval-options', () => (
     
   <TimePicker minuteStep={15} secondStep={10} />
 

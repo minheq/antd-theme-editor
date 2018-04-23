@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('menu', module);
+    const stories = storiesOf('antDesign.menu', module);
   import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -47,6 +47,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('horizontal', () => (
+stories.addWithJSX('horizontal', () => (
     <App />
   ))

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('menu', module);
+    const stories = storiesOf('antDesign.menu', module);
   import { Menu, Icon, Switch } from 'antd';
 const { SubMenu } = Menu;
 
@@ -63,6 +63,6 @@ class Sider extends React.Component {
   }
 }
 
-stories.add('switch-mode', () => (
+stories.addWithJSX('switch-mode', () => (
     <Sider />
   ))

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
+    const stories = storiesOf('antDesign.select', module);
   import { Select } from 'antd';
 const { Option, OptGroup } = Select;
 
@@ -9,7 +9,7 @@ function handleChange(value) {
   console.log(`selected ${value}`);
 }
 
-stories.add('optgroup', () => (
+stories.addWithJSX('optgroup', () => (
     
   <Select
     defaultValue="lucy"

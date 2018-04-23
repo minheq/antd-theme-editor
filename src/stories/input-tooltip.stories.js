@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input', module);
+    const stories = storiesOf('antDesign.input', module);
   import { Input, Tooltip } from 'antd';
 
 function formatNumber(value) {
@@ -77,6 +77,6 @@ class NumericInputDemo extends React.Component {
   }
 }
 
-stories.add('tooltip', () => (
+stories.addWithJSX('tooltip', () => (
     <NumericInputDemo />
   ))

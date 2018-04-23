@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
+    const stories = storiesOf('antDesign.mention', module);
   import { Mention, Popover, Button } from 'antd';
 const { toString, toContentState } = Mention;
 
@@ -36,6 +36,6 @@ class PopoverContainer extends React.Component {
   }
 }
 
-stories.add('popupContainer', () => (
+stories.addWithJSX('popupContainer', () => (
     <PopoverContainer />
   ))

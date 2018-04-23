@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('transfer', module);
+    const stories = storiesOf('antDesign.transfer', module);
   import { Transfer } from 'antd';
 
 const mockData = [];
@@ -61,6 +61,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     <App />
   ))

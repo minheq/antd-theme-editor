@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
+    const stories = storiesOf('antDesign.select', module);
   import { Select } from 'antd';
 const Option = Select.Option;
 
@@ -17,7 +17,7 @@ function handleFocus() {
   console.log('focus');
 }
 
-stories.add('search', () => (
+stories.addWithJSX('search', () => (
     
   <Select
     showSearch

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('notification', module);
+    const stories = storiesOf('antDesign.notification', module);
   import { Button, notification } from 'antd';
 
 const openNotificationWithIcon = (type) => {
@@ -11,7 +11,7 @@ const openNotificationWithIcon = (type) => {
   });
 };
 
-stories.add('with-icon', () => (
+stories.addWithJSX('with-icon', () => (
     
   <div>
     <Button onClick={() => openNotificationWithIcon('success')}>Success</Button>

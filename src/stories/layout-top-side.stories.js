@@ -1,12 +1,12 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('layout', module);
+    const stories = storiesOf('antDesign.layout', module);
   import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 
-stories.add('top-side', () => (
+stories.addWithJSX('top-side', () => (
     
   <Layout>
     <Header className="header">

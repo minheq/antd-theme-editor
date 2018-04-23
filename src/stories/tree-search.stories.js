@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tree', module);
+    const stories = storiesOf('antDesign.tree', module);
   import { Tree, Input } from 'antd';
 
 const TreeNode = Tree.TreeNode;
@@ -126,6 +126,6 @@ class SearchTree extends React.Component {
   }
 }
 
-stories.add('search', () => (
+stories.addWithJSX('search', () => (
     <SearchTree />
   ))

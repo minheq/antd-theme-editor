@@ -1,14 +1,14 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input-number', module);
+    const stories = storiesOf('antDesign.input-number', module);
   import { InputNumber } from 'antd';
 
 function onChange(value) {
   console.log('changed', value);
 }
 
-stories.add('formatter', () => (
+stories.addWithJSX('formatter', () => (
     
   <div>
     <InputNumber

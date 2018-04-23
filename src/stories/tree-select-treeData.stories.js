@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tree-select', module);
+    const stories = storiesOf('antDesign.tree-select', module);
   import { TreeSelect } from 'antd';
 
 const treeData = [{
@@ -46,6 +46,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('treeData', () => (
+stories.addWithJSX('treeData', () => (
     <Demo />
   ))

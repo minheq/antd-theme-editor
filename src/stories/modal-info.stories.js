@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('modal', module);
+    const stories = storiesOf('antDesign.modal', module);
   import { Modal, Button } from 'antd';
 
 function info() {
@@ -38,7 +38,7 @@ function warning() {
   });
 }
 
-stories.add('info', () => (
+stories.addWithJSX('info', () => (
     
   <div>
     <Button onClick={info}>Info</Button>

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('slider', module);
+    const stories = storiesOf('antDesign.slider', module);
   import { Slider, Icon } from 'antd';
 
 class IconSlider extends React.Component {
@@ -27,6 +27,6 @@ class IconSlider extends React.Component {
   }
 }
 
-stories.add('icon-slider', () => (
+stories.addWithJSX('icon-slider', () => (
     <IconSlider min={0} max={20} />
   ))

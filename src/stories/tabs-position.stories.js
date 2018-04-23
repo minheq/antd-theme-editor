@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tabs', module);
+    const stories = storiesOf('antDesign.tabs', module);
   import { Tabs, Select } from 'antd';
 const TabPane = Tabs.TabPane;
 const Option = Select.Option;
@@ -40,6 +40,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('position', () => (
+stories.addWithJSX('position', () => (
     <Demo />
   ))

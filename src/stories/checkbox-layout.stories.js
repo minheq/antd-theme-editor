@@ -1,14 +1,14 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('checkbox', module);
+    const stories = storiesOf('antDesign.checkbox', module);
   import { Checkbox, Row, Col } from 'antd';
 
 function onChange(checkedValues) {
   console.log('checked = ', checkedValues);
 }
 
-stories.add('layout', () => (
+stories.addWithJSX('layout', () => (
     
   <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
     <Row>

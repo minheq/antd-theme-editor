@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
+    const stories = storiesOf('antDesign.dropdown', module);
   import { Menu, Dropdown, Button, Icon, message } from 'antd';
 
 function handleButtonClick(e) {
@@ -22,7 +22,7 @@ const menu = (
   </Menu>
 );
 
-stories.add('dropdown-button', () => (
+stories.addWithJSX('dropdown-button', () => (
     
   <div>
     <Dropdown.Button onClick={handleButtonClick} overlay={menu}>

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('date-picker', module);
+    const stories = storiesOf('antDesign.date-picker', module);
   import { DatePicker } from 'antd';
 
 class DateRange extends React.Component {
@@ -79,6 +79,6 @@ class DateRange extends React.Component {
   }
 }
 
-stories.add('start-end', () => (
+stories.addWithJSX('start-end', () => (
     <DateRange />
   ))

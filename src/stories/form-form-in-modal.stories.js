@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Button, Modal, Form, Input, Radio } from 'antd';
 const FormItem = Form.Item;
 
@@ -84,6 +84,6 @@ class CollectionsPage extends React.Component {
   }
 }
 
-stories.add('form-in-modal', () => (
+stories.addWithJSX('form-in-modal', () => (
     <CollectionsPage />
   ))

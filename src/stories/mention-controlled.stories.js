@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
+    const stories = storiesOf('antDesign.mention', module);
   import { Mention, Form, Button } from 'antd';
 const { toContentState, getMentions } = Mention;
 const FormItem = Form.Item;
@@ -68,6 +68,6 @@ class App extends React.Component {
 
 const FormDemo = Form.create()(App);
 
-stories.add('controlled', () => (
+stories.addWithJSX('controlled', () => (
     <FormDemo />
   ))

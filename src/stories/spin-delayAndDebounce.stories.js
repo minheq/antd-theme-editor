@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('spin', module);
+    const stories = storiesOf('antDesign.spin', module);
   import { Spin, Alert, Switch } from 'antd';
 
 class Card extends React.Component {
@@ -28,6 +28,6 @@ class Card extends React.Component {
   }
 }
 
-stories.add('delayAndDebounce', () => (
+stories.addWithJSX('delayAndDebounce', () => (
     <Card />
   ))

@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('button', module);
+    const stories = storiesOf('antDesign.button', module);
   import { Button } from 'antd';
 
-stories.add('disabled', () => (
+stories.addWithJSX('disabled', () => (
     
   <div>
     <Button type="primary">Primary</Button>

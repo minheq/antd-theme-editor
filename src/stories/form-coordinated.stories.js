@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, Select, Input, Button } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -67,6 +67,6 @@ class App extends React.Component {
 
 const WrappedApp = Form.create()(App);
 
-stories.add('coordinated', () => (
+stories.addWithJSX('coordinated', () => (
     <WrappedApp />
   ))

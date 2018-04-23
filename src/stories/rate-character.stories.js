@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('rate', module);
+    const stories = storiesOf('antDesign.rate', module);
   import { Rate, Icon } from 'antd';
 
-stories.add('character', () => (
+stories.addWithJSX('character', () => (
     
   <div>
     <Rate character={<Icon type="heart" />} allowHalf />

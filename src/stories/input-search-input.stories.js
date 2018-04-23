@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input', module);
+    const stories = storiesOf('antDesign.input', module);
   import { Input } from 'antd';
 const Search = Input.Search;
 
-stories.add('search-input', () => (
+stories.addWithJSX('search-input', () => (
     
   <div>
     <Search

@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('breadcrumb', module);
+    const stories = storiesOf('antDesign.breadcrumb', module);
   import { Breadcrumb, Icon } from 'antd';
 
-stories.add('withIcon', () => (
+stories.addWithJSX('withIcon', () => (
     
   <Breadcrumb>
     <Breadcrumb.Item href="">

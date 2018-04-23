@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('slider', module);
+    const stories = storiesOf('antDesign.slider', module);
   import { Slider, Switch } from 'antd';
 
 class Demo extends React.Component {
@@ -23,6 +23,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     <Demo />
   ))

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 
 const columns = [{
@@ -82,7 +82,7 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
-stories.add('grouping-columns', () => (
+stories.addWithJSX('grouping-columns', () => (
     
   <Table
     columns={columns}

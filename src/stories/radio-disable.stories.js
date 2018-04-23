@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('radio', module);
+    const stories = storiesOf('antDesign.radio', module);
   import { Radio, Button } from 'antd';
 
 class App extends React.Component {
@@ -29,6 +29,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('disable', () => (
+stories.addWithJSX('disable', () => (
     <App />
   ))

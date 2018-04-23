@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
+    const stories = storiesOf('antDesign.mention', module);
   import { Mention } from 'antd';
 
 const users = ['afc163', 'benjycui', 'yiminghe', 'jljsj33', 'dqaria', 'RaoHai'];
@@ -40,6 +40,6 @@ class AsyncMention extends React.Component {
   }
 }
 
-stories.add('async', () => (
+stories.addWithJSX('async', () => (
     <AsyncMention />
   ))

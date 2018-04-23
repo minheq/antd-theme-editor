@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('modal', module);
+    const stories = storiesOf('antDesign.modal', module);
   import { Modal, Button } from 'antd';
 
 class App extends React.Component {
@@ -53,6 +53,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('footer', () => (
+stories.addWithJSX('footer', () => (
     <App />
   ))

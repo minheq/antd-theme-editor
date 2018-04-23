@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('button', module);
+    const stories = storiesOf('antDesign.button', module);
   import { Button, Menu, Dropdown, Icon } from 'antd';
 
 function handleMenuClick(e) {
@@ -16,7 +16,7 @@ const menu = (
   </Menu>
 );
 
-stories.add('multiple', () => (
+stories.addWithJSX('multiple', () => (
     
   <div>
     <Button type="primary">primary</Button>

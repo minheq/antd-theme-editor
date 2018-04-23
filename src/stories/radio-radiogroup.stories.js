@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('radio', module);
+    const stories = storiesOf('antDesign.radio', module);
   import { Radio } from 'antd';
 const RadioGroup = Radio.Group;
 
@@ -27,6 +27,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('radiogroup', () => (
+stories.addWithJSX('radiogroup', () => (
     <App />
   ))

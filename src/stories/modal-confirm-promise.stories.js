@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('modal', module);
+    const stories = storiesOf('antDesign.modal', module);
   import { Modal, Button } from 'antd';
 const confirm = Modal.confirm;
 
@@ -18,7 +18,7 @@ function showConfirm() {
   });
 }
 
-stories.add('confirm-promise', () => (
+stories.addWithJSX('confirm-promise', () => (
     
   <Button onClick={showConfirm}>
     Confirm

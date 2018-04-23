@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('date-picker', module);
+    const stories = storiesOf('antDesign.date-picker', module);
   import { DatePicker, Radio } from 'antd';
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 
@@ -36,6 +36,6 @@ class PickerSizesDemo extends React.Component {
   }
 }
 
-stories.add('size', () => (
+stories.addWithJSX('size', () => (
     <PickerSizesDemo />
   ))

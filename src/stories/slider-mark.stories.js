@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('slider', module);
+    const stories = storiesOf('antDesign.slider', module);
   import { Slider } from 'antd';
 
 const marks = {
@@ -16,7 +16,7 @@ const marks = {
   },
 };
 
-stories.add('mark', () => (
+stories.addWithJSX('mark', () => (
     
   <div>
     <h4>included=true</h4>

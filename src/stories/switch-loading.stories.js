@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('switch', module);
+    const stories = storiesOf('antDesign.switch', module);
   import { Switch } from 'antd';
 
-stories.add('loading', () => (
+stories.addWithJSX('loading', () => (
     
   <div>
     <Switch loading defaultChecked />

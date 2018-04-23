@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('notification', module);
+    const stories = storiesOf('antDesign.notification', module);
   import { Button, notification } from 'antd';
 
 const openNotification = () => {
@@ -11,7 +11,7 @@ const openNotification = () => {
   });
 };
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     
   <Button type="primary" onClick={openNotification}>Open the notification box</Button>
 

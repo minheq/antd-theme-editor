@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
+    const stories = storiesOf('antDesign.list', module);
   import { List, Card } from 'antd';
 
 const data = [
@@ -25,7 +25,7 @@ const data = [
   },
 ];
 
-stories.add('resposive', () => (
+stories.addWithJSX('resposive', () => (
     
   <List
     grid={{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3 }}

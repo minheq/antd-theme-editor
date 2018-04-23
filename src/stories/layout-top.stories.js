@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('layout', module);
+    const stories = storiesOf('antDesign.layout', module);
   import { Layout, Menu, Breadcrumb } from 'antd';
 const { Header, Content, Footer } = Layout;
 
-stories.add('top', () => (
+stories.addWithJSX('top', () => (
     
   <Layout className="layout">
     <Header>

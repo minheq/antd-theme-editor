@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table, Icon, Divider } from 'antd';
 
 const columns = [{
@@ -50,6 +50,6 @@ const data = [{
   address: 'Sidney No. 1 Lake Park',
 }];
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     <Table columns={columns} dataSource={data} />
   ))

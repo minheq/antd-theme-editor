@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tag', module);
+    const stories = storiesOf('antDesign.tag', module);
   import { Tag } from 'antd';
 const { CheckableTag } = Tag;
 
@@ -15,7 +15,7 @@ class MyTag extends React.Component {
   }
 }
 
-stories.add('checkable', () => (
+stories.addWithJSX('checkable', () => (
     
   <div>
     <MyTag>Tag1</MyTag>

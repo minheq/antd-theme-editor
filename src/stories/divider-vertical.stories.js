@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('divider', module);
+    const stories = storiesOf('antDesign.divider', module);
   import { Divider } from 'antd';
 
-stories.add('vertical', () => (
+stories.addWithJSX('vertical', () => (
     
   <div>
     Text

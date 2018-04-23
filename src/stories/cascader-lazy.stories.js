@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
+    const stories = storiesOf('antDesign.cascader', module);
   import { Cascader } from 'antd';
 
 const options = [{
@@ -52,6 +52,6 @@ class LazyOptions extends React.Component {
   }
 }
 
-stories.add('lazy', () => (
+stories.addWithJSX('lazy', () => (
     <LazyOptions />
   ))

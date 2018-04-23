@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('button', module);
+    const stories = storiesOf('antDesign.button', module);
   import { Button } from 'antd';
 
 class App extends React.Component {
@@ -42,6 +42,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('loading', () => (
+stories.addWithJSX('loading', () => (
     <App />
   ))

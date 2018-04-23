@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
+    const stories = storiesOf('antDesign.mention', module);
   import { Mention } from 'antd';
 const { toString } = Mention;
 
@@ -13,7 +13,7 @@ function onSelect(suggestion) {
   console.log('onSelect', suggestion);
 }
 
-stories.add('placement', () => (
+stories.addWithJSX('placement', () => (
     
   <Mention
     style={{ width: '100%' }}

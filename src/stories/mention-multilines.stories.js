@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('mention', module);
+    const stories = storiesOf('antDesign.mention', module);
   import { Mention } from 'antd';
 const { toString } = Mention;
 
@@ -9,7 +9,7 @@ function onChange(editorState) {
   console.log(toString(editorState));
 }
 
-stories.add('multilines', () => (
+stories.addWithJSX('multilines', () => (
     
   <Mention
     style={{ width: '100%', height: 100 }}

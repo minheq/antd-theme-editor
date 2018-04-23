@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('upload', module);
+    const stories = storiesOf('antDesign.upload', module);
   import { Upload, Button, Icon } from 'antd';
 
 const props = {
@@ -31,7 +31,7 @@ const props = {
   }],
 };
 
-stories.add('defaultFileList', () => (
+stories.addWithJSX('defaultFileList', () => (
     
   <Upload {...props}>
     <Button>

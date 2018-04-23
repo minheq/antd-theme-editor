@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('date-picker', module);
+    const stories = storiesOf('antDesign.date-picker', module);
   import { DatePicker } from 'antd';
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 
@@ -9,7 +9,7 @@ function onChange(date, dateString) {
   console.log(date, dateString);
 }
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     
   <div>
     <DatePicker onChange={onChange} />

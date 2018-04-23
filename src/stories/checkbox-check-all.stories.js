@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('checkbox', module);
+    const stories = storiesOf('antDesign.checkbox', module);
   import { Checkbox } from 'antd';
 const CheckboxGroup = Checkbox.Group;
 
@@ -47,6 +47,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('check-all', () => (
+stories.addWithJSX('check-all', () => (
     <App />
   ))

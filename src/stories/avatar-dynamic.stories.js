@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('avatar', module);
+    const stories = storiesOf('antDesign.avatar', module);
   import { Avatar, Button } from 'antd';
 
 const UserList = ['U', 'Lucy', 'Tom', 'Edward'];
@@ -36,7 +36,7 @@ class Autoset extends React.Component {
   }
 }
 
-stories.add('dynamic', () => (
+stories.addWithJSX('dynamic', () => (
     <Autoset />
 
   ))

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
+    const stories = storiesOf('antDesign.cascader', module);
   import { Cascader } from 'antd';
 
 const options = [{
@@ -37,7 +37,7 @@ function displayRender(label) {
   return label[label.length - 1];
 }
 
-stories.add('hover', () => (
+stories.addWithJSX('hover', () => (
     
   <Cascader
     options={options}

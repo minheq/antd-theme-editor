@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('avatar', module);
+    const stories = storiesOf('antDesign.avatar', module);
   import { Avatar, Badge } from 'antd';
 
-stories.add('badge', () => (
+stories.addWithJSX('badge', () => (
     
   <div>
     <span style={{ marginRight: 24 }}>

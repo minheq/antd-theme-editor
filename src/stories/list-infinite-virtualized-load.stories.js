@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
+    const stories = storiesOf('antDesign.list', module);
   import { List, message, Avatar, Spin } from 'antd';
 
 import reqwest from 'reqwest';
@@ -124,6 +124,6 @@ class VirtualizedExample extends React.Component {
   }
 }
 
-stories.add('infinite-virtualized-load', () => (
+stories.addWithJSX('infinite-virtualized-load', () => (
     <VirtualizedExample />
   ))

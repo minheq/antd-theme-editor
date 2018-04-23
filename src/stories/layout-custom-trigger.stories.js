@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('layout', module);
+    const stories = storiesOf('antDesign.layout', module);
   import { Layout, Menu, Icon } from 'antd';
 const { Header, Sider, Content } = Layout;
 
@@ -55,6 +55,6 @@ class SiderDemo extends React.Component {
   }
 }
 
-stories.add('custom-trigger', () => (
+stories.addWithJSX('custom-trigger', () => (
     <SiderDemo />
   ))

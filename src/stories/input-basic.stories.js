@@ -1,9 +1,9 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input', module);
+    const stories = storiesOf('antDesign.input', module);
   import { Input } from 'antd';
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     <Input placeholder="Basic usage" />
   ))

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
+    const stories = storiesOf('antDesign.cascader', module);
   import { Cascader } from 'antd';
 
 const options = [{
@@ -43,6 +43,6 @@ class CitySwitcher extends React.Component {
   }
 }
 
-stories.add('custom-trigger', () => (
+stories.addWithJSX('custom-trigger', () => (
     <CitySwitcher />
   ))

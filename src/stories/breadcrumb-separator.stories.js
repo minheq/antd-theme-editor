@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('breadcrumb', module);
+    const stories = storiesOf('antDesign.breadcrumb', module);
   import { Breadcrumb } from 'antd';
 
-stories.add('separator', () => (
+stories.addWithJSX('separator', () => (
     
   <Breadcrumb separator=">">
     <Breadcrumb.Item>Home</Breadcrumb.Item>

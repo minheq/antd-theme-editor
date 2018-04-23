@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
+    const stories = storiesOf('antDesign.cascader', module);
   import { Cascader } from 'antd';
 
 const options = [{
@@ -32,7 +32,7 @@ function onChange(value) {
   console.log(value);
 }
 
-stories.add('size', () => (
+stories.addWithJSX('size', () => (
     
   <div>
     <Cascader size="large" options={options} onChange={onChange} /><br /><br />

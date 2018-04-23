@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('slider', module);
+    const stories = storiesOf('antDesign.slider', module);
   import { Slider, InputNumber, Row, Col } from 'antd';
 
 class IntegerStep extends React.Component {
@@ -63,7 +63,7 @@ class DecimalStep extends React.Component {
   }
 }
 
-stories.add('input-number', () => (
+stories.addWithJSX('input-number', () => (
     
   <div>
     <IntegerStep />

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 
 const columns = [{
@@ -74,7 +74,7 @@ function onChange(pagination, filters, sorter) {
   console.log('params', pagination, filters, sorter);
 }
 
-stories.add('head', () => (
+stories.addWithJSX('head', () => (
     
   <Table columns={columns} dataSource={data} onChange={onChange} />
 

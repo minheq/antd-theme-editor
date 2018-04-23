@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, Input, Select, Button } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -108,6 +108,6 @@ class Demo extends React.Component {
 
 const WrappedDemo = Form.create()(Demo);
 
-stories.add('customized-form-controls', () => (
+stories.addWithJSX('customized-form-controls', () => (
     <WrappedDemo />
   ))

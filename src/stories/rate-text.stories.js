@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('rate', module);
+    const stories = storiesOf('antDesign.rate', module);
   import { Rate } from 'antd';
 
 class Rater extends React.Component {
@@ -22,6 +22,6 @@ class Rater extends React.Component {
   }
 }
 
-stories.add('text', () => (
+stories.addWithJSX('text', () => (
     <Rater />
   ))

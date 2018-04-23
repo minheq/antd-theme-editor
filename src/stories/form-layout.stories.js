@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, Input, Button, Radio } from 'antd';
 const FormItem = Form.Item;
 
@@ -58,6 +58,6 @@ class FormLayoutDemo extends React.Component {
   }
 }
 
-stories.add('layout', () => (
+stories.addWithJSX('layout', () => (
     <FormLayoutDemo />
   ))

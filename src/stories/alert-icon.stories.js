@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('alert', module);
+    const stories = storiesOf('antDesign.alert', module);
   import { Alert } from 'antd';
 
-stories.add('icon', () => (
+stories.addWithJSX('icon', () => (
     
   <div>
     <Alert message="Success Tips" type="success" showIcon />

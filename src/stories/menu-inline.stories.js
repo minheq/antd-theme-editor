@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('menu', module);
+    const stories = storiesOf('antDesign.menu', module);
   import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -48,6 +48,6 @@ class Sider extends React.Component {
   }
 }
 
-stories.add('inline', () => (
+stories.addWithJSX('inline', () => (
     <Sider />
   ))

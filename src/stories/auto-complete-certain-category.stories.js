@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('auto-complete', module);
+    const stories = storiesOf('antDesign.auto-complete', module);
   import { Icon, Input, AutoComplete } from 'antd';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
@@ -91,6 +91,6 @@ function Complete() {
   );
 }
 
-stories.add('certain-category', () => (
+stories.addWithJSX('certain-category', () => (
     <Complete />
   ))

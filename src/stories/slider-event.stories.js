@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('slider', module);
+    const stories = storiesOf('antDesign.slider', module);
   import { Slider } from 'antd';
 
 function onChange(value) {
@@ -12,7 +12,7 @@ function onAfterChange(value) {
   console.log('onAfterChange: ', value);
 }
 
-stories.add('event', () => (
+stories.addWithJSX('event', () => (
     
   <div>
     <Slider defaultValue={30} onChange={onChange} onAfterChange={onAfterChange} />

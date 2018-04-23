@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 import { DragDropContext, DragSource, DropTarget } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
@@ -178,6 +178,6 @@ class DragSortingTable extends React.Component {
 
 const Demo = DragDropContext(HTML5Backend)(DragSortingTable);
 
-stories.add('drag-sorting', () => (
+stories.addWithJSX('drag-sorting', () => (
     <Demo />
   ))

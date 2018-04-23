@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
+    const stories = storiesOf('antDesign.select', module);
   import { Select } from 'antd';
 import jsonp from 'fetch-jsonp';
 import querystring from 'querystring';
@@ -70,7 +70,7 @@ class SearchInput extends React.Component {
   }
 }
 
-stories.add('search-box', () => (
+stories.addWithJSX('search-box', () => (
     
   <SearchInput placeholder="input search text" style={{ width: 200 }} />
 

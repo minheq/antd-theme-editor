@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('date-picker', module);
+    const stories = storiesOf('antDesign.date-picker', module);
   import moment from 'moment';
 import { DatePicker } from 'antd';
 const { MonthPicker, RangePicker } = DatePicker;
@@ -42,7 +42,7 @@ function disabledRangeTime(_, type) {
   };
 }
 
-stories.add('disabled-date', () => (
+stories.addWithJSX('disabled-date', () => (
     
   <div>
     <DatePicker

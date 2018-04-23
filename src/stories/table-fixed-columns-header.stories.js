@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 
 const columns = [
@@ -34,6 +34,6 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
-stories.add('fixed-columns-header', () => (
+stories.addWithJSX('fixed-columns-header', () => (
     <Table columns={columns} dataSource={data} scroll={{ x: 1500, y: 300 }} />
   ))

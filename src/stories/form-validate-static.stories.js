@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('form', module);
+    const stories = storiesOf('antDesign.form', module);
   import { Form, Input, DatePicker, Col, TimePicker, Select, Cascader, InputNumber } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -17,7 +17,7 @@ const formItemLayout = {
   },
 };
 
-stories.add('validate-static', () => (
+stories.addWithJSX('validate-static', () => (
     
   <Form>
     <FormItem

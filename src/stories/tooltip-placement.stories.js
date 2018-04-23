@@ -1,14 +1,14 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tooltip', module);
+    const stories = storiesOf('antDesign.tooltip', module);
   import { Tooltip, Button } from 'antd';
 
 const text = <span>prompt text</span>;
 
 const buttonWidth = 70;
 
-stories.add('placement', () => (
+stories.addWithJSX('placement', () => (
     
   <div className="demo">
     <div style={{ marginLeft: buttonWidth, whiteSpace: 'nowrap' }}>

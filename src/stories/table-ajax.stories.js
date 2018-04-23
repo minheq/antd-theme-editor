@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 import reqwest from 'reqwest';
 
@@ -83,6 +83,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('ajax', () => (
+stories.addWithJSX('ajax', () => (
     <App />
   ))

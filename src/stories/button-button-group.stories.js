@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('button', module);
+    const stories = storiesOf('antDesign.button', module);
   import { Button, Icon } from 'antd';
 const ButtonGroup = Button.Group;
 
-stories.add('button-group', () => (
+stories.addWithJSX('button-group', () => (
     
   <div>
     <h4>Basic</h4>

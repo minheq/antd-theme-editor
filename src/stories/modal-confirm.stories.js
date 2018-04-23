@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('modal', module);
+    const stories = storiesOf('antDesign.modal', module);
   import { Modal, Button } from 'antd';
 const confirm = Modal.confirm;
 
@@ -34,7 +34,7 @@ function showDeleteConfirm() {
   });
 }
 
-stories.add('confirm', () => (
+stories.addWithJSX('confirm', () => (
     
   <div>
     <Button onClick={showConfirm}>

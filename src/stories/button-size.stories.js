@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('button', module);
+    const stories = storiesOf('antDesign.button', module);
   import { Button, Radio, Icon } from 'antd';
 
 class ButtonSize extends React.Component {
@@ -44,6 +44,6 @@ class ButtonSize extends React.Component {
   }
 }
 
-stories.add('size', () => (
+stories.addWithJSX('size', () => (
     <ButtonSize />
   ))

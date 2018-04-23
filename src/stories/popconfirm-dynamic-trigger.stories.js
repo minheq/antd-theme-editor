@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('popconfirm', module);
+    const stories = storiesOf('antDesign.popconfirm', module);
   import { Popconfirm, Switch, message } from 'antd';
 
 class App extends React.Component {
@@ -55,6 +55,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('dynamic-trigger', () => (
+stories.addWithJSX('dynamic-trigger', () => (
     <App />
   ))

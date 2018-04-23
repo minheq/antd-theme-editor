@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('input', module);
+    const stories = storiesOf('antDesign.input', module);
   import { Input } from 'antd';
 
-stories.add('size', () => (
+stories.addWithJSX('size', () => (
     
   <div className="example-input">
     <Input size="large" placeholder="large size" />

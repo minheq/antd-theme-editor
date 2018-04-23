@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('cascader', module);
+    const stories = storiesOf('antDesign.cascader', module);
   import { Cascader } from 'antd';
 
 const options = [{
@@ -47,7 +47,7 @@ const displayRender = (labels, selectedOptions) => labels.map((label, i) => {
   return <span key={option.value}>{label} / </span>;
 });
 
-stories.add('custom-render', () => (
+stories.addWithJSX('custom-render', () => (
     
   <Cascader
     options={options}

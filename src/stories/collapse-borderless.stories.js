@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('collapse', module);
+    const stories = storiesOf('antDesign.collapse', module);
   import { Collapse } from 'antd';
 const Panel = Collapse.Panel;
 
@@ -13,7 +13,7 @@ const text = (
   </p>
 );
 
-stories.add('borderless', () => (
+stories.addWithJSX('borderless', () => (
     
   <Collapse bordered={false} defaultActiveKey={['1']}>
     <Panel header="This is panel header 1" key="1">

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('list', module);
+    const stories = storiesOf('antDesign.list', module);
   import { List, Avatar } from 'antd';
 
 const data = [
@@ -19,7 +19,7 @@ const data = [
   },
 ];
 
-stories.add('basic', () => (
+stories.addWithJSX('basic', () => (
     
   <List
     itemLayout="horizontal"

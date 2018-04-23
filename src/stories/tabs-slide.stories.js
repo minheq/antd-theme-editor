@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tabs', module);
+    const stories = storiesOf('antDesign.tabs', module);
   import { Tabs, Radio } from 'antd';
 const TabPane = Tabs.TabPane;
 
@@ -46,6 +46,6 @@ class SlidingTabsDemo extends React.Component {
   }
 }
 
-stories.add('slide', () => (
+stories.addWithJSX('slide', () => (
     <SlidingTabsDemo />
   ))

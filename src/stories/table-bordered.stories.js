@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('table', module);
+    const stories = storiesOf('antDesign.table', module);
   import { Table } from 'antd';
 
 const columns = [{
@@ -34,7 +34,7 @@ const data = [{
   address: 'Sidney No. 1 Lake Park',
 }];
 
-stories.add('bordered', () => (
+stories.addWithJSX('bordered', () => (
     
   <Table
     columns={columns}

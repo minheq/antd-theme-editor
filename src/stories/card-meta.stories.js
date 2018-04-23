@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('card', module);
+    const stories = storiesOf('antDesign.card', module);
   import { Card, Icon, Avatar } from 'antd';
 const { Meta } = Card;
 
-stories.add('meta', () => (
+stories.addWithJSX('meta', () => (
     
   <Card
     style={{ width: 300 }}

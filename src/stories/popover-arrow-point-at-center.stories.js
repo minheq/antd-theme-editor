@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('popover', module);
+    const stories = storiesOf('antDesign.popover', module);
   import { Popover, Button } from 'antd';
 
 const text = <span>Title</span>;
@@ -12,7 +12,7 @@ const content = (
   </div>
 );
 
-stories.add('arrow-point-at-center', () => (
+stories.addWithJSX('arrow-point-at-center', () => (
     
   <div>
     <Popover placement="topLeft" title={text} content={content}>

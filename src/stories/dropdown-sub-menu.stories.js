@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('dropdown', module);
+    const stories = storiesOf('antDesign.dropdown', module);
   import { Menu, Dropdown, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
 
@@ -20,7 +20,7 @@ const menu = (
   </Menu>
 );
 
-stories.add('sub-menu', () => (
+stories.addWithJSX('sub-menu', () => (
     
   <Dropdown overlay={menu}>
     <a className="ant-dropdown-link" href="#">

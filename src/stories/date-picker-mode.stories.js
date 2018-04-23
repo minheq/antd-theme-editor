@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('date-picker', module);
+    const stories = storiesOf('antDesign.date-picker', module);
   import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
 
@@ -60,7 +60,7 @@ class ControlledRangePicker extends React.Component {
   }
 }
 
-stories.add('mode', () => (
+stories.addWithJSX('mode', () => (
     
   <div>
     <ControlledDatePicker />

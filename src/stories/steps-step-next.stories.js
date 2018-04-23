@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('steps', module);
+    const stories = storiesOf('antDesign.steps', module);
   import { Steps, Button, message } from 'antd';
 const Step = Steps.Step;
 
@@ -63,6 +63,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('step-next', () => (
+stories.addWithJSX('step-next', () => (
     <App />
   ))

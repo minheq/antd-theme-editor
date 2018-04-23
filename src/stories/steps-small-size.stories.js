@@ -1,11 +1,11 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('steps', module);
+    const stories = storiesOf('antDesign.steps', module);
   import { Steps } from 'antd';
 const Step = Steps.Step;
 
-stories.add('small-size', () => (
+stories.addWithJSX('small-size', () => (
     
   <Steps size="small" current={1}>
     <Step title="Finished" />

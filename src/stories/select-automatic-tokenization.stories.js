@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('select', module);
+    const stories = storiesOf('antDesign.select', module);
   import { Select } from 'antd';
 const Option = Select.Option;
 
@@ -14,7 +14,7 @@ function handleChange(value) {
   console.log(`selected ${value}`);
 }
 
-stories.add('automatic-tokenization', () => (
+stories.addWithJSX('automatic-tokenization', () => (
     
   <Select
     mode="tags"

@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tree-select', module);
+    const stories = storiesOf('antDesign.tree-select', module);
   import { TreeSelect } from 'antd';
 const SHOW_PARENT = TreeSelect.SHOW_PARENT;
 
@@ -57,6 +57,6 @@ class Demo extends React.Component {
   }
 }
 
-stories.add('checkable', () => (
+stories.addWithJSX('checkable', () => (
     <Demo />
   ))

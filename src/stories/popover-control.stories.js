@@ -1,7 +1,7 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('popover', module);
+    const stories = storiesOf('antDesign.popover', module);
   import { Popover, Button } from 'antd';
 
 class App extends React.Component {
@@ -31,6 +31,6 @@ class App extends React.Component {
   }
 }
 
-stories.add('control', () => (
+stories.addWithJSX('control', () => (
     <App />
   ))

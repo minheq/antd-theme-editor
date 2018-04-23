@@ -1,10 +1,10 @@
 
     import React from 'react';
     import { storiesOf } from '@storybook/react';
-    const stories = storiesOf('tag', module);
+    const stories = storiesOf('antDesign.tag', module);
   import { Tag } from 'antd';
 
-stories.add('colorful', () => (
+stories.addWithJSX('colorful', () => (
     
   <div>
     <h4 style={{ marginBottom: 16 }}>Presets:</h4>
