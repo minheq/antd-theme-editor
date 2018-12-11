@@ -2,14 +2,17 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.menu", module);
 import { Menu, Icon } from "antd";
+
 const SubMenu = Menu.SubMenu;
 
 class Sider extends React.Component {
   // submenu keys of first level
   rootSubmenuKeys = ["sub1", "sub2", "sub4"];
+
   state = {
     openKeys: ["sub1"]
   };
+
   onOpenChange = openKeys => {
     const latestOpenKey = openKeys.find(
       key => this.state.openKeys.indexOf(key) === -1
@@ -22,6 +25,7 @@ class Sider extends React.Component {
       });
     }
   };
+
   render() {
     return (
       <Menu

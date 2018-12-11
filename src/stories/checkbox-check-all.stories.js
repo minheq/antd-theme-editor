@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.checkbox", module);
 import { Checkbox } from "antd";
+
 const CheckboxGroup = Checkbox.Group;
 
 const plainOptions = ["Apple", "Pear", "Orange"];
@@ -13,6 +14,24 @@ class App extends React.Component {
     indeterminate: true,
     checkAll: false
   };
+
+  onChange = checkedList => {
+    this.setState({
+      checkedList,
+      indeterminate:
+        !!checkedList.length && checkedList.length < plainOptions.length,
+      checkAll: checkedList.length === plainOptions.length
+    });
+  };
+
+  onCheckAllChange = e => {
+    this.setState({
+      checkedList: e.target.checked ? plainOptions : [],
+      indeterminate: false,
+      checkAll: e.target.checked
+    });
+  };
+
   render() {
     return (
       <div>
@@ -34,21 +53,6 @@ class App extends React.Component {
       </div>
     );
   }
-  onChange = checkedList => {
-    this.setState({
-      checkedList,
-      indeterminate:
-        !!checkedList.length && checkedList.length < plainOptions.length,
-      checkAll: checkedList.length === plainOptions.length
-    });
-  };
-  onCheckAllChange = e => {
-    this.setState({
-      checkedList: e.target.checked ? plainOptions : [],
-      indeterminate: false,
-      checkAll: e.target.checked
-    });
-  };
 }
 
 stories.addWithJSX("check-all", () => <App />);

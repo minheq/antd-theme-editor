@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.checkbox", module);
 import { Checkbox } from "antd";
+
 const CheckboxGroup = Checkbox.Group;
 
 function onChange(checkedValues) {

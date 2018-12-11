@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.menu", module);
 import { Menu, Icon, Switch } from "antd";
+
 const { SubMenu } = Menu;
 
 class Sider extends React.Component {
@@ -9,16 +10,19 @@ class Sider extends React.Component {
     mode: "inline",
     theme: "light"
   };
+
   changeMode = value => {
     this.setState({
       mode: value ? "vertical" : "inline"
     });
   };
+
   changeTheme = value => {
     this.setState({
       theme: value ? "dark" : "light"
     });
   };
+
   render() {
     return (
       <div>

@@ -8,7 +8,7 @@ const openNotification = () => {
     message: "Notification Title",
     description:
       "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
-    icon: <Icon type="smile-circle" style={{ color: "#108ee9" }} />
+    icon: <Icon type="smile" style={{ color: "#108ee9" }} />
   });
 };
 

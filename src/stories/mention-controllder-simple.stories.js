@@ -2,20 +2,24 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.mention", module);
 import { Mention } from "antd";
+
 const { toContentState } = Mention;
 
 class App extends React.Component {
   state = {
     value: toContentState("@afc163")
   };
+
   componentDidMount() {
     this.mention.focus();
   }
+
   handleChange = editorState => {
     this.setState({
       value: editorState
     });
   };
+
   render() {
     return (
       <Mention

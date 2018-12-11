@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.select", module);
 import { Select, Spin } from "antd";
 import debounce from "lodash/debounce";
+
 const Option = Select.Option;
 
 class UserRemoteSelect extends React.Component {
@@ -11,11 +12,13 @@ class UserRemoteSelect extends React.Component {
     this.lastFetchId = 0;
     this.fetchUser = debounce(this.fetchUser, 800);
   }
+
   state = {
     data: [],
     value: [],
     fetching: false
   };
+
   fetchUser = value => {
     console.log("fetching user", value);
     this.lastFetchId += 1;
@@ -35,6 +38,7 @@ class UserRemoteSelect extends React.Component {
         this.setState({ data, fetching: false });
       });
   };
+
   handleChange = value => {
     this.setState({
       value,
@@ -42,6 +46,7 @@ class UserRemoteSelect extends React.Component {
       fetching: false
     });
   };
+
   render() {
     const { fetching, data, value } = this.state;
     return (
@@ -56,7 +61,9 @@ class UserRemoteSelect extends React.Component {
         onChange={this.handleChange}
         style={{ width: "100%" }}
       >
-        {data.map(d => <Option key={d.value}>{d.text}</Option>)}
+        {data.map(d => (
+          <Option key={d.value}>{d.text}</Option>
+        ))}
       </Select>
     );
   }

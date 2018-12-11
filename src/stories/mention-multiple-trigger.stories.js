@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.mention", module);
 import { Mention } from "antd";
+
 const { toString } = Mention;
 
 function onChange(editorState) {
@@ -22,6 +23,7 @@ class App extends React.Component {
       suggestions: []
     };
   }
+
   onSearchChange = (value, trigger) => {
     console.log("onSearchChange", value, trigger);
     const dataSource = trigger === "@" ? users : tags;
@@ -29,6 +31,7 @@ class App extends React.Component {
       suggestions: dataSource.filter(item => item.indexOf(value) !== -1)
     });
   };
+
   render() {
     return (
       <Mention

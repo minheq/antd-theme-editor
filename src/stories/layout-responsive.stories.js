@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.layout", module);
 import { Layout, Menu, Icon } from "antd";
+
 const { Header, Content, Footer, Sider } = Layout;
 
 stories.addWithJSX("responsive", () => (
@@ -9,6 +10,9 @@ stories.addWithJSX("responsive", () => (
     <Sider
       breakpoint="lg"
       collapsedWidth="0"
+      onBreakpoint={broken => {
+        console.log(broken);
+      }}
       onCollapse={(collapsed, type) => {
         console.log(collapsed, type);
       }}
@@ -41,7 +45,7 @@ stories.addWithJSX("responsive", () => (
         </div>
       </Content>
       <Footer style={{ textAlign: "center" }}>
-        Ant Design ©2016 Created by Ant UED
+        Ant Design ©2018 Created by Ant UED
       </Footer>
     </Layout>
   </Layout>

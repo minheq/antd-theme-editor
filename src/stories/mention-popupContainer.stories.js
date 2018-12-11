@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.mention", module);
 import { Mention, Popover, Button } from "antd";
+
 const { toString, toContentState } = Mention;
 
 function onChange(editorState) {
@@ -13,14 +14,14 @@ function onSelect(suggestion) {
 }
 
 class PopoverContainer extends React.Component {
-  getSuggestionContainer = () => {
-    return this.popover.getPopupDomNode();
-  };
+  getSuggestionContainer = () => this.popover.getPopupDomNode();
+
   visibleChange = visible => {
     if (visible && this.mention) {
       this.mention.focus();
     }
   };
+
   render() {
     const mention = (
       <Mention

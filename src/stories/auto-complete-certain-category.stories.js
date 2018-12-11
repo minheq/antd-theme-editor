@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.auto-complete", module);
 import { Icon, Input, AutoComplete } from "antd";
+
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
 

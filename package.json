@@ -9,8 +9,10 @@
     "react-dnd": "^7.0.2",
     "react-dnd-html5-backend": "^7.0.2",
     "react-infinite-scroller": "^1.2.2",
+    "react-resizable": "^1.7.5",
     "react-router": "4.2.0",
     "react-router-dom": "^4.3.1",
+    "react-sticky": "^6.0.3",
     "react-virtualized": "^9.21.0",
     "reqwest": "^2.0.5"
   },
@@ -31,9 +33,13 @@
     "@storybook/addons": "^4.0.12",
     "@storybook/react": "^4.0.12",
     "babel-loader": "^8.0.4",
+    "fs-readdir-promise": "^1.0.1",
+    "fs-readfile-promise": "^3.0.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "less-vars-to-js": "^1.3.0",
+    "mark-twain": "^2.0.3",
+    "node-fs-writefile-promise": "^1.0.0",
     "react-storybook-decorator-background": "^1.0.5",
     "storybook-addon-jsx": "^6.0.0"
   }

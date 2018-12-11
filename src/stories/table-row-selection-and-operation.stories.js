@@ -33,6 +33,7 @@ class App extends React.Component {
     selectedRowKeys: [], // Check here to configure the default column
     loading: false
   };
+
   start = () => {
     this.setState({ loading: true });
     // ajax request after empty completing
@@ -43,10 +44,12 @@ class App extends React.Component {
       });
     }, 1000);
   };
+
   onSelectChange = selectedRowKeys => {
     console.log("selectedRowKeys changed: ", selectedRowKeys);
     this.setState({ selectedRowKeys });
   };
+
   render() {
     const { loading, selectedRowKeys } = this.state;
     const rowSelection = {

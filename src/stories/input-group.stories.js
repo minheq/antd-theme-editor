@@ -10,6 +10,7 @@ import {
   AutoComplete,
   Cascader
 } from "antd";
+
 const InputGroup = Input.Group;
 const Option = Select.Option;
 
@@ -52,6 +53,7 @@ class CompactDemo extends React.Component {
   state = {
     dataSource: []
   };
+
   handleChange = value => {
     this.setState({
       dataSource:
@@ -60,6 +62,7 @@ class CompactDemo extends React.Component {
           : [`${value}@gmail.com`, `${value}@163.com`, `${value}@qq.com`]
     });
   };
+
   render() {
     return (
       <div>

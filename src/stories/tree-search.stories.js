@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tree", module);
 import { Tree, Input } from "antd";
 
-const TreeNode = Tree.TreeNode;
+const { TreeNode } = Tree;
 const Search = Input.Search;
 
 const x = 3;
@@ -68,17 +68,19 @@ class SearchTree extends React.Component {
     searchValue: "",
     autoExpandParent: true
   };
+
   onExpand = expandedKeys => {
     this.setState({
       expandedKeys,
       autoExpandParent: false
     });
   };
+
   onChange = e => {
     const value = e.target.value;
     const expandedKeys = dataList
       .map(item => {
-        if (item.key.indexOf(value) > -1) {
+        if (item.title.indexOf(value) > -1) {
           return getParentKey(item.key, gData);
         }
         return null;
@@ -90,13 +92,14 @@ class SearchTree extends React.Component {
       autoExpandParent: true
     });
   };
+
   render() {
     const { searchValue, expandedKeys, autoExpandParent } = this.state;
     const loop = data =>
       data.map(item => {
-        const index = item.key.indexOf(searchValue);
-        const beforeStr = item.key.substr(0, index);
-        const afterStr = item.key.substr(index + searchValue.length);
+        const index = item.title.indexOf(searchValue);
+        const beforeStr = item.title.substr(0, index);
+        const afterStr = item.title.substr(index + searchValue.length);
         const title =
           index > -1 ? (
             <span>
@@ -105,7 +108,7 @@ class SearchTree extends React.Component {
               {afterStr}
             </span>
           ) : (
-            <span>{item.key}</span>
+            <span>{item.title}</span>
           );
         if (item.children) {
           return (

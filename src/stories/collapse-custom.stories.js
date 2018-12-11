@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.collapse", module);
 import { Collapse } from "antd";
+
 const Panel = Collapse.Panel;
 
 const text = `

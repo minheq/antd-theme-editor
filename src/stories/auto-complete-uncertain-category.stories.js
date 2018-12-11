@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.auto-complete", module);
 import { Icon, Button, Input, AutoComplete } from "antd";
+
 const Option = AutoComplete.Option;
 
 function onSelect(value) {

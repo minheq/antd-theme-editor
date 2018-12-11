@@ -2,7 +2,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tree", module);
 import { Tree } from "antd";
-const TreeNode = Tree.TreeNode;
+
+const { TreeNode } = Tree;
 
 class Demo extends React.Component {
   state = {
@@ -12,8 +13,9 @@ class Demo extends React.Component {
       { title: "Tree Node", key: "2", isLeaf: true }
     ]
   };
-  onLoadData = treeNode => {
-    return new Promise(resolve => {
+
+  onLoadData = treeNode =>
+    new Promise(resolve => {
       if (treeNode.props.children) {
         resolve();
         return;
@@ -29,9 +31,9 @@ class Demo extends React.Component {
         resolve();
       }, 1000);
     });
-  };
-  renderTreeNodes = data => {
-    return data.map(item => {
+
+  renderTreeNodes = data =>
+    data.map(item => {
       if (item.children) {
         return (
           <TreeNode title={item.title} key={item.key} dataRef={item}>
@@ -41,7 +43,7 @@ class Demo extends React.Component {
       }
       return <TreeNode {...item} dataRef={item} />;
     });
-  };
+
   render() {
     return (
       <Tree loadData={this.onLoadData}>

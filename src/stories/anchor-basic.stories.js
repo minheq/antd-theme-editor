@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.anchor", module);
 import { Anchor } from "antd";
+
 const { Link } = Anchor;
 
 stories.addWithJSX("basic", () => (

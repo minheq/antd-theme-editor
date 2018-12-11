@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.layout", module);
 import { Layout, Menu, Breadcrumb } from "antd";
+
 const { Header, Content, Footer } = Layout;
 
 stories.addWithJSX("top", () => (
@@ -30,7 +31,7 @@ stories.addWithJSX("top", () => (
       </div>
     </Content>
     <Footer style={{ textAlign: "center" }}>
-      Ant Design ©2016 Created by Ant UED
+      Ant Design ©2018 Created by Ant UED
     </Footer>
   </Layout>
 ));

@@ -2,15 +2,19 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tree-select", module);
 import { TreeSelect } from "antd";
+
 const TreeNode = TreeSelect.TreeNode;
 
 class Demo extends React.Component {
   state = {
     value: undefined
   };
+
   onChange = value => {
+    console.log(value);
     this.setState({ value });
   };
+
   render() {
     return (
       <TreeSelect

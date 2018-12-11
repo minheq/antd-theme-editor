@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.steps", module);
 import { Steps, Icon } from "antd";
+
 const Step = Steps.Step;
 
 stories.addWithJSX("icon", () => (

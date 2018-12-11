@@ -5,7 +5,9 @@ import { Row, Col, Slider } from "antd";
 
 class App extends React.Component {
   gutters = {};
+
   colCounts = {};
+
   constructor() {
     super();
     this.state = {
@@ -19,12 +21,15 @@ class App extends React.Component {
       this.colCounts[i] = value;
     });
   }
+
   onGutterChange = gutterKey => {
     this.setState({ gutterKey });
   };
+
   onColCountChange = colCountKey => {
     this.setState({ colCountKey });
   };
+
   render() {
     const { gutterKey, colCountKey } = this.state;
     const cols = [];

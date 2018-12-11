@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tag", module);
 import { Tag } from "antd";
+
 const CheckableTag = Tag.CheckableTag;
 
 const tagsFromServer = ["Movies", "Books", "Music", "Sports"];

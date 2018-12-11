@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Select, Input, Button } from "antd";
+
 const FormItem = Form.Item;
 const Option = Select.Option;
 
@@ -14,12 +15,14 @@ class App extends React.Component {
       }
     });
   };
+
   handleSelectChange = value => {
     console.log(value);
     this.props.form.setFieldsValue({
       note: `Hi, ${value === "male" ? "man" : "lady"}!`
     });
   };
+
   render() {
     const { getFieldDecorator } = this.props.form;
     return (

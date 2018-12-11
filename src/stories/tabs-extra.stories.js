@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tabs", module);
 import { Tabs, Button } from "antd";
+
 const TabPane = Tabs.TabPane;
 
 const operations = <Button>Extra Action</Button>;

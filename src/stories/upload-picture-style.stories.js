@@ -5,7 +5,7 @@ import { Upload, Button, Icon } from "antd";
 
 const fileList = [
   {
-    uid: -1,
+    uid: "-1",
     name: "xxx.png",
     status: "done",
     url:
@@ -14,7 +14,7 @@ const fileList = [
       "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
   },
   {
-    uid: -2,
+    uid: "-2",
     name: "yyy.png",
     status: "done",
     url:
@@ -41,14 +41,14 @@ stories.addWithJSX("picture-style", () => (
   <div>
     <Upload {...props}>
       <Button>
-        <Icon type="upload" /> upload
+        <Icon type="upload" /> Upload
       </Button>
     </Upload>
     <br />
     <br />
     <Upload {...props2}>
       <Button>
-        <Icon type="upload" /> upload
+        <Icon type="upload" /> Upload
       </Button>
     </Upload>
   </div>

@@ -8,12 +8,15 @@ class App extends React.Component {
     modal1Visible: false,
     modal2Visible: false
   };
+
   setModal1Visible(modal1Visible) {
     this.setState({ modal1Visible });
   }
+
   setModal2Visible(modal2Visible) {
     this.setState({ modal2Visible });
   }
+
   render() {
     return (
       <div>
@@ -38,7 +41,7 @@ class App extends React.Component {
         </Button>
         <Modal
           title="Vertically centered modal dialog"
-          wrapClassName="vertical-center-modal"
+          centered
           visible={this.state.modal2Visible}
           onOk={() => this.setModal2Visible(false)}
           onCancel={() => this.setModal2Visible(false)}

@@ -2,9 +2,11 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Button, Modal, Form, Input, Radio } from "antd";
+
 const FormItem = Form.Item;
 
 const CollectionCreateForm = Form.create()(
+  // eslint-disable-next-line
   class extends React.Component {
     render() {
       const { visible, onCancel, onCreate, form } = this.props;
@@ -52,12 +54,15 @@ class CollectionsPage extends React.Component {
   state = {
     visible: false
   };
+
   showModal = () => {
     this.setState({ visible: true });
   };
+
   handleCancel = () => {
     this.setState({ visible: false });
   };
+
   handleCreate = () => {
     const form = this.formRef.props.form;
     form.validateFields((err, values) => {
@@ -70,9 +75,11 @@ class CollectionsPage extends React.Component {
       this.setState({ visible: false });
     });
   };
+
   saveFormRef = formRef => {
     this.formRef = formRef;
   };
+
   render() {
     return (
       <div>

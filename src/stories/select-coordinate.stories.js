@@ -2,8 +2,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.select", module);
 import { Select } from "antd";
-const Option = Select.Option;
 
+const Option = Select.Option;
 const provinceData = ["Zhejiang", "Jiangsu"];
 const cityData = {
   Zhejiang: ["Hangzhou", "Ningbo", "Wenzhou"],
@@ -15,39 +15,41 @@ class App extends React.Component {
     cities: cityData[provinceData[0]],
     secondCity: cityData[provinceData[0]][0]
   };
+
   handleProvinceChange = value => {
     this.setState({
       cities: cityData[value],
       secondCity: cityData[value][0]
     });
   };
+
   onSecondCityChange = value => {
     this.setState({
       secondCity: value
     });
   };
+
   render() {
-    const provinceOptions = provinceData.map(province => (
-      <Option key={province}>{province}</Option>
-    ));
-    const cityOptions = this.state.cities.map(city => (
-      <Option key={city}>{city}</Option>
-    ));
+    const { cities } = this.state;
     return (
       <div>
         <Select
           defaultValue={provinceData[0]}
-          style={{ width: 90 }}
+          style={{ width: 120 }}
           onChange={this.handleProvinceChange}
         >
-          {provinceOptions}
+          {provinceData.map(province => (
+            <Option key={province}>{province}</Option>
+          ))}
         </Select>
         <Select
+          style={{ width: 120 }}
           value={this.state.secondCity}
-          style={{ width: 90 }}
           onChange={this.onSecondCityChange}
         >
-          {cityOptions}
+          {cities.map(city => (
+            <Option key={city}>{city}</Option>
+          ))}
         </Select>
       </div>
     );

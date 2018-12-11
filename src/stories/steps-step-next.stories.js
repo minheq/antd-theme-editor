@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.steps", module);
 import { Steps, Button, message } from "antd";
+
 const Step = Steps.Step;
 
 const steps = [
@@ -26,29 +27,34 @@ class App extends React.Component {
       current: 0
     };
   }
+
   next() {
     const current = this.state.current + 1;
     this.setState({ current });
   }
+
   prev() {
     const current = this.state.current - 1;
     this.setState({ current });
   }
+
   render() {
     const { current } = this.state;
     return (
       <div>
         <Steps current={current}>
-          {steps.map(item => <Step key={item.title} title={item.title} />)}
+          {steps.map(item => (
+            <Step key={item.title} title={item.title} />
+          ))}
         </Steps>
-        <div className="steps-content">{steps[this.state.current].content}</div>
+        <div className="steps-content">{steps[current].content}</div>
         <div className="steps-action">
-          {this.state.current < steps.length - 1 && (
+          {current < steps.length - 1 && (
             <Button type="primary" onClick={() => this.next()}>
               Next
             </Button>
           )}
-          {this.state.current === steps.length - 1 && (
+          {current === steps.length - 1 && (
             <Button
               type="primary"
               onClick={() => message.success("Processing complete!")}
@@ -56,7 +62,7 @@ class App extends React.Component {
               Done
             </Button>
           )}
-          {this.state.current > 0 && (
+          {current > 0 && (
             <Button style={{ marginLeft: 8 }} onClick={() => this.prev()}>
               Previous
             </Button>

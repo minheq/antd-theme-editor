@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.layout", module);
 import { Layout, Menu, Breadcrumb, Icon } from "antd";
+
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -38,7 +39,8 @@ stories.addWithJSX("top-side", () => (
               key="sub1"
               title={
                 <span>
-                  <Icon type="user" />subnav 1
+                  <Icon type="user" />
+                  subnav 1
                 </span>
               }
             >
@@ -51,7 +53,8 @@ stories.addWithJSX("top-side", () => (
               key="sub2"
               title={
                 <span>
-                  <Icon type="laptop" />subnav 2
+                  <Icon type="laptop" />
+                  subnav 2
                 </span>
               }
             >
@@ -64,7 +67,8 @@ stories.addWithJSX("top-side", () => (
               key="sub3"
               title={
                 <span>
-                  <Icon type="notification" />subnav 3
+                  <Icon type="notification" />
+                  subnav 3
                 </span>
               }
             >
@@ -79,7 +83,7 @@ stories.addWithJSX("top-side", () => (
       </Layout>
     </Content>
     <Footer style={{ textAlign: "center" }}>
-      Ant Design ©2016 Created by Ant UED
+      Ant Design ©2018 Created by Ant UED
     </Footer>
   </Layout>
 ));

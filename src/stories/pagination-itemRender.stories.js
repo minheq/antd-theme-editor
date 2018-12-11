@@ -6,7 +6,8 @@ import { Pagination } from "antd";
 function itemRender(current, type, originalElement) {
   if (type === "prev") {
     return <a>Previous</a>;
-  } else if (type === "next") {
+  }
+  if (type === "next") {
     return <a>Next</a>;
   }
   return originalElement;

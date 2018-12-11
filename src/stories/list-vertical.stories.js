@@ -4,7 +4,7 @@ const stories = storiesOf("antDesign.list", module);
 import { List, Avatar, Icon } from "antd";
 
 const listData = [];
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 23; i++) {
   listData.push({
     href: "http://ant.design",
     title: `ant design part ${i}`,
@@ -15,13 +15,6 @@ for (let i = 0; i < 5; i++) {
       "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently."
   });
 }
-
-const pagination = {
-  pageSize: 10,
-  current: 1,
-  total: listData.length,
-  onChange: () => {}
-};
 
 const IconText = ({ type, text }) => (
   <span>
@@ -34,7 +27,12 @@ stories.addWithJSX("vertical", () => (
   <List
     itemLayout="vertical"
     size="large"
-    pagination={pagination}
+    pagination={{
+      onChange: page => {
+        console.log(page);
+      },
+      pageSize: 3
+    }}
     dataSource={listData}
     footer={
       <div>

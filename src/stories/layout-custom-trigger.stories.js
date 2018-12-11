@@ -2,17 +2,20 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.layout", module);
 import { Layout, Menu, Icon } from "antd";
+
 const { Header, Sider, Content } = Layout;
 
 class SiderDemo extends React.Component {
   state = {
     collapsed: false
   };
+
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed
     });
   };
+
   render() {
     return (
       <Layout>

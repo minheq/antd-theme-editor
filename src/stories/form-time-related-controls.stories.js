@@ -2,9 +2,9 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, DatePicker, TimePicker, Button } from "antd";
+
 const FormItem = Form.Item;
-const MonthPicker = DatePicker.MonthPicker;
-const RangePicker = DatePicker.RangePicker;
+const { MonthPicker, RangePicker } = DatePicker;
 
 class TimeRelatedForm extends React.Component {
   handleSubmit = e => {
@@ -38,6 +38,7 @@ class TimeRelatedForm extends React.Component {
       console.log("Received values of form: ", values);
     });
   };
+
   render() {
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {

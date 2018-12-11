@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.alert", module);
 import { Alert } from "antd";
 
-const onClose = function(e) {
+const onClose = e => {
   console.log(e, "I was closed.");
 };
 

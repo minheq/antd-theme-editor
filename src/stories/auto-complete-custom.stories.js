@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.auto-complete", module);
 import { AutoComplete, Input } from "antd";
+
 const { TextArea } = Input;
 
 function onSelect(value) {

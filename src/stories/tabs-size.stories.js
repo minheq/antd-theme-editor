@@ -2,13 +2,16 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tabs", module);
 import { Tabs, Radio } from "antd";
+
 const { TabPane } = Tabs;
 
 class Demo extends React.Component {
   state = { size: "small" };
+
   onChange = e => {
     this.setState({ size: e.target.value });
   };
+
   render() {
     const { size } = this.state;
     return (

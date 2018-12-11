@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.menu", module);
 import { Menu, Icon } from "antd";
+
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
@@ -9,6 +10,7 @@ class Sider extends React.Component {
   handleClick = e => {
     console.log("click ", e);
   };
+
   render() {
     return (
       <Menu
