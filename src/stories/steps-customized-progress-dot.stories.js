@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.steps", module);
 import { Steps, Popover } from "antd";
+
 const Step = Steps.Step;
 
 const customDot = (dot, { status, index }) => (

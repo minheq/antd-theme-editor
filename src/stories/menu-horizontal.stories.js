@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.menu", module);
 import { Menu, Icon } from "antd";
+
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
@@ -9,12 +10,14 @@ class App extends React.Component {
   state = {
     current: "mail"
   };
+
   handleClick = e => {
     console.log("click ", e);
     this.setState({
       current: e.key
     });
   };
+
   render() {
     return (
       <Menu
@@ -23,15 +26,18 @@ class App extends React.Component {
         mode="horizontal"
       >
         <Menu.Item key="mail">
-          <Icon type="mail" />Navigation One
+          <Icon type="mail" />
+          Navigation One
         </Menu.Item>
         <Menu.Item key="app" disabled>
-          <Icon type="appstore" />Navigation Two
+          <Icon type="appstore" />
+          Navigation Two
         </Menu.Item>
         <SubMenu
           title={
-            <span>
-              <Icon type="setting" />Navigation Three - Submenu
+            <span className="submenu-title-wrapper">
+              <Icon type="setting" />
+              Navigation Three - Submenu
             </span>
           }
         >

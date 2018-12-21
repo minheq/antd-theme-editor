@@ -3,10 +3,10 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.popconfirm", module);
 import { Popconfirm, message, Button } from "antd";
 
-const text = "Are you sure delete this task?";
+const text = "Are you sure to delete this task?";
 
 function confirm() {
-  message.info("Click on Yes.");
+  message.info("Clicked on Yes.");
 }
 
 stories.addWithJSX("placement", () => (

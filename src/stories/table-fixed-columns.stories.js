@@ -11,7 +11,13 @@ const columns = [
     key: "name",
     fixed: "left"
   },
-  { title: "Age", width: 100, dataIndex: "age", key: "age", fixed: "left" },
+  {
+    title: "Age",
+    width: 100,
+    dataIndex: "age",
+    key: "age",
+    fixed: "left"
+  },
   { title: "Column 1", dataIndex: "address", key: "1" },
   { title: "Column 2", dataIndex: "address", key: "2" },
   { title: "Column 3", dataIndex: "address", key: "3" },

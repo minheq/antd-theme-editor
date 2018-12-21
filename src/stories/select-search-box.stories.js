@@ -4,6 +4,7 @@ const stories = storiesOf("antDesign.select", module);
 import { Select } from "antd";
 import jsonp from "fetch-jsonp";
 import querystring from "querystring";
+
 const Option = Select.Option;
 
 let timeout;
@@ -44,26 +45,33 @@ function fetch(value, callback) {
 class SearchInput extends React.Component {
   state = {
     data: [],
-    value: ""
+    value: undefined
   };
-  handleChange = value => {
-    this.setState({ value });
+
+  handleSearch = value => {
     fetch(value, data => this.setState({ data }));
   };
+
+  handleChange = value => {
+    this.setState({ value });
+  };
+
   render() {
     const options = this.state.data.map(d => (
       <Option key={d.value}>{d.text}</Option>
     ));
     return (
       <Select
-        mode="combobox"
+        showSearch
         value={this.state.value}
         placeholder={this.props.placeholder}
         style={this.props.style}
         defaultActiveFirstOption={false}
         showArrow={false}
         filterOption={false}
+        onSearch={this.handleSearch}
         onChange={this.handleChange}
+        notFoundContent={null}
       >
         {options}
       </Select>

@@ -2,7 +2,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tree", module);
 import { Tree } from "antd";
-const TreeNode = Tree.TreeNode;
+
+const { TreeNode } = Tree;
 
 const treeData = [
   {
@@ -55,8 +56,9 @@ class Demo extends React.Component {
     checkedKeys: ["0-0-0"],
     selectedKeys: []
   };
+
   onExpand = expandedKeys => {
-    console.log("onExpand", arguments);
+    console.log("onExpand", expandedKeys);
     // if not set autoExpandParent to false, if children expanded, parent can not collapse.
     // or, you can remove all expanded children keys.
     this.setState({
@@ -64,16 +66,19 @@ class Demo extends React.Component {
       autoExpandParent: false
     });
   };
+
   onCheck = checkedKeys => {
     console.log("onCheck", checkedKeys);
     this.setState({ checkedKeys });
   };
+
   onSelect = (selectedKeys, info) => {
     console.log("onSelect", info);
     this.setState({ selectedKeys });
   };
-  renderTreeNodes = data => {
-    return data.map(item => {
+
+  renderTreeNodes = data =>
+    data.map(item => {
       if (item.children) {
         return (
           <TreeNode title={item.title} key={item.key} dataRef={item}>
@@ -83,7 +88,7 @@ class Demo extends React.Component {
       }
       return <TreeNode {...item} />;
     });
-  };
+
   render() {
     return (
       <Tree

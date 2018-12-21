@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.menu", module);
 import { Menu, Icon } from "antd";
+
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 

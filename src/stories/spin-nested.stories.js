@@ -5,9 +5,11 @@ import { Spin, Switch, Alert } from "antd";
 
 class Card extends React.Component {
   state = { loading: false };
+
   toggle = value => {
     this.setState({ loading: value });
   };
+
   render() {
     return (
       <div>
@@ -19,10 +21,8 @@ class Card extends React.Component {
           />
         </Spin>
         <div style={{ marginTop: 16 }}>
-          Loading state：<Switch
-            checked={this.state.loading}
-            onChange={this.toggle}
-          />
+          Loading state：
+          <Switch checked={this.state.loading} onChange={this.toggle} />
         </div>
       </div>
     );

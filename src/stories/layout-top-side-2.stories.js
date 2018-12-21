@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.layout", module);
 import { Layout, Menu, Breadcrumb, Icon } from "antd";
+
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
@@ -32,7 +33,8 @@ stories.addWithJSX("top-side-2", () => (
             key="sub1"
             title={
               <span>
-                <Icon type="user" />subnav 1
+                <Icon type="user" />
+                subnav 1
               </span>
             }
           >
@@ -45,7 +47,8 @@ stories.addWithJSX("top-side-2", () => (
             key="sub2"
             title={
               <span>
-                <Icon type="laptop" />subnav 2
+                <Icon type="laptop" />
+                subnav 2
               </span>
             }
           >
@@ -58,7 +61,8 @@ stories.addWithJSX("top-side-2", () => (
             key="sub3"
             title={
               <span>
-                <Icon type="notification" />subnav 3
+                <Icon type="notification" />
+                subnav 3
               </span>
             }
           >
@@ -76,7 +80,12 @@ stories.addWithJSX("top-side-2", () => (
           <Breadcrumb.Item>App</Breadcrumb.Item>
         </Breadcrumb>
         <Content
-          style={{ background: "#fff", padding: 24, margin: 0, minHeight: 280 }}
+          style={{
+            background: "#fff",
+            padding: 24,
+            margin: 0,
+            minHeight: 280
+          }}
         >
           Content
         </Content>

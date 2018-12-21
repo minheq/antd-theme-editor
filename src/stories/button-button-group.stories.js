@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.button", module);
 import { Button, Icon } from "antd";
+
 const ButtonGroup = Button.Group;
 
 stories.addWithJSX("button-group", () => (
@@ -25,10 +26,12 @@ stories.addWithJSX("button-group", () => (
     <h4>With Icon</h4>
     <ButtonGroup>
       <Button type="primary">
-        <Icon type="left" />Go back
+        <Icon type="left" />
+        Go back
       </Button>
       <Button type="primary">
-        Go forward<Icon type="right" />
+        Go forward
+        <Icon type="right" />
       </Button>
     </ButtonGroup>
     <ButtonGroup>

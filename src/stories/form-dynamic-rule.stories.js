@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Input, Button, Checkbox } from "antd";
+
 const FormItem = Form.Item;
 
 const formItemLayout = {
@@ -16,6 +17,7 @@ class DynamicRule extends React.Component {
   state = {
     checkNick: false
   };
+
   check = () => {
     this.props.form.validateFields(err => {
       if (!err) {
@@ -23,6 +25,7 @@ class DynamicRule extends React.Component {
       }
     });
   };
+
   handleChange = e => {
     this.setState(
       {
@@ -33,6 +36,7 @@ class DynamicRule extends React.Component {
       }
     );
   };
+
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
@@ -58,7 +62,7 @@ class DynamicRule extends React.Component {
           })(<Input placeholder="Please input your nickname" />)}
         </FormItem>
         <FormItem {...formTailLayout}>
-          <Checkbox value={this.state.checkNick} onChange={this.handleChange}>
+          <Checkbox checked={this.state.checkNick} onChange={this.handleChange}>
             Nickname is required
           </Checkbox>
         </FormItem>

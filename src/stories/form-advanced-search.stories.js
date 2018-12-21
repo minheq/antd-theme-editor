@@ -2,27 +2,12 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Row, Col, Input, Button, Icon } from "antd";
+
 const FormItem = Form.Item;
 
 class AdvancedSearchForm extends React.Component {
   state = {
     expand: false
-  };
-
-  handleSearch = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      console.log("Received values of form: ", values);
-    });
-  };
-
-  handleReset = () => {
-    this.props.form.resetFields();
-  };
-
-  toggle = () => {
-    const { expand } = this.state;
-    this.setState({ expand: !expand });
   };
 
   // To generate mock Form.Item
@@ -48,6 +33,22 @@ class AdvancedSearchForm extends React.Component {
     }
     return children;
   }
+
+  handleSearch = e => {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      console.log("Received values of form: ", values);
+    });
+  };
+
+  handleReset = () => {
+    this.props.form.resetFields();
+  };
+
+  toggle = () => {
+    const { expand } = this.state;
+    this.setState({ expand: !expand });
+  };
 
   render() {
     return (

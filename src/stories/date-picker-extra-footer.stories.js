@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.date-picker", module);
 import { DatePicker } from "antd";
+
 const { RangePicker, MonthPicker } = DatePicker;
 
 stories.addWithJSX("extra-footer", () => (

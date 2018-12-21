@@ -2,12 +2,14 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tree", module);
 import { Tree } from "antd";
-const TreeNode = Tree.TreeNode;
+
+const { TreeNode } = Tree;
 
 class Demo extends React.Component {
   onSelect = (selectedKeys, info) => {
     console.log("selected", selectedKeys, info);
   };
+
   render() {
     return (
       <Tree showLine defaultExpandedKeys={["0-0-0"]} onSelect={this.onSelect}>

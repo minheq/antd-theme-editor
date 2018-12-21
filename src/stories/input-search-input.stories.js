@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.input", module);
 import { Input } from "antd";
+
 const Search = Input.Search;
 
 stories.addWithJSX("search-input", () => (
@@ -20,6 +21,11 @@ stories.addWithJSX("search-input", () => (
     />
     <br />
     <br />
-    <Search placeholder="input search text" enterButton="Search" size="large" />
+    <Search
+      placeholder="input search text"
+      enterButton="Search"
+      size="large"
+      onSearch={value => console.log(value)}
+    />
   </div>
 ));

@@ -11,7 +11,7 @@ stories.addWithJSX("text", () => (
     <br />
     <Switch
       checkedChildren={<Icon type="check" />}
-      unCheckedChildren={<Icon type="cross" />}
+      unCheckedChildren={<Icon type="close" />}
       defaultChecked
     />
   </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Input } from "antd";
+
 const FormItem = Form.Item;
 
 const CustomizedForm = Form.create({
@@ -40,11 +41,13 @@ class Demo extends React.Component {
       }
     }
   };
+
   handleFormChange = changedFields => {
     this.setState(({ fields }) => ({
       fields: { ...fields, ...changedFields }
     }));
   };
+
   render() {
     const fields = this.state.fields;
     return (

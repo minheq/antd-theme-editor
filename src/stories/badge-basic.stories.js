@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.badge", module);
-import { Badge } from "antd";
+import { Badge, Icon } from "antd";
 
 stories.addWithJSX("basic", () => (
   <div>
@@ -9,6 +9,9 @@ stories.addWithJSX("basic", () => (
       <a href="#" className="head-example" />
     </Badge>
     <Badge count={0} showZero>
+      <a href="#" className="head-example" />
+    </Badge>
+    <Badge count={<Icon type="clock-circle" style={{ color: "#f5222d" }} />}>
       <a href="#" className="head-example" />
     </Badge>
   </div>

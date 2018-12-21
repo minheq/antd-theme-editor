@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.date-picker", module);
 import moment from "moment";
 import { DatePicker } from "antd";
+
 const { MonthPicker, RangePicker } = DatePicker;
 
 function range(start, end) {

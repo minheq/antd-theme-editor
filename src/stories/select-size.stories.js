@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.select", module);
 import { Select, Radio } from "antd";
+
 const Option = Select.Option;
 
 const children = [];
@@ -34,16 +35,6 @@ class SelectSizesDemo extends React.Component {
         <br />
         <br />
         <Select
-          size={size}
-          defaultValue="a1"
-          onChange={handleChange}
-          style={{ width: 200 }}
-        >
-          {children}
-        </Select>
-        <br />
-        <Select
-          mode="combobox"
           size={size}
           defaultValue="a1"
           onChange={handleChange}

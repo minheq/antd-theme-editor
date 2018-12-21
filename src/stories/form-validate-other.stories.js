@@ -13,6 +13,7 @@ import {
   Icon,
   Rate
 } from "antd";
+
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;
@@ -27,6 +28,7 @@ class Demo extends React.Component {
       }
     });
   };
+
   normFile = e => {
     console.log("Upload event:", e);
     if (Array.isArray(e)) {
@@ -34,6 +36,7 @@ class Demo extends React.Component {
     }
     return e && e.fileList;
   };
+
   render() {
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
@@ -51,7 +54,7 @@ class Demo extends React.Component {
           })(
             <Select placeholder="Please select a country">
               <Option value="china">China</Option>
-              <Option value="use">U.S.A</Option>
+              <Option value="usa">U.S.A</Option>
             </Select>
           )}
         </FormItem>
@@ -93,7 +96,14 @@ class Demo extends React.Component {
         <FormItem {...formItemLayout} label="Slider">
           {getFieldDecorator("slider")(
             <Slider
-              marks={{ 0: "A", 20: "B", 40: "C", 60: "D", 80: "E", 100: "F" }}
+              marks={{
+                0: "A",
+                20: "B",
+                40: "C",
+                60: "D",
+                80: "E",
+                100: "F"
+              }}
             />
           )}
         </FormItem>

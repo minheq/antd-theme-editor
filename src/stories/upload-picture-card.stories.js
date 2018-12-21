@@ -9,7 +9,7 @@ class PicturesWall extends React.Component {
     previewImage: "",
     fileList: [
       {
-        uid: -1,
+        uid: "-1",
         name: "xxx.png",
         status: "done",
         url:

@@ -7,12 +7,15 @@ class IntegerStep extends React.Component {
   state = {
     inputValue: 1
   };
+
   onChange = value => {
     this.setState({
       inputValue: value
     });
   };
+
   render() {
+    const { inputValue } = this.state;
     return (
       <Row>
         <Col span={12}>
@@ -20,7 +23,7 @@ class IntegerStep extends React.Component {
             min={1}
             max={20}
             onChange={this.onChange}
-            value={this.state.inputValue}
+            value={typeof inputValue === "number" ? inputValue : 0}
           />
         </Col>
         <Col span={4}>
@@ -28,7 +31,7 @@ class IntegerStep extends React.Component {
             min={1}
             max={20}
             style={{ marginLeft: 16 }}
-            value={this.state.inputValue}
+            value={inputValue}
             onChange={this.onChange}
           />
         </Col>
@@ -41,12 +44,18 @@ class DecimalStep extends React.Component {
   state = {
     inputValue: 0
   };
+
   onChange = value => {
+    if (Number.isNaN(value)) {
+      return;
+    }
     this.setState({
       inputValue: value
     });
   };
+
   render() {
+    const { inputValue } = this.state;
     return (
       <Row>
         <Col span={12}>
@@ -54,7 +63,7 @@ class DecimalStep extends React.Component {
             min={0}
             max={1}
             onChange={this.onChange}
-            value={this.state.inputValue}
+            value={typeof inputValue === "number" ? inputValue : 0}
             step={0.01}
           />
         </Col>
@@ -64,7 +73,7 @@ class DecimalStep extends React.Component {
             max={1}
             style={{ marginLeft: 16 }}
             step={0.01}
-            value={this.state.inputValue}
+            value={inputValue}
             onChange={this.onChange}
           />
         </Col>

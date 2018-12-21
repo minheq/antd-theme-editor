@@ -18,8 +18,18 @@ class VirtualizedExample extends React.Component {
     data: [],
     loading: false
   };
+
   loadedRowsMap = {};
-  getData = callback => {
+
+  componentDidMount() {
+    this.fetchData(res => {
+      this.setState({
+        data: res.results
+      });
+    });
+  }
+
+  fetchData = callback => {
     reqwest({
       url: fakeDataUrl,
       type: "json",
@@ -30,13 +40,7 @@ class VirtualizedExample extends React.Component {
       }
     });
   };
-  componentDidMount() {
-    this.getData(res => {
-      this.setState({
-        data: res.results
-      });
-    });
-  }
+
   handleInfiniteOnLoad = ({ startIndex, stopIndex }) => {
     let data = this.state.data;
     this.setState({
@@ -53,7 +57,7 @@ class VirtualizedExample extends React.Component {
       });
       return;
     }
-    this.getData(res => {
+    this.fetchData(res => {
       data = data.concat(res.results);
       this.setState({
         data,
@@ -61,9 +65,9 @@ class VirtualizedExample extends React.Component {
       });
     });
   };
-  isRowLoaded = ({ index }) => {
-    return !!this.loadedRowsMap[index];
-  };
+
+  isRowLoaded = ({ index }) => !!this.loadedRowsMap[index];
+
   renderItem = ({ index, key, style }) => {
     const { data } = this.state;
     const item = data[index];
@@ -80,6 +84,7 @@ class VirtualizedExample extends React.Component {
       </List.Item>
     );
   };
+
   render() {
     const { data } = this.state;
     const vlist = ({

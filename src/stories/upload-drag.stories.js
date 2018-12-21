@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.upload", module);
 import { Upload, Icon, message } from "antd";
+
 const Dragger = Upload.Dragger;
 
 const props = {

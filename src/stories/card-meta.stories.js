@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.card", module);
 import { Card, Icon, Avatar } from "antd";
+
 const { Meta } = Card;
 
 stories.addWithJSX("meta", () => (

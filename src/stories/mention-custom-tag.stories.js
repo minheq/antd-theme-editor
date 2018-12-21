@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.mention", module);
 import { Mention } from "antd";
+
 const Nav = Mention.Nav;
 
 const webFrameworks = [
@@ -20,6 +21,7 @@ class CustomNavMention extends React.Component {
   state = {
     suggestions: []
   };
+
   onSearchChange = value => {
     const searchValue = value.toLowerCase();
     const filtered = webFrameworks.filter(
@@ -34,6 +36,7 @@ class CustomNavMention extends React.Component {
     ));
     this.setState({ suggestions });
   };
+
   render() {
     const { suggestions } = this.state;
     return (

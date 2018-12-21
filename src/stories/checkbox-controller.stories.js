@@ -8,6 +8,22 @@ class App extends React.Component {
     checked: true,
     disabled: false
   };
+
+  toggleChecked = () => {
+    this.setState({ checked: !this.state.checked });
+  };
+
+  toggleDisable = () => {
+    this.setState({ disabled: !this.state.disabled });
+  };
+
+  onChange = e => {
+    console.log("checked = ", e.target.checked);
+    this.setState({
+      checked: e.target.checked
+    });
+  };
+
   render() {
     const label = `${this.state.checked ? "Checked" : "Unchecked"}-${
       this.state.disabled ? "Disabled" : "Enabled"
@@ -39,18 +55,6 @@ class App extends React.Component {
       </div>
     );
   }
-  toggleChecked = () => {
-    this.setState({ checked: !this.state.checked });
-  };
-  toggleDisable = () => {
-    this.setState({ disabled: !this.state.disabled });
-  };
-  onChange = e => {
-    console.log("checked = ", e.target.checked);
-    this.setState({
-      checked: e.target.checked
-    });
-  };
 }
 
 stories.addWithJSX("controller", () => <App />);

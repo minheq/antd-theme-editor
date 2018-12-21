@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.mention", module);
 import { Mention, Form, Button } from "antd";
+
 const { toContentState, getMentions } = Mention;
 const FormItem = Form.Item;
 
@@ -9,21 +10,24 @@ class App extends React.Component {
   state = {
     initValue: toContentState("@afc163")
   };
+
   handleReset = e => {
     e.preventDefault();
     this.props.form.resetFields();
   };
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((errors, values) => {
       if (errors) {
-        console.log("Errors in form!!!");
+        console.log("Errors in the form!!!");
         return;
       }
       console.log("Submit!!!");
       console.log(values);
     });
   };
+
   checkMention = (rule, value, callback) => {
     const { getFieldValue } = this.props.form;
     const mentions = getMentions(getFieldValue("mention"));
@@ -33,6 +37,7 @@ class App extends React.Component {
       callback();
     }
   };
+
   render() {
     const { getFieldDecorator, getFieldValue } = this.props.form;
     console.log(">> render", getFieldValue("mention") === this.state.initValue);

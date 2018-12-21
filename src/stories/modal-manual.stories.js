@@ -3,12 +3,24 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.modal", module);
 import { Modal, Button } from "antd";
 
-function success() {
+function countDown() {
+  let secondsToGo = 5;
   const modal = Modal.success({
     title: "This is a notification message",
-    content: "This modal will be destroyed after 1 second"
+    content: `This modal will be destroyed after ${secondsToGo} second.`
   });
-  setTimeout(() => modal.destroy(), 1000);
+  const timer = setInterval(() => {
+    secondsToGo -= 1;
+    modal.update({
+      content: `This modal will be destroyed after ${secondsToGo} second.`
+    });
+  }, 1000);
+  setTimeout(() => {
+    clearInterval(timer);
+    modal.destroy();
+  }, secondsToGo * 1000);
 }
 
-stories.addWithJSX("manual", () => <Button onClick={success}>Success</Button>);
+stories.addWithJSX("manual", () => (
+  <Button onClick={countDown}>Open modal to close in 5s</Button>
+));

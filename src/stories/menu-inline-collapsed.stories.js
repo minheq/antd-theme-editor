@@ -2,17 +2,20 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.menu", module);
 import { Menu, Icon, Button } from "antd";
+
 const SubMenu = Menu.SubMenu;
 
 class App extends React.Component {
   state = {
     collapsed: false
   };
+
   toggleCollapsed = () => {
     this.setState({
       collapsed: !this.state.collapsed
     });
   };
+
   render() {
     return (
       <div style={{ width: 256 }}>

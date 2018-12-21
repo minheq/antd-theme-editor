@@ -45,10 +45,12 @@ class TabsCard extends React.Component {
     key: "tab1",
     noTitleKey: "app"
   };
+
   onTabChange = (key, type) => {
     console.log(key, type);
     this.setState({ [type]: key });
   };
+
   render() {
     return (
       <div>
@@ -57,6 +59,7 @@ class TabsCard extends React.Component {
           title="Card title"
           extra={<a href="#">More</a>}
           tabList={tabList}
+          activeTabKey={this.state.key}
           onTabChange={key => {
             this.onTabChange(key, "key");
           }}

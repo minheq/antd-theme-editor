@@ -2,13 +2,16 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tag", module);
 import { Tag } from "antd";
+
 const { CheckableTag } = Tag;
 
 class MyTag extends React.Component {
   state = { checked: true };
+
   handleChange = checked => {
     this.setState({ checked });
   };
+
   render() {
     return (
       <CheckableTag

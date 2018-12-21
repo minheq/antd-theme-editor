@@ -7,9 +7,11 @@ class App extends React.Component {
   state = {
     visible: true
   };
+
   handleClose = () => {
     this.setState({ visible: false });
   };
+
   render() {
     return (
       <div>

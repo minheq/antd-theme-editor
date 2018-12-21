@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.card", module);
 import { Card } from "antd";
+
 const { Meta } = Card;
 
 stories.addWithJSX("flexible-content", () => (

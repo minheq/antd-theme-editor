@@ -2,11 +2,12 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.layout", module);
 import { Layout, Menu, Breadcrumb } from "antd";
+
 const { Header, Content, Footer } = Layout;
 
 stories.addWithJSX("fixed", () => (
   <Layout>
-    <Header style={{ position: "fixed", width: "100%" }}>
+    <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
       <div className="logo" />
       <Menu
         theme="dark"
@@ -30,7 +31,7 @@ stories.addWithJSX("fixed", () => (
       </div>
     </Content>
     <Footer style={{ textAlign: "center" }}>
-      Ant Design ©2016 Created by Ant UED
+      Ant Design ©2018 Created by Ant UED
     </Footer>
   </Layout>
 ));

@@ -2,7 +2,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.tree", module);
 import { Tree } from "antd";
-const TreeNode = Tree.TreeNode;
+
+const { TreeNode } = Tree;
 
 const x = 3;
 const y = 2;
@@ -37,6 +38,7 @@ class Demo extends React.Component {
     gData,
     expandedKeys: ["0-0", "0-0-0", "0-0-0-0"]
   };
+
   onDragEnter = info => {
     console.log(info);
     // expandedKeys 需要受控时设置
@@ -44,6 +46,7 @@ class Demo extends React.Component {
     //   expandedKeys: info.expandedKeys,
     // });
   };
+
   onDrop = info => {
     console.log(info);
     const dropKey = info.node.props.eventKey;
@@ -51,7 +54,7 @@ class Demo extends React.Component {
     const dropPos = info.node.props.pos.split("-");
     const dropPosition =
       info.dropPosition - Number(dropPos[dropPos.length - 1]);
-    // const dragNodesKeys = info.dragNodesKeys;
+
     const loop = (data, key, callback) => {
       data.forEach((item, index, arr) => {
         if (item.key === key) {
@@ -63,12 +66,32 @@ class Demo extends React.Component {
       });
     };
     const data = [...this.state.gData];
+
+    // Find dragObject
     let dragObj;
     loop(data, dragKey, (item, index, arr) => {
       arr.splice(index, 1);
       dragObj = item;
     });
-    if (info.dropToGap) {
+
+    if (!info.dropToGap) {
+      // Drop on the content
+      loop(data, dropKey, item => {
+        item.children = item.children || [];
+        // where to insert 示例添加到尾部，可以是随意位置
+        item.children.push(dragObj);
+      });
+    } else if (
+      (info.node.props.children || []).length > 0 && // Has children
+      info.node.props.expanded && // Is expanded
+      dropPosition === 1 // On the bottom gap
+    ) {
+      loop(data, dropKey, item => {
+        item.children = item.children || [];
+        // where to insert 示例添加到尾部，可以是随意位置
+        item.children.unshift(dragObj);
+      });
+    } else {
       let ar;
       let i;
       loop(data, dropKey, (item, index, arr) => {
@@ -80,28 +103,24 @@ class Demo extends React.Component {
       } else {
         ar.splice(i + 1, 0, dragObj);
       }
-    } else {
-      loop(data, dropKey, item => {
-        item.children = item.children || [];
-        // where to insert 示例添加到尾部，可以是随意位置
-        item.children.push(dragObj);
-      });
     }
+
     this.setState({
       gData: data
     });
   };
+
   render() {
     const loop = data =>
       data.map(item => {
         if (item.children && item.children.length) {
           return (
-            <TreeNode key={item.key} title={item.key}>
+            <TreeNode key={item.key} title={item.title}>
               {loop(item.children)}
             </TreeNode>
           );
         }
-        return <TreeNode key={item.key} title={item.key} />;
+        return <TreeNode key={item.key} title={item.title} />;
       });
     return (
       <Tree

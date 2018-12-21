@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.mention", module);
 import { Mention } from "antd";
+
 const { toString, toContentState } = Mention;
 
 function onChange(contentState) {

@@ -18,6 +18,7 @@ import {
 import zhCN from "antd/lib/locale-provider/zh_CN";
 import moment from "moment";
 import "moment/locale/zh-cn";
+
 moment.locale("en");
 
 const Option = Select.Option;
@@ -44,12 +45,15 @@ class Page extends React.Component {
   state = {
     visible: false
   };
+
   showModal = () => {
     this.setState({ visible: true });
   };
+
   hideModal = () => {
     this.setState({ visible: false });
   };
+
   render() {
     const info = () => {
       Modal.info({
@@ -115,7 +119,6 @@ class Page extends React.Component {
   }
 }
 
-let forceRerender = 0;
 class App extends React.Component {
   constructor() {
     super();
@@ -123,6 +126,7 @@ class App extends React.Component {
       locale: null
     };
   }
+
   changeLocale = e => {
     const localeValue = e.target.value;
     this.setState({ locale: localeValue });
@@ -132,7 +136,9 @@ class App extends React.Component {
       moment.locale("zh-cn");
     }
   };
+
   render() {
+    const { locale } = this.state;
     return (
       <div>
         <div className="change-locale">
@@ -146,10 +152,12 @@ class App extends React.Component {
             </Radio.Button>
           </Radio.Group>
         </div>
-        <LocaleProvider locale={this.state.locale}>
+        <LocaleProvider locale={locale}>
           <Page
             key={
-              forceRerender++ /* HACK: just refresh in production environment */
+              locale
+                ? locale.locale
+                : "en" /* Have to refresh for production environment */
             }
           />
         </LocaleProvider>

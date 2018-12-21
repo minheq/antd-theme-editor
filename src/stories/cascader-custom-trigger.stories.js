@@ -36,6 +36,7 @@ class CitySwitcher extends React.Component {
       text: selectedOptions.map(o => o.label).join(", ")
     });
   };
+
   render() {
     return (
       <span>

@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.menu", module);
 import { Menu, Icon, Switch } from "antd";
+
 const SubMenu = Menu.SubMenu;
 
 class Sider extends React.Component {
@@ -9,17 +10,20 @@ class Sider extends React.Component {
     theme: "dark",
     current: "1"
   };
+
   changeTheme = value => {
     this.setState({
       theme: value ? "dark" : "light"
     });
   };
+
   handleClick = e => {
     console.log("click ", e);
     this.setState({
       current: e.key
     });
   };
+
   render() {
     return (
       <div>

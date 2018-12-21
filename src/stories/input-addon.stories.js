@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.input", module);
 import { Input, Select, Icon } from "antd";
+
 const Option = Select.Option;
 
 const selectBefore = (

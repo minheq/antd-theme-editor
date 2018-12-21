@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Icon, Input, Button } from "antd";
+
 const FormItem = Form.Item;
 
 function hasErrors(fieldsError) {
@@ -13,6 +14,7 @@ class HorizontalLoginForm extends React.Component {
     // To disabled submit button at the beginning.
     this.props.form.validateFields();
   }
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -21,6 +23,7 @@ class HorizontalLoginForm extends React.Component {
       }
     });
   };
+
   render() {
     const {
       getFieldDecorator,
