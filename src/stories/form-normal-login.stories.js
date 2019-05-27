@@ -3,8 +3,6 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Icon, Input, Button, Checkbox } from "antd";
 
-const FormItem = Form.Item;
-
 class NormalLoginForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
@@ -19,8 +17,8 @@ class NormalLoginForm extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
-        <FormItem>
-          {getFieldDecorator("userName", {
+        <Form.Item>
+          {getFieldDecorator("username", {
             rules: [{ required: true, message: "Please input your username!" }]
           })(
             <Input
@@ -28,8 +26,8 @@ class NormalLoginForm extends React.Component {
               placeholder="Username"
             />
           )}
-        </FormItem>
-        <FormItem>
+        </Form.Item>
+        <Form.Item>
           {getFieldDecorator("password", {
             rules: [{ required: true, message: "Please input your Password!" }]
           })(
@@ -39,8 +37,8 @@ class NormalLoginForm extends React.Component {
               placeholder="Password"
             />
           )}
-        </FormItem>
-        <FormItem>
+        </Form.Item>
+        <Form.Item>
           {getFieldDecorator("remember", {
             valuePropName: "checked",
             initialValue: true
@@ -56,12 +54,14 @@ class NormalLoginForm extends React.Component {
             Log in
           </Button>
           Or <a href="">register now!</a>
-        </FormItem>
+        </Form.Item>
       </Form>
     );
   }
 }
 
-const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
+const WrappedNormalLoginForm = Form.create({ name: "normal_login" })(
+  NormalLoginForm
+);
 
 stories.addWithJSX("normal-login", () => <WrappedNormalLoginForm />);

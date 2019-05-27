@@ -64,13 +64,15 @@ stories.addWithJSX("list", () => (
     itemLayout="horizontal"
     dataSource={data}
     renderItem={item => (
-      <Comment
-        actions={item.actions}
-        author={item.author}
-        avatar={item.avatar}
-        content={item.content}
-        datetime={item.datetime}
-      />
+      <li>
+        <Comment
+          actions={item.actions}
+          author={item.author}
+          avatar={item.avatar}
+          content={item.content}
+          datetime={item.datetime}
+        />
+      </li>
     )}
   />
 ));

@@ -3,8 +3,7 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Select, Input, Button } from "antd";
 
-const FormItem = Form.Item;
-const Option = Select.Option;
+const { Option } = Select;
 
 class App extends React.Component {
   handleSubmit = e => {
@@ -26,17 +25,17 @@ class App extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <FormItem label="Note" labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
+      <Form
+        labelCol={{ span: 5 }}
+        wrapperCol={{ span: 12 }}
+        onSubmit={this.handleSubmit}
+      >
+        <Form.Item label="Note">
           {getFieldDecorator("note", {
             rules: [{ required: true, message: "Please input your note!" }]
           })(<Input />)}
-        </FormItem>
-        <FormItem
-          label="Gender"
-          labelCol={{ span: 5 }}
-          wrapperCol={{ span: 12 }}
-        >
+        </Form.Item>
+        <Form.Item label="Gender">
           {getFieldDecorator("gender", {
             rules: [{ required: true, message: "Please select your gender!" }]
           })(
@@ -48,17 +47,17 @@ class App extends React.Component {
               <Option value="female">female</Option>
             </Select>
           )}
-        </FormItem>
-        <FormItem wrapperCol={{ span: 12, offset: 5 }}>
+        </Form.Item>
+        <Form.Item wrapperCol={{ span: 12, offset: 5 }}>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
-        </FormItem>
+        </Form.Item>
       </Form>
     );
   }
 }
 
-const WrappedApp = Form.create()(App);
+const WrappedApp = Form.create({ name: "coordinated" })(App);
 
 stories.addWithJSX("coordinated", () => <WrappedApp />);

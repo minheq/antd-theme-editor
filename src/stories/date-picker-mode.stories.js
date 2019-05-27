@@ -46,6 +46,10 @@ class ControlledRangePicker extends React.Component {
     });
   };
 
+  handleChange = value => {
+    this.setState({ value });
+  };
+
   render() {
     const { value, mode } = this.state;
     return (
@@ -54,6 +58,7 @@ class ControlledRangePicker extends React.Component {
         format="YYYY-MM"
         value={value}
         mode={mode}
+        onChange={this.handleChange}
         onPanelChange={this.handlePanelChange}
       />
     );

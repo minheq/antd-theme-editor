@@ -3,8 +3,6 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Input, Icon, Button } from "antd";
 
-const FormItem = Form.Item;
-
 let id = 0;
 
 class DynamicFieldSet extends React.Component {
@@ -27,7 +25,7 @@ class DynamicFieldSet extends React.Component {
     const { form } = this.props;
     // can use data-binding to get
     const keys = form.getFieldValue("keys");
-    const nextKeys = keys.concat(++id);
+    const nextKeys = keys.concat(id++);
     // can use data-binding to set
     // important! notify form to detect changes
     form.setFieldsValue({
@@ -39,7 +37,9 @@ class DynamicFieldSet extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
+        const { keys, names } = values;
         console.log("Received values of form: ", values);
+        console.log("Merged values:", keys.map(key => names[key]));
       }
     });
   };
@@ -65,7 +65,7 @@ class DynamicFieldSet extends React.Component {
     getFieldDecorator("keys", { initialValue: [] });
     const keys = getFieldValue("keys");
     const formItems = keys.map((k, index) => (
-      <FormItem
+      <Form.Item
         {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
         label={index === 0 ? "Passengers" : ""}
         required={false}
@@ -90,29 +90,30 @@ class DynamicFieldSet extends React.Component {
           <Icon
             className="dynamic-delete-button"
             type="minus-circle-o"
-            disabled={keys.length === 1}
             onClick={() => this.remove(k)}
           />
         ) : null}
-      </FormItem>
+      </Form.Item>
     ));
     return (
       <Form onSubmit={this.handleSubmit}>
         {formItems}
-        <FormItem {...formItemLayoutWithOutLabel}>
+        <Form.Item {...formItemLayoutWithOutLabel}>
           <Button type="dashed" onClick={this.add} style={{ width: "60%" }}>
             <Icon type="plus" /> Add field
           </Button>
-        </FormItem>
-        <FormItem {...formItemLayoutWithOutLabel}>
+        </Form.Item>
+        <Form.Item {...formItemLayoutWithOutLabel}>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
-        </FormItem>
+        </Form.Item>
       </Form>
     );
   }
 }
 
-const WrappedDynamicFieldSet = Form.create()(DynamicFieldSet);
+const WrappedDynamicFieldSet = Form.create({ name: "dynamic_form_item" })(
+  DynamicFieldSet
+);
 stories.addWithJSX("dynamic-form-item", () => <WrappedDynamicFieldSet />);

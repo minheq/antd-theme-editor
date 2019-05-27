@@ -15,8 +15,7 @@ import {
   AutoComplete
 } from "antd";
 
-const FormItem = Form.Item;
-const Option = Select.Option;
+const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 
 const residences = [
@@ -143,8 +142,8 @@ class RegistrationForm extends React.Component {
     ));
 
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <FormItem {...formItemLayout} label="E-mail">
+      <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+        <Form.Item label="E-mail">
           {getFieldDecorator("email", {
             rules: [
               {
@@ -157,8 +156,8 @@ class RegistrationForm extends React.Component {
               }
             ]
           })(<Input />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="Password">
+        </Form.Item>
+        <Form.Item label="Password" hasFeedback>
           {getFieldDecorator("password", {
             rules: [
               {
@@ -169,9 +168,9 @@ class RegistrationForm extends React.Component {
                 validator: this.validateToNextPassword
               }
             ]
-          })(<Input type="password" />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="Confirm Password">
+          })(<Input.Password />)}
+        </Form.Item>
+        <Form.Item label="Confirm Password" hasFeedback>
           {getFieldDecorator("confirm", {
             rules: [
               {
@@ -182,10 +181,9 @@ class RegistrationForm extends React.Component {
                 validator: this.compareToFirstPassword
               }
             ]
-          })(<Input type="password" onBlur={this.handleConfirmBlur} />)}
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
+          })(<Input.Password onBlur={this.handleConfirmBlur} />)}
+        </Form.Item>
+        <Form.Item
           label={
             <span>
               Nickname&nbsp;
@@ -204,8 +202,8 @@ class RegistrationForm extends React.Component {
               }
             ]
           })(<Input />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="Habitual Residence">
+        </Form.Item>
+        <Form.Item label="Habitual Residence">
           {getFieldDecorator("residence", {
             initialValue: ["zhejiang", "hangzhou", "xihu"],
             rules: [
@@ -216,15 +214,15 @@ class RegistrationForm extends React.Component {
               }
             ]
           })(<Cascader options={residences} />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="Phone Number">
+        </Form.Item>
+        <Form.Item label="Phone Number">
           {getFieldDecorator("phone", {
             rules: [
               { required: true, message: "Please input your phone number!" }
             ]
           })(<Input addonBefore={prefixSelector} style={{ width: "100%" }} />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="Website">
+        </Form.Item>
+        <Form.Item label="Website">
           {getFieldDecorator("website", {
             rules: [{ required: true, message: "Please input website!" }]
           })(
@@ -236,9 +234,8 @@ class RegistrationForm extends React.Component {
               <Input />
             </AutoComplete>
           )}
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
+        </Form.Item>
+        <Form.Item
           label="Captcha"
           extra="We must make sure that your are a human."
         >
@@ -257,8 +254,8 @@ class RegistrationForm extends React.Component {
               <Button>Get captcha</Button>
             </Col>
           </Row>
-        </FormItem>
-        <FormItem {...tailFormItemLayout}>
+        </Form.Item>
+        <Form.Item {...tailFormItemLayout}>
           {getFieldDecorator("agreement", {
             valuePropName: "checked"
           })(
@@ -266,17 +263,19 @@ class RegistrationForm extends React.Component {
               I have read the <a href="">agreement</a>
             </Checkbox>
           )}
-        </FormItem>
-        <FormItem {...tailFormItemLayout}>
+        </Form.Item>
+        <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
             Register
           </Button>
-        </FormItem>
+        </Form.Item>
       </Form>
     );
   }
 }
 
-const WrappedRegistrationForm = Form.create()(RegistrationForm);
+const WrappedRegistrationForm = Form.create({ name: "register" })(
+  RegistrationForm
+);
 
 stories.addWithJSX("register", () => <WrappedRegistrationForm />);

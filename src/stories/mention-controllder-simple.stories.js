@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <Mention
         ref={ele => (this.mention = ele)}
-        suggestions={[
+        defaultSuggestions={[
           "afc163",
           "benjycui",
           "yiminghe",

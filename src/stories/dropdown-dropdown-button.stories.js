@@ -31,20 +31,18 @@ const menu = (
 );
 
 stories.addWithJSX("dropdown-button", () => (
-  <div>
+  <div id="components-dropdown-demo-dropdown-button">
     <Dropdown.Button onClick={handleButtonClick} overlay={menu}>
       Dropdown
     </Dropdown.Button>
-    <Dropdown.Button
-      onClick={handleButtonClick}
-      overlay={menu}
-      disabled
-      style={{ marginLeft: 8 }}
-    >
+    <Dropdown.Button overlay={menu} icon={<Icon type="user" />}>
+      Dropdown
+    </Dropdown.Button>
+    <Dropdown.Button onClick={handleButtonClick} overlay={menu} disabled>
       Dropdown
     </Dropdown.Button>
     <Dropdown overlay={menu}>
-      <Button style={{ marginLeft: 8 }}>
+      <Button>
         Button <Icon type="down" />
       </Button>
     </Dropdown>

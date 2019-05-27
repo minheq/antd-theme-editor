@@ -34,7 +34,8 @@ const columns = [
     // specify the condition of filtering result
     // here is that finding the name started with `value`
     onFilter: (value, record) => record.name.indexOf(value) === 0,
-    sorter: (a, b) => a.name.length - b.name.length
+    sorter: (a, b) => a.name.length - b.name.length,
+    sortDirections: ["descend"]
   },
   {
     title: "Age",
@@ -57,7 +58,8 @@ const columns = [
     ],
     filterMultiple: false,
     onFilter: (value, record) => record.address.indexOf(value) === 0,
-    sorter: (a, b) => a.address.length - b.address.length
+    sorter: (a, b) => a.address.length - b.address.length,
+    sortDirections: ["descend", "ascend"]
   }
 ];
 

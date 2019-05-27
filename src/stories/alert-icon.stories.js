@@ -11,13 +11,13 @@ stories.addWithJSX("icon", () => (
     <Alert message="Error" type="error" showIcon />
     <Alert
       message="Success Tips"
-      description="Detailed description and advices about successful copywriting."
+      description="Detailed description and advice about successful copywriting."
       type="success"
       showIcon
     />
     <Alert
       message="Informational Notes"
-      description="Additional description and informations about copywriting."
+      description="Additional description and information about copywriting."
       type="info"
       showIcon
     />

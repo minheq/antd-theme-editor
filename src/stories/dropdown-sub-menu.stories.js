@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.dropdown", module);
 import { Menu, Dropdown, Icon } from "antd";
 
-const SubMenu = Menu.SubMenu;
+const { SubMenu } = Menu;
 
 const menu = (
   <Menu>

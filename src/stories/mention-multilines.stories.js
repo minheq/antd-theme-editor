@@ -13,7 +13,7 @@ stories.addWithJSX("multilines", () => (
   <Mention
     style={{ width: "100%", height: 100 }}
     onChange={onChange}
-    suggestions={[
+    defaultSuggestions={[
       "afc163",
       "benjycui",
       "yiminghe",

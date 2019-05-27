@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.table", module);
 import { Table, Input, Button, Icon } from "antd";
+import Highlighter from "react-highlight-words";
 
 const data = [
   {
@@ -35,12 +36,73 @@ class App extends React.Component {
     searchText: ""
   };
 
-  handleSearch = (selectedKeys, confirm) => () => {
+  getColumnSearchProps = dataIndex => ({
+    filterDropdown: ({
+      setSelectedKeys,
+      selectedKeys,
+      confirm,
+      clearFilters
+    }) => (
+      <div style={{ padding: 8 }}>
+        <Input
+          ref={node => {
+            this.searchInput = node;
+          }}
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={e =>
+            setSelectedKeys(e.target.value ? [e.target.value] : [])
+          }
+          onPressEnter={() => this.handleSearch(selectedKeys, confirm)}
+          style={{ width: 188, marginBottom: 8, display: "block" }}
+        />
+        <Button
+          type="primary"
+          onClick={() => this.handleSearch(selectedKeys, confirm)}
+          icon="search"
+          size="small"
+          style={{ width: 90, marginRight: 8 }}
+        >
+          Search
+        </Button>
+        <Button
+          onClick={() => this.handleReset(clearFilters)}
+          size="small"
+          style={{ width: 90 }}
+        >
+          Reset
+        </Button>
+      </div>
+    ),
+    filterIcon: filtered => (
+      <Icon type="search" style={{ color: filtered ? "#1890ff" : undefined }} />
+    ),
+    onFilter: (value, record) =>
+      record[dataIndex]
+        .toString()
+        .toLowerCase()
+        .includes(value.toLowerCase()),
+    onFilterDropdownVisibleChange: visible => {
+      if (visible) {
+        setTimeout(() => this.searchInput.select());
+      }
+    },
+    render: text => (
+      <Highlighter
+        highlightStyle={{ backgroundColor: "#ffc069", padding: 0 }}
+        searchWords={[this.state.searchText]}
+        autoEscape
+        textToHighlight={text.toString()}
+      />
+    )
+  });
+
+  handleSearch = (selectedKeys, confirm) => {
     confirm();
     this.setState({ searchText: selectedKeys[0] });
   };
 
-  handleReset = clearFilters => () => {
+  handleReset = clearFilters => {
     clearFilters();
     this.setState({ searchText: "" });
   };
@@ -51,87 +113,21 @@ class App extends React.Component {
         title: "Name",
         dataIndex: "name",
         key: "name",
-        filterDropdown: ({
-          setSelectedKeys,
-          selectedKeys,
-          confirm,
-          clearFilters
-        }) => (
-          <div className="custom-filter-dropdown">
-            <Input
-              ref={ele => (this.searchInput = ele)}
-              placeholder="Search name"
-              value={selectedKeys[0]}
-              onChange={e =>
-                setSelectedKeys(e.target.value ? [e.target.value] : [])
-              }
-              onPressEnter={this.handleSearch(selectedKeys, confirm)}
-            />
-            <Button
-              type="primary"
-              onClick={this.handleSearch(selectedKeys, confirm)}
-            >
-              Search
-            </Button>
-            <Button onClick={this.handleReset(clearFilters)}>Reset</Button>
-          </div>
-        ),
-        filterIcon: filtered => (
-          <Icon
-            type="smile-o"
-            style={{ color: filtered ? "#108ee9" : "#aaa" }}
-          />
-        ),
-        onFilter: (value, record) =>
-          record.name.toLowerCase().includes(value.toLowerCase()),
-        onFilterDropdownVisibleChange: visible => {
-          if (visible) {
-            setTimeout(() => {
-              this.searchInput.focus();
-            });
-          }
-        },
-        render: text => {
-          const { searchText } = this.state;
-          return searchText ? (
-            <span>
-              {text
-                .split(new RegExp(`(${searchText})`, "gi"))
-                .map((fragment, i) =>
-                  fragment.toLowerCase() === searchText.toLowerCase() ? (
-                    <span key={i} className="highlight">
-                      {fragment}
-                    </span>
-                  ) : (
-                    fragment
-                  ) // eslint-disable-line
-                )}
-            </span>
-          ) : (
-            text
-          );
-        }
+        width: "30%",
+        ...this.getColumnSearchProps("name")
       },
       {
         title: "Age",
         dataIndex: "age",
-        key: "age"
+        key: "age",
+        width: "20%",
+        ...this.getColumnSearchProps("age")
       },
       {
         title: "Address",
         dataIndex: "address",
         key: "address",
-        filters: [
-          {
-            text: "London",
-            value: "London"
-          },
-          {
-            text: "New York",
-            value: "New York"
-          }
-        ],
-        onFilter: (value, record) => record.address.indexOf(value) === 0
+        ...this.getColumnSearchProps("address")
       }
     ];
     return <Table columns={columns} dataSource={data} />;

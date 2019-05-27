@@ -3,8 +3,6 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, InputNumber } from "antd";
 
-const FormItem = Form.Item;
-
 function validatePrimeNumber(number) {
   if (number === 11) {
     return {
@@ -44,7 +42,7 @@ class RawForm extends React.Component {
       "A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself.";
     return (
       <Form>
-        <FormItem
+        <Form.Item
           {...formItemLayout}
           label="Prime between 8 & 12"
           validateStatus={number.validateStatus}
@@ -56,7 +54,7 @@ class RawForm extends React.Component {
             value={number.value}
             onChange={this.handleNumberChange}
           />
-        </FormItem>
+        </Form.Item>
       </Form>
     );
   }

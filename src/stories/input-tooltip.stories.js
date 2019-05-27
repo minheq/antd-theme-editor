@@ -36,7 +36,7 @@ class NumericInput extends React.Component {
   onBlur = () => {
     const { value, onBlur, onChange } = this.props;
     if (value.charAt(value.length - 1) === "." || value === "-") {
-      onChange({ value: value.slice(0, -1) });
+      onChange(value.slice(0, -1));
     }
     if (onBlur) {
       onBlur();
@@ -64,7 +64,7 @@ class NumericInput extends React.Component {
           onChange={this.onChange}
           onBlur={this.onBlur}
           placeholder="Input a number"
-          maxLength="25"
+          maxLength={25}
         />
       </Tooltip>
     );

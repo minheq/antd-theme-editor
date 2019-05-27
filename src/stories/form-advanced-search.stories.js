@@ -3,8 +3,6 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Row, Col, Input, Button, Icon } from "antd";
 
-const FormItem = Form.Item;
-
 class AdvancedSearchForm extends React.Component {
   state = {
     expand: false
@@ -18,7 +16,7 @@ class AdvancedSearchForm extends React.Component {
     for (let i = 0; i < 10; i++) {
       children.push(
         <Col span={8} key={i} style={{ display: i < count ? "block" : "none" }}>
-          <FormItem label={`Field ${i}`}>
+          <Form.Item label={`Field ${i}`}>
             {getFieldDecorator(`field-${i}`, {
               rules: [
                 {
@@ -27,7 +25,7 @@ class AdvancedSearchForm extends React.Component {
                 }
               ]
             })(<Input placeholder="placeholder" />)}
-          </FormItem>
+          </Form.Item>
         </Col>
       );
     }
@@ -72,7 +70,9 @@ class AdvancedSearchForm extends React.Component {
   }
 }
 
-const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
+const WrappedAdvancedSearchForm = Form.create({ name: "advanced_search" })(
+  AdvancedSearchForm
+);
 stories.addWithJSX("advanced-search", () => (
   <div>
     <WrappedAdvancedSearchForm />

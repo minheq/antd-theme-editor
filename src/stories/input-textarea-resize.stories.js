@@ -18,7 +18,10 @@ class Demo extends React.Component {
 
     return (
       <div>
-        <Button onClick={() => this.setState({ autoResize: !autoResize })}>
+        <Button
+          onClick={() => this.setState({ autoResize: !autoResize })}
+          style={{ marginBottom: 16 }}
+        >
           Auto Resize: {String(autoResize)}
         </Button>
         <TextArea rows={4} autosize={autoResize} defaultValue={defaultValue} />

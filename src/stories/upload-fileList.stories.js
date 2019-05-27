@@ -16,7 +16,7 @@ class MyUpload extends React.Component {
   };
 
   handleChange = info => {
-    let fileList = info.fileList;
+    let fileList = [...info.fileList];
 
     // 1. Limit the number of uploaded files
     // Only to show two recent uploaded files, and old ones will be replaced by the new
@@ -31,20 +31,12 @@ class MyUpload extends React.Component {
       return file;
     });
 
-    // 3. Filter successfully uploaded files according to response from server
-    fileList = fileList.filter(file => {
-      if (file.response) {
-        return file.response.status === "success";
-      }
-      return false;
-    });
-
     this.setState({ fileList });
   };
 
   render() {
     const props = {
-      action: "//jsonplaceholder.typicode.com/posts/",
+      action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
       onChange: this.handleChange,
       multiple: true
     };

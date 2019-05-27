@@ -13,7 +13,7 @@ const handleClick = (e, link) => {
 stories.addWithJSX("onClick", () => (
   <Anchor affix={false} onClick={handleClick}>
     <Link href="#components-anchor-demo-basic" title="Basic demo" />
-    <Link href="#components-anchor-demo-fixed" title="Fixed demo" />
+    <Link href="#components-anchor-demo-static" title="Static demo" />
     <Link href="#API" title="API">
       <Link href="#Anchor-Props" title="Anchor Props" />
       <Link href="#Link-Props" title="Link Props" />

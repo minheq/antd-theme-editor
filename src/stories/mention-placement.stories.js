@@ -17,7 +17,7 @@ stories.addWithJSX("placement", () => (
   <Mention
     style={{ width: "100%" }}
     onChange={onChange}
-    suggestions={[
+    defaultSuggestions={[
       "afc163",
       "benjycui",
       "yiminghe",

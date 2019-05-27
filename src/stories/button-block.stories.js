@@ -13,7 +13,10 @@ stories.addWithJSX("block", () => (
       Dashed
     </Button>
     <Button type="danger" block>
-      danger
+      Danger
+    </Button>
+    <Button type="link" block>
+      Link
     </Button>
   </div>
 ));

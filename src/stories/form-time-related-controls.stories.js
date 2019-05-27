@@ -3,7 +3,6 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, DatePicker, TimePicker, Button } from "antd";
 
-const FormItem = Form.Item;
 const { MonthPicker, RangePicker } = DatePicker;
 
 class TimeRelatedForm extends React.Component {
@@ -60,30 +59,30 @@ class TimeRelatedForm extends React.Component {
       rules: [{ type: "array", required: true, message: "Please select time!" }]
     };
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <FormItem {...formItemLayout} label="DatePicker">
+      <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+        <Form.Item label="DatePicker">
           {getFieldDecorator("date-picker", config)(<DatePicker />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="DatePicker[showTime]">
+        </Form.Item>
+        <Form.Item label="DatePicker[showTime]">
           {getFieldDecorator("date-time-picker", config)(
             <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
           )}
-        </FormItem>
-        <FormItem {...formItemLayout} label="MonthPicker">
+        </Form.Item>
+        <Form.Item label="MonthPicker">
           {getFieldDecorator("month-picker", config)(<MonthPicker />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="RangePicker">
+        </Form.Item>
+        <Form.Item label="RangePicker">
           {getFieldDecorator("range-picker", rangeConfig)(<RangePicker />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="RangePicker[showTime]">
+        </Form.Item>
+        <Form.Item label="RangePicker[showTime]">
           {getFieldDecorator("range-time-picker", rangeConfig)(
             <RangePicker showTime format="YYYY-MM-DD HH:mm:ss" />
           )}
-        </FormItem>
-        <FormItem {...formItemLayout} label="TimePicker">
+        </Form.Item>
+        <Form.Item label="TimePicker">
           {getFieldDecorator("time-picker", config)(<TimePicker />)}
-        </FormItem>
-        <FormItem
+        </Form.Item>
+        <Form.Item
           wrapperCol={{
             xs: { span: 24, offset: 0 },
             sm: { span: 16, offset: 8 }
@@ -92,12 +91,14 @@ class TimeRelatedForm extends React.Component {
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
-        </FormItem>
+        </Form.Item>
       </Form>
     );
   }
 }
 
-const WrappedTimeRelatedForm = Form.create()(TimeRelatedForm);
+const WrappedTimeRelatedForm = Form.create({ name: "time_related_controls" })(
+  TimeRelatedForm
+);
 
 stories.addWithJSX("time-related-controls", () => <WrappedTimeRelatedForm />);

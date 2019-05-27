@@ -30,7 +30,9 @@ class Demo extends React.Component {
           }}
         >
           {positionList.map(pos => (
-            <Option value={pos}>Parent - {pos}</Option>
+            <Option key={pos} value={pos}>
+              Parent - {pos}
+            </Option>
           ))}
         </Select>
 
@@ -41,7 +43,9 @@ class Demo extends React.Component {
           }}
         >
           {positionList.map(pos => (
-            <Option value={pos}>Child - {pos}</Option>
+            <Option key={pos} value={pos}>
+              Child - {pos}
+            </Option>
           ))}
         </Select>
 

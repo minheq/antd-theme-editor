@@ -26,7 +26,7 @@ stories.addWithJSX("auto-adjust-overflow", () => (
       getPopupContainer={trigger => trigger.parentElement}
       autoAdjustOverflow={false}
     >
-      <Button>Ingore / 不处理</Button>
+      <Button>Ignore / 不处理</Button>
     </Tooltip>
   </div>
 ));

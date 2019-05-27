@@ -8,10 +8,20 @@ function onShowSizeChange(current, pageSize) {
 }
 
 stories.addWithJSX("changer", () => (
-  <Pagination
-    showSizeChanger
-    onShowSizeChange={onShowSizeChange}
-    defaultCurrent={3}
-    total={500}
-  />
+  <div>
+    <Pagination
+      showSizeChanger
+      onShowSizeChange={onShowSizeChange}
+      defaultCurrent={3}
+      total={500}
+    />
+    <br />
+    <Pagination
+      showSizeChanger
+      onShowSizeChange={onShowSizeChange}
+      defaultCurrent={3}
+      total={500}
+      disabled
+    />
+  </div>
 ));

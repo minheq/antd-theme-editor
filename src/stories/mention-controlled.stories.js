@@ -54,7 +54,7 @@ class App extends React.Component {
             initialValue: this.state.initValue
           })(
             <Mention
-              suggestions={[
+              defaultSuggestions={[
                 "afc163",
                 "benjycui",
                 "yiminghe",

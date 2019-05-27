@@ -15,5 +15,8 @@ stories.addWithJSX("ghost", () => (
     <Button type="danger" ghost>
       danger
     </Button>
+    <Button type="link" ghost>
+      link
+    </Button>
   </div>
 ));

@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const lessToJs = require('less-vars-to-js');
 
-module.exports = (baseConfig, env, defaultConfig) => {
+module.exports = ({ config }) => {
   // load custom variables for theme
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.less$/,
     use: [
       { loader: 'style-loader' },
@@ -17,5 +17,5 @@ module.exports = (baseConfig, env, defaultConfig) => {
     ],
   });
 
-  return defaultConfig;
+  return config;
 };

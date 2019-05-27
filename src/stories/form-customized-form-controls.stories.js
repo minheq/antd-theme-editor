@@ -3,8 +3,7 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Input, Select, Button } from "antd";
 
-const FormItem = Form.Item;
-const Option = Select.Option;
+const { Option } = Select;
 
 class PriceInput extends React.Component {
   static getDerivedStateFromProps(nextProps) {
@@ -101,22 +100,22 @@ class Demo extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <Form layout="inline" onSubmit={this.handleSubmit}>
-        <FormItem label="Price">
+        <Form.Item label="Price">
           {getFieldDecorator("price", {
             initialValue: { number: 0, currency: "rmb" },
             rules: [{ validator: this.checkPrice }]
           })(<PriceInput />)}
-        </FormItem>
-        <FormItem>
+        </Form.Item>
+        <Form.Item>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
-        </FormItem>
+        </Form.Item>
       </Form>
     );
   }
 }
 
-const WrappedDemo = Form.create()(Demo);
+const WrappedDemo = Form.create({ name: "customized_form_controls" })(Demo);
 
 stories.addWithJSX("customized-form-controls", () => <WrappedDemo />);

@@ -11,5 +11,5 @@ const success = () => {
 };
 
 stories.addWithJSX("thenable", () => (
-  <Button onClick={success}>Display a sequence of message</Button>
+  <Button onClick={success}>Display sequential messages</Button>
 ));

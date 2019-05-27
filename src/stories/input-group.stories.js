@@ -4,6 +4,7 @@ const stories = storiesOf("antDesign.input", module);
 import {
   Input,
   Col,
+  Row,
   Select,
   InputNumber,
   DatePicker,
@@ -67,12 +68,14 @@ class CompactDemo extends React.Component {
     return (
       <div>
         <InputGroup size="large">
-          <Col span={5}>
-            <Input defaultValue="0571" />
-          </Col>
-          <Col span={8}>
-            <Input defaultValue="26888888" />
-          </Col>
+          <Row gutter={8}>
+            <Col span={5}>
+              <Input defaultValue="0571" />
+            </Col>
+            <Col span={8}>
+              <Input defaultValue="26888888" />
+            </Col>
+          </Row>
         </InputGroup>
         <br />
         <InputGroup compact>
@@ -102,7 +105,7 @@ class CompactDemo extends React.Component {
         <br />
         <InputGroup compact>
           <Input style={{ width: "50%" }} defaultValue="input content" />
-          <DatePicker />
+          <DatePicker style={{ width: "50%" }} />
         </InputGroup>
         <br />
         <InputGroup compact>

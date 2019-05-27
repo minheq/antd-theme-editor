@@ -18,7 +18,7 @@ stories.addWithJSX("basic", () => (
     style={{ width: "100%" }}
     onChange={onChange}
     defaultValue={toContentState("@afc163")}
-    suggestions={[
+    defaultSuggestions={[
       "afc163",
       "benjycui",
       "yiminghe",

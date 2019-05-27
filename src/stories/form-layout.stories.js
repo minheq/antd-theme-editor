@@ -3,8 +3,6 @@ import { storiesOf } from "@storybook/react";
 const stories = storiesOf("antDesign.form", module);
 import { Form, Input, Button, Radio } from "antd";
 
-const FormItem = Form.Item;
-
 class FormLayoutDemo extends React.Component {
   constructor() {
     super();
@@ -35,7 +33,7 @@ class FormLayoutDemo extends React.Component {
     return (
       <div>
         <Form layout={formLayout}>
-          <FormItem label="Form Layout" {...formItemLayout}>
+          <Form.Item label="Form Layout" {...formItemLayout}>
             <Radio.Group
               defaultValue="horizontal"
               onChange={this.handleFormLayoutChange}
@@ -44,16 +42,16 @@ class FormLayoutDemo extends React.Component {
               <Radio.Button value="vertical">Vertical</Radio.Button>
               <Radio.Button value="inline">Inline</Radio.Button>
             </Radio.Group>
-          </FormItem>
-          <FormItem label="Field A" {...formItemLayout}>
+          </Form.Item>
+          <Form.Item label="Field A" {...formItemLayout}>
             <Input placeholder="input placeholder" />
-          </FormItem>
-          <FormItem label="Field B" {...formItemLayout}>
+          </Form.Item>
+          <Form.Item label="Field B" {...formItemLayout}>
             <Input placeholder="input placeholder" />
-          </FormItem>
-          <FormItem {...buttonItemLayout}>
+          </Form.Item>
+          <Form.Item {...buttonItemLayout}>
             <Button type="primary">Submit</Button>
-          </FormItem>
+          </Form.Item>
         </Form>
       </div>
     );

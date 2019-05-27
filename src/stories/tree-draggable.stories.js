@@ -127,6 +127,7 @@ class Demo extends React.Component {
         className="draggable-tree"
         defaultExpandedKeys={this.state.expandedKeys}
         draggable
+        blockNode
         onDragEnter={this.onDragEnter}
         onDrop={this.onDrop}
       >
